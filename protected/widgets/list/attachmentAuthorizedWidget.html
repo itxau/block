@@ -1,0 +1,36 @@
+<div class="panel-wrapper">
+  <div class="panel-body">
+    <div class="table-wrap">
+      <table class="table table-responsive table-hover">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>文档说明</th>
+                  <th>区块地址</th>
+                  <th>上链时间</th>
+              </tr>
+          </thead>
+          <tbody>
+              {set:$attas=AttachmentService::getAttachment($sourceid,$type)}
+              {if:$attas}
+              {list:items=$attas}
+              <tr>
+                  <td>{echo:$key+1}</td>
+                  <td>{$item["title"]}</td>
+                  <td>
+                    <a href="{url:/$con/downfile/rid/$sourceid/tid/$item[txid]/aid/$item[address_id]}" style="color: blue;" target="_blank">{echo:TString::msubstr($item["txid"],0,40)}</a>
+                  </td>
+                  <td>{$item["created_time"]}</td>
+              </tr>
+              {/list}
+              {else:}
+              <tr>
+                  <td colspan="4">未上传无任何附件资料</td>
+              </tr>
+              {/if}
+          </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

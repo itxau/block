@@ -1,0 +1,76 @@
+<form action="{url:/govdahs/index}" method="post" id="main_form" name="main_form">
+  <div class="card-header">
+      <div class="pull-left">
+          <div class="button-list">
+              <button class="btn btn-primary op-new">
+                  <i class="fa fa-plus"></i>
+                  <span>新上链</span>
+              </button>
+          </div>
+      </div>
+      <div class="pull-right">
+          <div class="form-inline">
+            <div class="form-group">
+                <input type="text" class="form-control" name="ct__title" placeholder="文档标题" value="{$ct__title}">
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="year" id="year">
+                  {widget:name=list action=yearWidget}
+                </select>
+            </div>
+            <div class="form-group">
+                <select class="form-control" name="month" id="month">
+                  {widget:name=list action=monthWidget}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">查找
+            </button>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+  </div>
+  <div class="card-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+            <th>#</th>
+            <th>年月</th>
+            <th>文档标题</th>
+            <th>区块地址</th>
+            <th>类型</th>
+            <th>上链时间</th>
+        </tr>
+      </thead>
+      <tbody>
+        {list:items=$data["data"]}
+        <tr>
+          <td>{echo:Common::gridIndex($data["page"],$key)}</td>
+          <td>{$item["year"]}-{echo:str_pad($item["month"],2,'0',STR_PAD_LEFT)}</td>
+          <td>{$item['title']}</td>
+          <td>
+            <a href="{url:/govdahs/downfile/rid/$item[id]/tid/$item[txid]/aid/$item[address_id]}" style="color: blue;" target="_blank">{echo:TString::msubstr($item["txid"],0,40)}</a>
+          </td>
+          <td class="text-center"><i class="fa fa-lg {echo:Common::getExtensionIcon($item['ext'])}"></i></td>
+          <td>{$item["created_time"]}</td>
+        </tr>
+        {/list}
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer">
+    <div class="page_nav">
+    {echo:$data['html']}
+    </div>
+  </div>
+</form>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#year").val("{$year}");
+        $("#month").val("{$month}");
+        $('.op-new').on('click',function(){
+            open_dialog("{url:/govdahs/blcup}","数据上链",800,300,false);
+            return false;
+        });
+    });
+</script>
+

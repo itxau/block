@@ -1,0 +1,105 @@
+<div class="panel-body">
+  <form class="form-horizontal" action="{url:/taxetp/save}" method="post" id="edit-form" name="edit-form">
+    {if:isset($id) && ($id)}
+    <input type="hidden" name="id" value="{$id}">
+    {/if}
+      <div class="col-md-11 col-sm-11">
+          <div class="message">{$errmsg}</div>
+          <div class="col-md-8 col-sm-8">
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*企业账号：</label>
+              <div class="col-md-9 col-sm-9">
+                {if:isset($id)}
+                <label class="control-label">{$account}</label>
+                {else:}
+                <div class="input-group">
+                  <input type="text" class="form-control" id="account" name="account" value="" pattern="required">
+                  <div class="input-group-addon" 
+                  style="cursor: pointer;background:#635bd6;border: solid 1px #635bd6;color: #fff;" id="btnKey">自动生成</div>
+                </div>
+                {/if}
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*企业名称：</label>
+              <div class="col-md-9 col-sm-9">
+                <input type="text" class="form-control" name="name" value="{$name}" pattern="required" alt="企业名称不能为空">
+                <label class="valid-msg"></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*企业全名：</label>
+              <div class="col-md-9 col-sm-9">
+                <input type="text" class="form-control" name="full_name" value="{$full_name}" pattern="required" alt="企业全名不能为空">
+                <label class="valid-msg"></label>
+              </div>
+            </div>
+            {if:!isset($id)}
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*密码：</label>
+              <div class="col-md-9 col-sm-9">
+                <input type="password" class="form-control" name="password" autocomplete="new-password"  bind="repassword" pattern=".{6,}" alt="密码长度必须大于6位">
+                <label class="valid-msg"></label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*密码确认：</label>
+              <div class="col-md-9 col-sm-9">
+                <input type="password" class="form-control" name="repassword" autocomplete="new-password" bind="password" alt="密码输入必须一致" pattern="required">
+                <label class="valid-msg"></label>
+              </div>
+            </div>
+            {/if}
+            <div class="form-group">
+              <label class="col-md-3 col-sm-3 control-label">*验证手机：</label>
+              <div class="col-md-9 col-sm-9">
+                <input type="text" class="form-control" id="mobile" name="mobile" value="{$mobile}" pattern="mobi">
+              </div>
+            </div>
+            <div class="form-actions mt-30">
+              <div class="form-group">
+                <label class="col-md-3 col-sm-3 control-label"></label>
+                <div class="col-md-9 col-sm-9">
+                  {token:key=form}
+                  <button type="submit" class="btn btn-primary" style="width: 180px;"> 保存</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4">
+            <div class="text-center">
+              {set:$head_pic=Common::getAvatar(isset($head_pic)?$head_pic:"")}
+              {widget:name=public action=headpicWidgetUser head_pic=$head_pic}
+            </div>
+        </div>
+      </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+
+    $(function(){
+
+        //btnkey.click
+        $("#btnKey").click(function() {
+            $.ajax({
+                type: "get",
+                url: "{url:/enterprise/etpkeygenerate}",
+                dataType: 'json',
+                success: function(result) {
+                    if (result['status'] == 'success') {
+                      $("#account").val(result['msg']);
+                    } else {
+                        swal(result['msg']);
+                    }
+                },
+                error:function(){
+                  swal("发生错误，生成失败");
+                }
+            });
+        });
+       
+  });
+
+
+</script>

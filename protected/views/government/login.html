@@ -1,0 +1,44 @@
+<style type="text/css">
+    .login-bg {
+        background-image: url({url:@static/images/login_gov.jpg});
+    }
+</style>
+
+<div class="row">
+    <div class="col-sm-12 col-xs-12">
+        <div>
+            <h3 class="text-center txt-dark mb-10"><strong>前海区块链管理服务平台</strong></h3>
+            <p class="text-center nonecase-font txt-grey">请输入你的账号信息</p>
+        </div>  
+        <div class="message">{$msg}</div>
+        <div class="form-wrap">
+            <form action="{url:/government/login_act}" method="post">
+                <input type="hidden" name="redirectURL" value="{$redirectURL}">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                        <input type="text" class="form-control" name="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><i class="fa fa-check"></i></div>
+                        <input type="text" class="form-control" name="verifyCode">
+                        <div class="input-group-addon addonext"><img id="captcha_img" src='{url:/index/captcha}' onclick="this.src='{url:/index/captcha/random/}'+Math.random()"/></div>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                    {token:key=form}
+                    <button type="submit" class="btn btn-primary btn-rounded">登录</button>
+                </div>
+            </form>
+        </div>
+    </div>  
+</div>
+                    

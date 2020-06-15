@@ -1,0 +1,50 @@
+.panel-heading .pull-right input {width: 140px;	}
+.panel-heading .pull-left .button-list .btn {margin-top: 0px; }
+
+.wrapper.theme-6-active.pimary-color-pink .fixed-sidebar-left .side-nav > li > a.active {
+    color: #18eb0e;
+}
+.fixed-sidebar-left .side-nav > li > ul > li a {
+    color: #fff;
+}
+.fixed-sidebar-left .side-nav > li ul.collapse li a.active {
+    color: #18eb0e;
+}
+
+.dropdown-menu a {cursor: pointer;}
+
+.nav-header .pull-left { background: #4c7430; }
+input.form-control,select.form-control {height: 34px;}
+
+.form-horizontal .has-feedback .form-control-feedback {	top:-4px;}
+.help-block {margin-top: 0px;margin-bottom: 0px;}
+.navbar.navbar-inverse.navbar-fixed-top .nav-header {
+	padding-left: 5px;
+}
+.navbar.navbar-inverse.navbar-fixed-top .nav-header .logo-wrap {
+   padding-top: 10px;
+}
+
+th {font-weight: bold; white-space: nowrap;}
+.brand-img {height: 30px; width: 30px; margin-top: 5px; }
+.square {background-color: #f8f8f8; border:0px;padding: 20px; margin:30px 0px;}
+.square p {font-weight: bold;margin-top: 10px;}
+.circular {
+    width: 76px;height: 76px; margin:0 auto; 
+}
+.square:hover{ box-shadow: 0 0 15px #ddd; }
+.circular img {width: 100%;}
+.topheader {background-color: #f8f8f8; width: 100%; height: 40px;}
+.page-footer{
+    background-color: #e7e8e8;
+    height: 170px;
+    line-height: 170px;
+}
+.footer-content{
+    margin: 0 auto;
+    width: 500px;
+}
+.footer-content span{
+    margin-left: 50px;
+}
+.message {text-align: center;color: red; font-weight: bold; padding-bottom: 10px;}

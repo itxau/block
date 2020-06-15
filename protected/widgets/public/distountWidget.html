@@ -1,0 +1,36 @@
+
+<style>
+    .dita td{border: 1px solid #eee !important;padding: 5px!important;    font-size: 12px;}
+</style>
+<script type="text/javascript">
+    function addDist(e){
+        
+        if(e){
+            art.dialog({id:'adistount'}).close();
+            $.ajax({
+                url: "{url:/ajax/list}",
+                type: "post",
+                data: {
+                    id:e
+                },
+                success: function (result) { 
+                result= JSON.parse(result);
+                var table = "<table style='width:100%;margin-top:10px' class='dita'>", cid="",items="";
+                if(result.data){
+                    $.each(result.data,function(index,value){
+                        cid+= value.id+',';
+                        items+= value.name+',';
+                        table+="<tr><td width='120' style='color: #333;'>"+value.parent[0].parent[0].name+"</td><td>"+value.name+"</td></tr>";
+                    });
+                    table += "</table>";
+                }
+                $("#cid").val(cid);
+                $("#items").val(items);
+                
+                $("#dist").html(table);
+                FireEvent(document.getElementById("cid"),"change");
+                }
+            });
+        } 
+    }
+</script>

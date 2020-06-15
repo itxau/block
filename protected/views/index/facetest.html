@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$site_full_name}</title>
+	<meta name="author" content="designer:sunxiangen, date:2019-10-12" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{url:@favicon.ico}">
+	<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+	<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+
+
+	<link href="{url:@static/js/face/zDialog.css}" rel="stylesheet" type="text/css"/>
+	<script type="text/javascript" src="{url:@static/js/face/zDialog.js}"></script>
+	<script type="text/javascript" src="{url:@static/js/face/zDrag.js}"></script>
+	<script type="text/javascript" src="{url:@static/js/face/easyXDM.min.js}"></script>
+
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .html-body-overflow
+		{
+		    overflow-x:hidden;
+		    overflow-y:hidden;
+		}
+        div{
+            width:100%;
+            height: 100%;
+        }
+</style>
+	<script type="text/javascript">
+		var diag = new Dialog();
+		var loginname="tester";
+		diag.Drag = false;
+		diag.Title ="人脸验证登录[用户名: " + loginname + "]";
+		diag.URL = "{url:/index/facelogin/USERNAME/}";
+		diag.URL += loginname;
+		diag.Width = 480;
+		diag.Height = 480;
+		diag.CancelEvent = function(){ //关闭事件
+			var faceResult = diag.innerFrame.contentWindow.faceResult;
+			var faceImg = diag.innerFrame.contentWindow.faceImg; //AUTHWAY=1时,可用faceImg作为人脸图像保存(BASE64编码)
+			if (faceResult == "success") { 
+				alert("face ok");
+			}
+			diag.close();
+		};
+		diag.OnLoad = function(){
+			//页面加载完成
+			//diag.innerFrame.contentWindow.document.getElementById('HEADPHOTO').value='头像数据'; //BASE64编码
+		};
+		diag.show();
+	</script>
+</head>
+<body>
+	
+ 
+</body>
+
+
+</html>
+
+

@@ -1,0 +1,11 @@
+<ul class="nav" id="main-menu">
+{list:items=$menus }
+	<li>
+		<a {if:$act==$key} class='active-menu' {/if} href="{url:/enterprise/}{key}">
+			<i class="fa fa-lg {$item['icon']}"></i>{$item['title']}
+		</a>
+	</li>
+{/list}
+</ul>
+
+

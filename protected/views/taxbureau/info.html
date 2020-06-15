@@ -1,0 +1,39 @@
+<div class="panel-body">
+  <form id="main_form" class="form-horizontal" action="{url:/manager/save}" method="post">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="col-md-11 col-sm-11">
+      {if:isset($errmsg)}
+      <div class="message">{$errmsg}</div>
+      {/if}
+      <div class="form-group">
+        <label class="col-md-3 col-sm-3 control-label">我的名称：</label>
+        <label class="col-md-9 col-sm-9 control-label text-left">{$name}</label>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 col-sm-3 control-label">所属部门：</label>
+        <label class="col-md-9 col-sm-9 control-label text-left">{$deptname}</label>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 col-sm-3 control-label">权限角色：</label>
+        <label class="col-md-9 col-sm-9 control-label text-left">{if:$is_admin}超级管理元{else:}{$rolename}{/if}</label>
+      </div>
+      <div class="form-group">
+        <label class="col-md-3 col-sm-3 control-label">我的头像：</label>
+        <label class="col-md-9 col-sm-9 control-label text-left">
+          {if:$head_pic}
+          <img src="{$head_pic}">
+          {else:}
+          <img src="{url:@static/images/nobody.png}">
+          {/if}
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#dept_id").val({$dept_id});
+    $("#role_id").val({$role_id});
+  });
+</script>

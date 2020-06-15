@@ -1,0 +1,27 @@
+<div class="panel-body">
+  <form id="edit-form" name="edit-form" class="form-horizontal" action="{url:/govdept/save}" method="post">
+    {if:isset($id)}
+    <input type="hidden" name="id" value="{$id}">
+    {/if}
+    <div class="col-sm-11 col-xs-11 mt-10">
+      {if:isset($errmsg)}
+      <div class="message">{$errmsg}</div>
+      {/if}
+      <div class="form-group">
+        <label class="col-xs-3 col-sm-3 control-label text-right">* 部门名称：</label>
+        <div class="col-xs-9 col-sm-9">
+          <input class="form-control" name="name" id="name" type="text" value="{$name}" pattern="required">
+        </div>
+      </div>
+      <div class="form-actions mt-30">
+        <div class="form-group">
+          <label class="col-xs-3 col-sm-3 control-label"></label>
+          <div class="col-xs-9 col-sm-9">
+            {token:key=form}
+            <button type="submit" class="btn btn-primary op-save"> 保存</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

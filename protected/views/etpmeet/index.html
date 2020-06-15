@@ -1,0 +1,54 @@
+<form action="{url:/etpmeet/index}" method="post" id="main_form" name="main_form">
+    <div class="panel-heading">
+        <div class="pull-left">
+        </div>
+        <div class="pull-right">
+            <div class="form-inline">
+                <div class="form-group">
+                    {widget:name=list action=statusWidget statusMap=$this->entity->statusMap}
+                </div>
+                <button type="button" class="btn btn-primary btn-rounded btn-sm" id="btn_searchId">查找</button>
+             </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-wrapper">
+        <div class="panel-body">
+            <div class="table-wrap">
+                <table class="table table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>会议名称</th>
+                            <th>房间号码</th>
+                            <th>开始时间</th>
+                            <th>结束时间</th>
+                            <th>创建时间</th>
+                            <th class="text-center">加入会议</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {list:items=$data["data"]}
+                        <tr>
+                            <td>{echo:Common::gridIndex($data["page"],$key)}</td>
+                            <td>{$item["title"]}</td>
+                            <td>{$item["room"]}</td>
+                            <td>{$item["begin_time"]}</td>
+                            <td>{$item["end_time"]}</td>
+                            <td>{$item["created_time"]}</td>
+                            <td class="text-center">
+                                <a style="color: green;" href="{$item['anonymous_url']}" target="_blank"><i class="fa fa-video-camera"></i></a>
+                            </td>
+                            <td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
+                        </tr>
+                        {/list}
+                    </tbody>
+                </table>
+                <div class="page_nav">
+                {echo:$data['html']}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

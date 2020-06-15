@@ -1,0 +1,208 @@
+*{
+	box-sizing:border-box;
+}
+html{
+	height:100%
+}
+li{
+	padding:6px
+}
+#autoCom li{
+	padding:0
+}
+#autoCom a{
+	color:white;
+}
+#autoCom a:hover{
+	color: #15b5ff;
+}
+body{
+	background-image:linear-gradient(rgb(53 135 210),rgb( 163 150 175));
+	height:auto;
+}
+
+#header{
+	border:1px solid rgb(207,214,222);
+	width:100%;
+	height:80px;
+	background-color:rgb(216,234,248);
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+}
+#header h1{
+	display:inline-block;
+	margin-left:130px;
+	margin-bottom:0px;
+	height:100%;
+	color:	#000079;
+}
+
+#contents{
+	width:100%;
+	background-image: linear-gradient(rgb(216 233 247),rgb(  231 237 247),rgb(  244 243 246));
+	justify-content: space-around;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+}
+#content{
+	/*border:1px solid rgb(207,214,222);*/
+	
+	width:1040px;
+	
+	vertical-align:top;
+	display:inline-block;
+}
+#aside{
+	/*border:1px solid rgb(207,214,222);*/
+	width:450px;
+
+	vertical-align:top;
+	display:inline-block;
+}
+#speak_box{
+	padding:5px;
+	border:1px solid rgb(207,214,222);
+	overflow-x: hidden; overflow-y: auto;
+}
+#speak_box a{
+	color:#15b5ff;
+}
+.admin_speak{
+	margin-top:10px;
+}
+.users_speak{
+	margin-top:10px;
+	text-align:right
+}
+.admin_img{
+	display:inline-block
+}
+.users_img{
+	display:inline-block
+}
+.admin_img img{
+	width:40px;height:40px
+}
+.users_img img{
+	width:40px;height:40px
+}
+#admin_icon{
+	width:0;
+	height:0;
+	margin-left:-5px;
+	margin-top:-10px;
+	display:inline-block;
+	border:8px solid transparent;
+	border-right: 8px solid white;
+}
+#users_icon{
+	width:0;
+	height:0;
+	margin-left:-5px;
+	margin-top:-10px;
+	display:inline-block;
+	border:8px solid transparent;
+	border-left: 8px solid white;
+}
+.users_text{
+	letter-spacing: 1px;
+	line-height: 25px;
+	padding:5px;
+	margin-left:-4px;
+	margin-top:10px;
+	vertical-align:top;
+	border-radius:5px;
+	max-width:600px;
+	display:inline-block;
+	text-align:left;
+	background-color:white; 
+}
+.admin_text{
+	letter-spacing: 1px;
+	line-height: 25px;
+	padding:5px;
+	margin-left:-4px;
+	margin-top:10px;
+	vertical-align:top;
+	border-radius:5px;
+	max-width:600px;
+	display:inline-block;
+	background-color:white; 
+}
+#inputArea{
+	
+	position:relative;
+}
+#inputArea textarea{
+	width:100%;
+	height:100%;
+	padding:10px;
+	font-size:15px;
+	background-color:transparent
+}
+#inputArea button{
+	position:absolute;
+	bottom:10px;
+	right:10px;
+}
+@media screen and (min-width: 550px) and (max-width: 1200px){
+	.admin_text{
+		max-width: 400px;
+	}
+	.users_text{
+		max-width: 400px;
+	}
+}
+@media screen and (min-width: 320px) and (max-width: 550px){
+	.admin_text{
+		max-width: 80%;
+	}
+	.users_text{
+		max-width: 200px;
+	}
+}
+/*@media screen and (min-width: 320px) and (max-width: 550px){
+	body{
+		height:670px
+	}
+	#contentext{
+		width:100%
+	}
+	#header{
+		width:100%;
+		height:60px;
+	}
+	#header h1{
+		display:inline-block;
+		margin-left:24px;
+		font-size:350;
+		margin-bottom:0px;
+		line-height:60px;
+		color:	#000079;
+	}
+	.good>img{
+		display: none
+	}
+	#contents{
+		width:100%;
+		
+	}
+	#speak_box,#content{
+		width:100%;
+		height:450px;
+	}
+	#aside{
+		display:none
+	}
+	.admin_text{
+		max-width:260px;
+	}
+	#inputArea{
+		width:100%
+	}
+	#inputArea textarea{
+		width:100%;
+		height:120px;
+	}
+	
+}*/

@@ -1,0 +1,4 @@
+<option value="">发票类别</option>
+{list:items=(new InvoicetypeEntity())->queryAll()}
+    <option value="{$item['id']}">{$item['name']}</option>
+{/list}

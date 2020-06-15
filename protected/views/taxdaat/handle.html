@@ -1,0 +1,78 @@
+{echo:JS::import('date');}
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+    <div  class="tab-struct custom-tab-1">
+      <ul role="tablist" class="nav nav-tabs" id="tabs_1">
+          <li class="active">
+            <a data-toggle="tab" role="tab" href="#tab_1">基本信息</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab" href="#tab_2">附件资料</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab" href="#tab_3">协同资料</a>
+          </li>
+      </ul>
+      <div class="tab-content" id="tab_content">
+        <div  id="tab_1" class="tab-pane fade active in" role="tabpanel">
+            <div class="col-md-11 col-sm-11 col-xs-11">
+              <form action="{url:/taxdaat/save}" class="form-horizontal" name="main-form" id="main-form" method="post">
+                  <input type="hidden" name="id" value="{$id}">
+                  <input type="hidden" name="status" id="status" value="{$status}">
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">协同事项：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input class="form-control" type="text" name="title" value="{$title}" readonly>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">协同说明：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <textarea class="form-control" name="content" readonly rows="3">{$content}</textarea>
+                    </div>
+                  </div>
+                  <div class="form-actions mt-30">
+                    {token:key=form}
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                        <button type="button" class="btn btn-primary mr-20" id="btn_save">接受申请</button>
+                        <button type="button" class="btn btn-primary" id="btn_submit">拒绝申请</button>
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+        {if:isset($id) && $id}
+        <div id="tab_2" class="tab-pane fade in" role="tabpanel">
+          {widget:name=list action=attachmentAuthorizedWidget con=taxbureau sourceid=$id type=6}
+        </div>
+        <div id="tab_3" class="tab-pane fade in" role="tabpanel">
+          {widget:name=list action=attachmentWidget sourceid=$id type=7 con=taxdaat}
+        </div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
+{widget:name=public action=downWidget} 
+
+<script type="text/javascript">
+    $("#btn_save").on("click",function(){
+      $("#status").val(3);
+      $("#main-form").submit();
+    });
+
+    $("#btn_submit").on("click",function(){
+      $("#status").val(4);
+      $("#main-form").submit();
+    });
+
+    $(document).ready(function() {
+        {if:isset($upld) && $upld==1}
+        $("#tabs_1 li").eq(2).addClass('active').siblings().removeClass('active');
+        $('#tab_3').addClass('active').siblings().removeClass('active');
+        {/if}
+    });
+</script>

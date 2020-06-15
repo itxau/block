@@ -1,0 +1,69 @@
+<script type="text/javascript" src="{url:@static/js/face/easyXDM.min.js}"></script>
+
+<div>
+	<input type="hidden" name="HEADPHOTO" id="HEADPHOTO" value="{$HEADPHOTO}" /> 
+	<input type="hidden" name="USERNAME" id="USERNAME" value="{$USERNAME}"/>
+	<div id="facecontainer" style="width: 100%;height: 100%"></div>
+	<script type="text/javascript">
+
+		var domain = "http://www.nfcsjmj.com/ZTCloud/"; //云端测试地址
+		var isIE=checkIE();
+
+		var URL = domain + 'appFaceIDInterface/login_toFaceLogin.do';
+		URL += '?USERNAME='+"{$USERNAME}";	
+		URL += '&AUTHWAY=0'; //0-登录,1-注册
+		URL += '&SRC=1'; 	 //0-内部使用,1-区块链使用
+		URL += '&isIE=' + checkIE();
+
+		var socket;
+		var generateRpc = function (url) {
+			return new easyXDM.Rpc({
+				isHost: true,
+				remote: URL,
+				hash: true,
+				protocol: '1',
+				container: document.getElementById('facecontainer'),
+				props: {
+					frameBorder: 0,
+					scrolling: 'no',
+					style: {width: '100%', height: '100%'}
+				},
+		        onReady: function (msg) {
+		        	//AUTHWAY=0且SRC=1时通过此处发送用户头像
+		        	var HEADPHOTO = $("#HEADPHOTO").val();
+		        	if (HEADPHOTO != '') {	        		
+			        	socket.pingIframe($("#HEADPHOTO").val(), function(response){
+							
+						}, function(errorObj){
+							swal("人脸验证发送错误！");
+						});
+		        	}
+		       }
+			},
+			{
+				local: {
+					echo: function (message) {
+						var item = message.split("#,#");
+						if (item.length == 5) {
+							//password = item[1];
+							//faceResult = item[3];
+							//faceImg = item[4];
+						}
+						return {'msg': 'success'};
+					}
+				},
+				remote: {
+					pingIframe: {}
+				}
+			});
+		};
+		socket = generateRpc(domain);
+		
+		function checkIE() {
+		    if(!!window.ActiveXObject || "ActiveXObject" in window){
+		      return true;
+		    }
+			return false;
+		}
+	</script>
+</div>

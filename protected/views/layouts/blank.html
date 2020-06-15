@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{$site_full_name}</title>
+		<meta name="author" content="designer:sunxiangen, date:2018-08-01" />
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{url:@favicon.ico}">
+		<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+		<!--alerts CSS -->
+		<link href="{url:@static/vendors/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+		<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+			
+		<link href="{url:@static/vendors/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css}" rel="stylesheet" type="text/css"/>
+		<!-- Custom CSS -->
+		<link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css">
+		<link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css">
+		<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+		{echo:JS::import('form');}
+		{echo:JS::import('dialog?skin=tinysimple');}
+		{echo:JS::import('dialogtools');}
+	</head>
+	<body style="background-color: #fff;">
+		<div>
+			{__viewcontents}
+		</div>
+	</body>
+	<!-- JavaScript -->
+	<script src="{url:@static/js/common.js}"></script>
+	
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+    <!-- Sweet-Alert  -->
+	<script src="{url:@static/vendors/sweetalert/dist/sweetalert.min.js}"></script>
+	
+</html>

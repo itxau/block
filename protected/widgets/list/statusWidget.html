@@ -1,0 +1,10 @@
+<select class="form-control" name="status" id="status">
+	<option value="">选择状态</option>
+	{list:items=$statusMap}
+		{if:$key==1 && isset($draft) && $draft=='N'}
+		//省略
+		{else:}
+		<option value="{$key}">{$item}</option>
+		{/if}
+	{/list}
+</select>

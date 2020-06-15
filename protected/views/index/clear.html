@@ -1,0 +1,57 @@
+<div class="panel-heading">
+    <div class="pull-left">
+        <h4>系统缓存清理提示:</h4>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="panel-wrapper">
+	<div class="panel-body">
+		<ul>
+			<li>1、数据库结构发生变化时，建议数据缓存清理。</li>
+			<li>2、二次开发更换Controller里的layout，建议模板缓存清理。</li>
+			<li>3、开发调试过程中，不清晰修改的问题，建议全部清理。</li>
+			<li>4、正式运营环境，建议不要清理缓存。</b></li>
+		</ul>
+		<div class="button-list">
+	        <button class="btn btn-sm btn-primary btn-icon left-icon">
+	            <i class="fa fa-trash"></i>
+	            <span>数据缓存清理</span>
+	        </button>
+	        <button class="btn btn-sm btn-warning btn-icon left-icon">
+	            <i class="fa fa-trash"></i>
+	            <span>模板缓存清理</span>
+	        </button>
+	        <button class="btn btn-sm btn-danger btn-icon left-icon">
+	            <i class="fa fa-trash"></i>
+	            <span>全部清理缓存</span>
+	        </button>
+	    </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".btn-primary").on("click",function(){
+			clear_catch("data");return false;
+		});
+
+		$(".btn-warning").on("click",function(){
+			clear_catch("theme");return false;
+		});
+
+		$(".btn-danger").on("click",function(){
+			clear_catch("all");return false;
+		});
+	});
+
+	function clear_catch(type){
+	//data,theme,all
+		$.post("{url:/index/clear_act/type/}"+type,function(data){
+			swal({   
+                title: data.msg,   
+                timer: 2000,   
+                showConfirmButton: true 
+            });
+		},'json');
+	}
+</script>

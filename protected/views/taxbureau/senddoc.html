@@ -1,0 +1,18 @@
+<div class="panel-wrapper">
+    <div class="panel-body mt-30">
+        <form class="form-horizontal" action="{url:/taxbureau/senddoc_act}" method="post" id="upload_form" name="upload_form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label class="col-md-2 col-sm-2 control-label">*文档名称：</label>
+                <div class="col-md-6 col-sm-6">
+                  <input type="file" class="form-control" name="upfile" id="upfile">
+                </div>
+            </div>
+            <div class="col-md-offset-2 col-sm-offset-2 pt-15">
+              {token:key=form}
+              <button type="submit" class="btn btn-sm btn-primary btn-icon left-icon">
+                <i class="fa fa-upload"></i>发送
+              </button>
+            </div>
+        </form>
+    </div>
+</div>

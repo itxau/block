@@ -1,0 +1,109 @@
+<style type="text/css">
+  table.layout {width: 100%;}
+  table.layout tr th, table.layout tr td {padding: 8px 10px}
+  table.layout tr th {text-align: right; width: 20%}
+  table.layout tr td {width: 30%;text-align: left;}
+</style>
+<div class="panel-body">
+  <div class="col-md-11 col-xm-11">
+    <table class="layout">
+      <tr>
+        <th>企业名称：</th>
+        <td>{$name}</td>
+        <th>企业全名：</th>
+        <td>{$full_name}</td>
+      </tr>
+      <tr>
+        <th>法定代表人：</th>
+        <td>{$legal_representative}</td>
+        <th>法人电话：</th>
+        <td>{$legal_mobile}</td>
+      </tr>
+      <tr>
+        <th>成立日期：</th>
+        <td>{$establish_date}</td>
+        <th>登记状态：</th>
+        <td>{$registration_status}</td>
+      </tr>
+      <tr>
+        <th>注册资本：</th>
+        <td>{echo:number_format($registered_capital)}</td>
+        <th>实纳资本：</th>
+        <td>{echo:number_format($real_capital)}</td>
+      </tr>
+      <tr>
+        <th>企业类型：</th>
+        <td>{$enterprise_type}</td>
+        <th>参保人数：</th>
+        <td>{$insured_persons}</td>
+      </tr>
+      <tr>
+        <th>人员规模：</th>
+        <td>{$staff_num}</td>
+        <th>统一社会信用代码：</th>
+        <td>{$socialcredit_no}</td>
+      </tr>
+      <tr>
+        <th>纳税人识别号：</th>
+        <td>{$taxpayer_no}</td>
+        <th>工商注册号：</th>
+        <td>{$registration_no}</td>
+      </tr>
+      <tr>
+        <th>组织机构代码：</th>
+        <td>{$organization_no}</td>
+        <th>纳税信用等级：</th>
+        <td>{$taxlevel}</td>
+      </tr>
+      <tr>
+        <th>企业电话：</th>
+        <td>{$tel}</td>
+        <th>企业传真：</th>
+        <td>{$fax}</td>
+      </tr>
+      <tr>
+        <th>经营地址：</th>
+        <td>{$addr}</td>
+        <th>经营范围：</th>
+        <td>{$business_scope}</td>
+      </tr>
+      <tr>
+        <th>纳税责任人：</th>
+        <td>{$tax_responsible}</td>
+        <th>纳税机关：</th>
+        <td>{$tax_office}</td>
+      </tr>
+      <tr>
+        <th></th>
+        <td></td>
+        <th></th>
+        <td></td>
+      </tr>
+    </table>
+  </div>
+  <div class="table-wrap ml-25 mr-25">
+      <table class="table table-responsive table-hover">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>股东名称</th>
+                  <th>股东类型</th>
+                  <th>持股比例</th>
+                  <th>认缴出资额</th>
+              </tr>
+          </thead>
+          <tbody>
+              {list:items=$data["data"]}
+              <tr>
+                  <td>{echo:Common::gridIndex($data["page"],$key)}</td>
+                  <td>{$item["name"]}</td>
+                  <td>{$item["typename"]}</td>
+                  <td>{echo:number_format($item["hold_rate"],2)}</td>
+                  <td>{echo:number_format($item["invested_amount"])}</td>
+              </tr>
+              {/list}
+          </tbody>
+      </table>
+  </div>
+</div>
+        

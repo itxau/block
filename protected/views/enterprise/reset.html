@@ -1,0 +1,54 @@
+<style type="text/css">
+	.auth-form { width: 600px; }
+	body {background: #444;}
+</style>
+<div class="page-wrapper pt-30 pt-100  ma-0 auth-page">
+	<div class="container-fluid">
+		<!-- Row -->
+		<div class="table-struct full-width full-height">
+			<div class="table-cell vertical-align-middle auth-form-wrap">
+				<div class="auth-form  ml-auto mr-auto no-float card-view pt-30 pb-30">
+					<div class="row">
+						<div class="col-sm-12 col-xs-12">
+							<div class="sp-logo-wrap text-center pa-0 mb-30">
+								<span class="brand-text">密码重置成功</span>
+							</div>
+							<div class="form-wrap ml-30 mr-30">
+								<form class="form-horizontal">
+									<div class="message">{$errmsg}</div>
+									<div class="form-group">
+							            <label class="col-md-3 col-sm-3 control-label">企业账号：</label>
+							            <div class="col-md-9 col-sm-9">
+							                <input type="text" class="form-control" id="account" name="account" value="{$account}" readonly>
+							            </div>
+							        </div>
+							        <div class="form-group">
+							            <label class="col-md-3 col-sm-3 control-label">企业名称：</label>
+							            <div class="col-md-9 col-sm-9">
+							              <input type="text" class="form-control" name="name" value="{$name}" readonly>
+							              <label class="valid-msg"></label>
+							            </div>
+							        </div>
+							        <div class="form-group">
+							            <label class="col-md-3 col-sm-3 control-label">验证手机：</label>
+							            <div class="col-md-9 col-sm-9">
+							                <input type="text" class="form-control" id="mobile" name="mobile" value="{$mobile}" readonly>
+							            </div>
+							        </div>
+									<div class="form-group mt-30">
+										<label class="col-md-3 col-sm-3 control-label"></label>
+							            <div class="col-md-9 col-sm-9">
+											<a href="{url:/enterprise/login}" class="btn btn-primary mr-30" style="width: 110px;">立刻登录</a>
+											<a href="{url:/index/index}" class="btn btn-default" style="width: 110px;">返回首页</a>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Row -->	
+	</div>
+</div>

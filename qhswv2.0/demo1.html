@@ -1,0 +1,303 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <title>测试</title>
+    <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+   <link rel="stylesheet" type="text/css" href="./static/css/review.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/icon.css">
+    <link rel="shortcut icon"  href="./static/img/bitbug_favicon.ico">
+	
+	 <script type="text/javascript" src="./static/js/jquery-1.8.1.min.js"></script>
+</head>
+
+<body style="margin-left:10%;margin-top:2%;">
+<style> 
+
+#autoCom li{
+	 display: inline-block;
+	  white-space: nowrap; 
+	  width: 100%; 
+	  overflow: hidden;
+	  text-overflow:ellipsis;
+	  margin:2px !important
+}
+em{
+color:red;
+font-family:'宋体';
+}
+.admin_text a{
+display: inline-block;
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+	  margin:2px !important
+}
+</style>
+
+  <div id="contentext">
+	<div id="header" >
+		
+		<h1>为您提供税收政策咨询服务</h1>
+	</div>
+	<div id="contents" >
+		<div id="content" style="display:inline-block">
+			<!-------------对话内容----------------->
+			<div id="speak_box">
+				<div class="admin_speak">
+				<div id="nowTime" style="display: block;text-align: center;">2020-12-212</div>
+					<div class="admin_img"><img src="./static/img/WeChat Image_20200303132220.png" ></div>
+					<div id="admin_icon"></div>
+					<div class="admin_text">您好，请问有什么可以帮您？<br>
+温馨提示：本次咨询仅供参考，具体以法律法规及相关规定为准。请注意保护企业或个人信息安全，不要在对话过程录入账号密码等敏感信息。</div>
+				</div>
+				
+				<!--<div class="users_speak">
+					<div class="users_text">东风股份大广东佛山的风神股份</div>
+					<div id="users_icon"></div>
+					<div class="users_img"><img src="./static/img/WeChat Image_20200303132230.png" ></div>
+				</div>-->
+			</div>
+			<!-------------输入内容----------------->
+			
+			<div id="inputArea">
+				<div id="autoCom" style="display:none;width:70%;padding:10px;height:150px;position:absolute;top:-150px;border-radius: 5px;background: url(static/img/menubg.png) repeat;color:white">
+				</div>
+				<textarea id="inputData" onkeyup="keyLogin()" placeholder="请输入您要咨询的问题"></textarea>
+				<button  type="button"  onclick="showData1()" class="layui-btn layui-btn-warm">发送</button>
+			</div>
+		</div>
+		<!-------------面板----------------->
+		<div id="aside" style="display:inline-block">
+			<div class="layui-collapse" lay-accordion>
+			 
+					  <div class="layui-colla-item"> 
+						<h2 class="layui-colla-title" style="font-weight: bold;color: #15b5ff;font-size: 16px;">疫情防控税收优惠政策热点<!--<i style="color:red;font-size:25px;float:right" class="iconfont icon-zuixinnewchunse"></i>--></h2>
+							<div class="layui-colla-content layui-show" style="overflow-x: hidden; overflow-y: auto;max-height:650px">
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/sscx/rddetail?bh=8dd70b7793ba4222a98cc0d17ff709bf">防控疫情税收优惠政策热点问答（第八期）</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/rdwd/202003/50341af409a948cebc8acca0a38e748a.shtml">防控疫情税收优惠政策热点问答（第七期）</a></li>
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=ae410b54983c4763aca8b0b51a4cffe9&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第六期）</a></li>
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=7c70007867454de9b01a91db215e99fb&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第五期）</a></li>
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=1d3b8a479ba34bcb880920db938cceea&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第四期）</a></li>
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=763d24728d0c44319e22f85d327162ff&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第三期）</a></li>
+							<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=689957f814b94d399ef642dd1c9b1d70&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第二期）</a></li>
+							<li><a target="_blank" href="http://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5143796/content.html">防控疫情税收优惠政策热点问答（第一期）</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zcjd/202002/8940507936df4c0d87fa30a39b6bd899.shtml">关于《国家税务总局关于支持新型冠状病毒感染的肺炎疫情防控有关税收征收管理事项的公告》的解读</a></li>
+
+							</div>
+					  </div>
+					  <div class="layui-colla-item">
+						<h2 class="layui-colla-title" style="font-weight: bold;color: #15b5ff;font-size: 16px;">最新文件</h2>
+						<div class="layui-colla-content  ">
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/d3debecf82d245c6a52a2c01a1936f1b.shtml">国家税务总局关于延长2020年3月纳税申报期限有关事项的通知</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/95eb09fcfddc4285b2444c547c42534a.shtml">国家税务总局关于支持个体工商户复工复业等税收征收管理事项的公告</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/c82731072bdc43c0beac75cc68099c1e.shtml">国家税务总局关于开展2020年“便民办税春风行动”的意见</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/3bcee1c35ab544e18dc35fd09a82b29a.shtml">国家税务总局关于贯彻落实阶段性减免企业社会保险费政策的通知</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/441566cda715491a9d88ff4fc82017f6.shtml">财政部 税务总局关于支持个体工商户复工复业增值税政策的公告</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/54520c0355fa49a1a67570aab2fc83dc.shtml">国家税务总局关于做好新型冠状病毒感染的肺炎疫情防控期间出口退（免）税有关工作的通知</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/90c53065b7fb4060ab72fdba9f6fe872.shtml">国家医保局 财政部 税务总局关于阶段性减征职工基本医疗保险费的指导意见</a></li>
+							<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/3f937632bd18495d809ecf3bb8769520.shtml">财政部 海关总署 税务总局关于取消“十三五”进口种子种源税收政策免税额度管理的通知</a></li>
+
+						</div>
+					  </div>
+					</div>
+		</div>
+	</div>
+  </div>
+</body>
+ 
+<script type="text/javascript" src="./layui/layui.js"></script>
+
+<script type="text/javascript" src="./static/js/index.js"></script>
+
+<script>
+var bwidth=0.8*(document.documentElement.clientWidth);
+var bheight=0.9*(document.documentElement.clientHeight);
+
+$('#contentext').width(bwidth);
+$('#contentext').height(0.9*bheight);
+
+$('#header').height(0.1*bheight);
+
+$('#contents').height(0.8*bheight);
+$('#contents').width(bwidth);
+
+
+$('#content').height(0.8*bheight);
+$('#content').width(0.69*bwidth);
+
+$('#aside').height(0.8*bheight);
+$('#aside').width(0.30*bwidth);
+
+
+$('#speak_box').height(0.6*bheight);
+$('#speak_box').width(0.69*bwidth);
+
+$('#inputArea').height(0.2*bheight);
+$('#inputArea').width(0.69*bwidth);
+
+if(document.documentElement.clientWidth<420){
+	var bwidth=document.documentElement.clientWidth;
+	var bheight=document.documentElement.clientHeight;
+	$('#header').height(0.1*bheight);
+	$('#content').width(bwidth);
+	$('#content').height(0.7*bheight);
+	$('#contents').width(bwidth);
+	$('#contents').height(0.7*bheight);
+	$('#speak_box').width(bwidth);
+	$('#speak_box').height(0.7*bheight);
+	$('#aside').hide();
+	$('#contentext').width(bwidth);
+	$('#contentext').height(bheight);
+	$('#inputArea').width(bwidth);
+	$('#inputArea').height(0.19*bheight);
+	$('#header h1').css({'margin-left':'10px'})
+	$('body').css({'margin-left':'0'})
+}
+</script>
+
+<script type="text/javascript"> 
+ if(navigator.userAgent.indexOf("Trident")!=-1){ 
+document.getElementById('bodys').style.backgroundColor="#97CBFF";
+//document.getElementById('contentext').style.backgroundColor="#C6E2FF";
+ }
+var content='';//文本输入内容
+var isclick= true;//是否点击
+var xyy_url="./getQueryX.php";//分词
+var timer=0;//输入时间的定义
+$("body").click(function(){
+	$('#autoCom').hide(); 
+ })
+ /*$("#inputData").click(function(){
+	$('#autoCom').show();
+ })*/
+
+layui.use(['element','jquery'], function(){
+  var element = layui.element;
+  var $ = layui.jquery;
+  var myDates = new Date();
+  var mytimes=myDates.toLocaleString();
+  $('#nowTime').text(mytimes); 
+});
+
+
+function showName(name){
+$('#inputData').val(name.replace(/\s/g,""));
+showData1();
+}
+function keyLogin(){
+	if(event.keyCode==13){
+		showData1()
+	}//判断回车键
+
+}
+
+function showData1(){
+content=$('#inputData').val();
+content=content.replace(/\s/g,"");
+$('#inputData').val('');
+addUserDom(content);
+var xyy_params={query:content};
+var xyy_params=common_false(xyy_url,xyy_params);//
+console.log(JSON.parse(xyy_params));
+console.log(JSON.parse(xyy_params));
+var sss=(JSON.parse(xyy_params))['dk']['data']['sptag_info']['a_list'];
+console.log(sss);
+
+var tpls='<strong>用户问题：</strong>'+content+'</br>';
+xyy_datas=JSON.parse(xyy_params);
+$.each(xyy_datas['xyy']['matched_question'],function(index,item){
+	if(index==0){
+		tpls+='<strong>问:</strong>'+item[0]+'</br>';
+		tpls+='<strong>答:</strong>'+item[1]+'</br>';
+		tpls+='<strong>你是不是想问:</strong></br>';
+	}
+	tpls+='<a href="javascript:showName(\''+item[0]+'\')">'+item[0]+'</a>';
+})
+tpls+='<strong>DK的问题:</strong></br>';
+if(xyy_datas['dk']['data']['domain']!='闲聊'){
+	tpls+=xyy_datas['dk']['data']['bot_answer'];
+}else{
+	tpls+='<span>我更擅长回答办税指南和抗疫情政策相关的问题，其它业务咨询您可以拨打12366热线电话。</span>';
+}
+addAdminDoms(tpls,1); 
+
+$('#speak_box')[0].scrollTop=$('#speak_box')[0].scrollHeight;
+}
+
+//------------------dom-----------------------------------
+function addAdminDoms(data,id){
+	var tpl='';
+	switch(id){
+		case 1:
+			tpl+='<div class="admin_speak">'
+			tpl+='	<div style="width: 40px;height: 40px;" class="admin_img"><img style="width: 40px;height: 40px;" src="./static/img/WeChat Image_20200303132220.png" ></div>'
+			tpl+='	<div id="admin_icon"></div>'
+			tpl+='	<div class="admin_text">'+data+'</div>'
+			tpl+='	</div>'
+		break;
+		case 2:
+			var data1=data;
+			
+			console.log('---');
+			var data2=sessionStorage.getItem("esAll");
+			console.log(JSON.parse(data2));
+			if(JSON.parse(data2)!=null&&JSON.parse(data2)!=0){
+				$.each(JSON.parse(data2)[0]['hits']['hits'],function(index,item){
+				//console.log(item);
+					if(index<3){
+						data1+='<a title="'+item["_source"]["content"]+'" target="_blank" href="'+item["_source"]["url"]+'">'+item["_source"]["title"]+'</a>';
+					}
+				})
+			}
+			
+			tpl+='<div class="admin_speak">'
+			tpl+='	<div style="width: 40px;height: 40px;" class="admin_img"><img style="width: 40px;height: 40px;" src="./static/img/WeChat Image_20200303132220.png" ></div>'
+			tpl+='	<div id="admin_icon"></div>'
+			tpl+='	<div class="admin_text">'+data1+'</div>'
+			tpl+='	</div>'
+		break;
+		default:
+			tpl+='<div class="admin_speak">'
+			tpl+='	<div style="width: 40px;height: 40px;" class="admin_img"><img style="width: 40px;height: 40px;" src="./static/img/WeChat Image_20200303132220.png" ></div>'
+			tpl+='	<div id="admin_icon"></div>'
+			var alink=namList[id]+'<br>';
+			$.each(data,function(index,item){
+				if(index<3){
+					alink+='<a title="'+item["_source"]["content"]+'" target="_blank" href="'+item["_source"]["url"]+'">'+(index+1)+'、'+item["_source"]["title"]+'</a>';
+				}
+			})
+			tpl+='	<div class="admin_text">'+alink+'</div>'
+			tpl+='	</div>'
+	}
+	$('#speak_box').append(tpl);
+	 
+}
+
+function addUserDom(data){
+	var tpl='';
+	tpl+='<div class="users_speak">'
+	tpl+='	<div class="users_text">'+data+'</div>'
+	tpl+='	<div id="users_icon"></div>'
+	tpl+='	<div class="users_img"><img src="./static/img/WeChat Image_20200303132230.png" ></div>'
+	tpl+='</div>'
+	$('#speak_box').append(tpl);
+}
+
+//检查输入内容是否存在换行、空格
+function check(strValue){
+	strValue=strValue.replace(/\n/g,'');
+    if(strValue=="")
+    {
+        return false;
+    }  
+}
+
+
+
+</script>
+</html>

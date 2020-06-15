@@ -1,0 +1,27 @@
+1、通过如下代码打开一个人脸验证窗口
+//使用zDialog.js 2.3
+var diag = new Dialog();
+diag.Drag = false;
+diag.Title ="人脸验证登录[用户名: " + loginname + "]";
+diag.URL = '<%=basePath%>appFaceIDInterface/toFaceLoginPage.do'; //URL根据自己的系统调整, 功能为打开faceLoginPage.jsp页面
+diag.URL += '?USERNAME='+loginname;
+diag.Width = 480;
+diag.Height = 480;	
+diag.Width = 480;
+diag.Height = 480;		
+diag.CancelEvent = function(){ //关闭事件
+	var faceResult = diag.innerFrame.contentWindow.faceResult;
+	var faceImg = diag.innerFrame.contentWindow.faceImg; //AUTHWAY=1时,可用faceImg作为人脸图像保存(BASE64编码)
+	if (faceResult == "success") { //人脸处理成功
+		//此处添加自己系统的处理;
+	}
+	diag.close();
+};
+diag.OnLoad = function(){
+	//页面加载完成
+	//diag.innerFrame.contentWindow.document.getElementById('HEADPHOTO').value='头像数据'; //BASE64编码
+};
+diag.show();
+
+2.参考《faceLoginPage.jsp》代码，在自己的系统实现。
+

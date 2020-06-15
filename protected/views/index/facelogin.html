@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$site_full_name}</title>
+	<meta name="author" content="designer:sunxiangen, date:2019-10-12" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{url:@favicon.ico}">
+	<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+	<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+	<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css"/>
+	
+	<script type="text/javascript" src="{url:@static/js/face/easyXDM.min.js}"></script>
+	<script type="text/javascript" src="{url:@static/js/face/zDialog.js}"></script>
+
+<style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        .html-body-overflow
+		{
+		    overflow-x:hidden;
+		    overflow-y:hidden;
+		}
+        div{
+            width:100%;
+            height: 100%;
+        }
+</style>
+</head>
+<body>
+	<!-- Preloader -->
+	<div class="preloader-it">
+		<div class="la-anim-1"></div>
+	</div>
+	<!-- /Preloader -->
+
+    <div class="wrapper">
+    	<textarea class="form-control" rows="5" style="width: 500px;">
+    		{$HEADPHOTO}
+    	</textarea>
+		<input type="hidden" name="HEADPHOTO" id="HEADPHOTO" value="{$HEADPHOTO}" /> 
+		<input type="hidden" name="USERNAME" id="USERNAME" value="{$USERNAME}"/>
+		<div id="container"></div>
+		<script type="text/javascript">
+			var faceResult = "";
+			var faceImg = "";
+			var faceID = "";
+			var password = "";
+
+			//禁止滚动条(默认是没有附加这个样式类的）
+			$(document.body).toggleClass("html-body-overflow");
+			//非IE浏览器本地访问外部需使用https方式,否则不允许使用摄像头
+			//var path = '<%=basePath%>';
+			//var domain = path; //内部使用	
+			var domain = "http://www.nfcsjmj.com/ZTCloud/"; //云端测试地址
+			var isIE=true;
+			/*
+			if (path == domain) {
+				if ((path.search("http://localhost") != -1) || 
+					(path.search("http://192.") != -1)|| 
+					(path.search("http://172.") != -1) ||
+					(path.search("https://") != -1)) {
+					isIE = checkIE();
+				} else {
+					isIE = true; //固定IE方式
+				}
+			} else {
+				isIE = true; //固定IE方式
+			}
+			*/
+			var URL = domain + 'appFaceIDInterface/login_toFaceLogin.do';
+			URL += '?USERNAME='+"{$USERNAME}";	
+			URL += '&AUTHWAY=0'; //0-登录,1-注册
+			URL += '&SRC=1'; 	 //0-内部使用,1-区块链使用
+			URL += '&isIE=' + isIE;
+			//URL += '&HEADPHOTO=';
+			//+"{$HEADPHOTO}"; 
+			//alert(URL);
+
+			var socket;
+			var generateRpc = function (url) {
+				return new easyXDM.Rpc({
+					isHost: true,
+					remote: URL,
+					hash: true,
+					protocol: '1',
+					container: document.getElementById('container'),
+					props: {
+						frameBorder: 0,
+						scrolling: 'no',
+						style: {width: '100%', height: '100%'}
+					},
+			        onReady: function (msg) {
+			        	//AUTHWAY=0且SRC=1时通过此处发送用户头像
+			        	var HEADPHOTO = $("#HEADPHOTO").val();
+			        	if (HEADPHOTO != '') {	        		
+				        	socket.pingIframe($("#HEADPHOTO").val(), function(response){
+								//alert(response.msg);
+							}, function(errorObj){
+								alert('error');
+							});
+			        	}
+			       }
+				},
+				{
+					local: {
+						echo: function (message) {
+							//alert('main:' + message); //接收处理结果
+							//用户名#,#密码(加密后,内部使用)#,#记录ID#,#处理结果(success表示成功)#,#抓拍图像
+							var item = message.split("#,#");
+							if (item.length == 5) {
+								password = item[1];
+								faceResult = item[3];
+								faceImg = item[4];
+								top.Dialog.close();
+							}
+							alert("ok");
+							return {'msg': 'success'};
+						}
+					},
+					remote: {
+						pingIframe: {}
+					}
+				});
+			};
+			socket = generateRpc(domain);
+			
+			function checkIE() {
+			    if(!!window.ActiveXObject || "ActiveXObject" in window){
+			      return true;
+			    }
+				return false;
+			}
+		</script>
+       
+    </div>
+     
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+   	<!-- Slimscroll JavaScript -->
+	<script src="{url:@static/js/jquery.slimscroll.js}"></script>
+	<!-- Init JavaScript -->
+	<script src="{url:@static/js/init.js}"></script>
+</body>
+
+
+</html>
+
+

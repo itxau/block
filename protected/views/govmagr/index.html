@@ -1,0 +1,122 @@
+<style type="text/css">
+    td >img.head-pic {width: 32px;height: 32px;}
+</style>
+<form action="{url:/govmagr/index}" method="post" id="main_form" name="main_form">
+    <div class="card-header">
+        <div class="pull-left">
+            <div class="button-list">
+                <button class="btn btn-primary op-new">
+                  <i class="fa fa-plus"></i>
+                  <span>新增</span>
+                </button>
+                <button class="btn btn-primary op-deletes">
+                  <i class="fa fa-trash"></i>
+                  <span>删除</span>
+                </button>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="ct__name" name="ct__name" placeholder="用户名称" value="{$ct__name}">
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="dept_id" id="dept_id">
+                        {widget:name=list action=deptWidgetGov gov_id=$this->gov_id status=0}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="role_id" id="role_id">
+                        {widget:name=list action=roleWidgetGov gov_id=$this->gov_id status=0}
+                    </select>
+                </div>
+                <div class="form-group">
+                    {widget:name=list action=statusWidget statusMap=$this->entity->statusMap}
+                </div>
+                <button type="submit" class="btn btn-primary" id="btn_searchId">查找</button>
+           </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="selectall" name="selectall" >
+                    </th>
+                    <th>#</th>
+                    <th>头像</th>
+                    <th>用户名称</th>
+                    <th>所属部门</th>
+                    <th>用户员角色</th>
+                    <th>参与企业互动?</th>
+                    <th>参与税务互动?</th>
+                    <th>最后登录IP</th>
+                    <th>最后登录时间</th>
+                    <th>创建时间</th>
+                    <th>状态</th>
+                    <th style="width: 120px; text-align: center;">操作</th>
+                </tr>
+            </thead>
+            <tbody>
+                {list:items=$data["data"]}
+                <tr>
+                    <td>
+                        <input type="checkbox" name="selectone[]" value="{$item['id']}">
+                    </td>
+                    <td>{echo:Common::gridIndex($data["page"],$key)}</td>
+                    <td>
+                        <img class="head-pic" src={echo:Common::getAvatar($item['head_pic'])}>
+                    </td>
+                    <td>{$item["name"]}</td>
+                    <td>{$item["deptname"]}</td>
+                    <td>{if:$item['is_admin']}超级管理员{else:}{$item["rolename"]}{/if}</td>
+                    <td>{$item["msgofetp"]}</td>
+                    <td>{$item["msgofadm"]}</td>
+                    <td>{$item["last_ip"]}</td>
+                    <td>{$item["last_login"]}</td>
+                    <td>{$item["created_time"]}</td>
+                    <td><span class="badge badge-{$item['label']}">{$item["statusname"]}</span></td>
+                    <td style="text-align: center;">
+                        <button type="button" class="btn btn-sm btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" data-refid="{$item['id']}">
+                            处理
+                            <span class="sr-only"></span>
+                            <div class="dropdown-menu" role="menu">
+                                {if:$item["is_admin"]}
+                                {if:$item["id"]==$this->govuser["id"]}
+                                <a class="dropdown-item op-edit"><i class="fa fa-fw fa-pencil"></i> 修改</a>
+                                {/if}
+                                {else:}
+                                <a class="dropdown-item op-edit"><i class="fa fa-fw fa-pencil"></i> 修改</a>
+                                <a class="dropdown-item op-password"><i class="fa fa-fw fa-key"></i>修改密码</a>
+                                {if:$item["status"]==1}
+                                <a class="dropdown-item" onclick="changeStatus({$item['id']},2);"><i class="fa fa-fw fa-lock"></i> 禁止登录</a>
+                                {else:}
+                                <a class="dropdown-item" onclick="changeStatus({$item['id']},1);"><i class="fa fa-fw fa-unlock-alt"></i> 允许登录</a>
+                                {/if}
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item op-delete"><i class="fa fa-fw fa-trash"></i> 删除</a>
+                                {/if}
+                            </div>
+                        </button>
+                    </td>
+                </tr>
+                {/list}
+            </tbody>
+        </table>
+    </div>
+    <div class="card-footer">
+        <div class="page_nav">
+        {echo:$data['html']}
+        </div>
+    </div>
+</form>
+
+{widget:name=public action=commandWidget con=govmagr width=800 height=400 title=用户}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#status").val("{$status}");
+    });
+</script>

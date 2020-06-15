@@ -1,0 +1,353 @@
+<link href="{url:@static/vendors/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css}" rel="stylesheet" type="text/css"/>
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+    <form class="form-horizontal">
+      <div class="tab-struct custom-tab-1">
+        <ul role="tablist" class="nav nav-tabs" id="tabs">
+          <li class="active">
+            <a data-toggle="tab" role="tab" href="#tab_1">账户信息</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab"  href="#tab_2">基本信息</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab" href="#tab_4">税务信息</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab"  href="#tab_3">法人信息</a>
+          </li>
+          <li>
+            <a data-toggle="tab" role="tab" href="#tab_5">股东信息</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="tabcontent">
+          <!-- 账户信息 -->
+          <div  id="tab_1" class="tab-pane fade active in" role="tabpanel">
+            <div class="col-md-11 col-sm-11">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">企业账号：</label>
+                  <label class="col-md-7 col-sm-7 control-label text-left">{$account}</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">注册日期：</label>
+                  <label class="col-md-7 col-sm-7 control-label text-left">{$created_time}</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">验证手机：</label>
+                  <label class="col-md-7 col-sm-7 control-label text-left">{$mobile}</label>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">状态：</label>
+                  <label class="col-md-7 col-sm-7 control-label text-left">{$statusname}</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 账户信息 -->
+          <!-- 基本信息 -->
+
+          <div  id="tab_2" class="tab-pane fade" role="tabpanel">
+            <div class="col-md-11 col-sm-11">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">*企业名称：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="name" value="{$name}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">*企业全名：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="full_name" value="{$full_name}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">成立日期：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="Wdate form-control" name="establish_date" id="establish_date" onfocus="WdatePicker()" value="{$establish_date}" readonly>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">登记状态：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <select class="form-control" name="registration_status" id="registration_status">
+                      {widget:name=list action=registrationstatusWidget}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">注册资本：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="registered_capital" value="{$registered_capital}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">实纳资本：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="real_capital" value="{$real_capital}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">企业类型：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <select class="form-control" name="enterprise_type" id="enterprise_type">
+                      {widget:name=list action=enterprisetypeWidget}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">参保人数：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="insured_persons" value="{$insured_persons}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">人员规模：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="staff_num" value="{$staff_num}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">企业电话：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="tel" value="{$tel}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">企业传真：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="fax" value="{$fax}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">经营地址：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="addr" value="{$addr}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">经营范围：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="business_scope" value="{$business_scope}">
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          <!-- 基本信息 -->
+          <!-- 法人信息 -->
+          <div  id="tab_3" class="tab-pane fade" role="tabpanel">
+            <div class="col-md-11 col-sm-11">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">法人姓名：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="legal_representative" value="{$legal_representative}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">联系电话：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="legal_mobile" value="{$legal_mobile}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">法人证件类型：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <select class="form-control" name="legal_identificationtype" id="legal_identificationtype">
+                        {widget:name=list action=identificationWidget}
+                      </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">证件号码：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="legal_identificationo" value="{$legal_identificationo}">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 基本信息 -->
+          <!-- 税务信息 -->
+          <div  id="tab_4" class="tab-pane fade" role="tabpanel">
+            <div class="col-md-11 col-sm-11">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">统一社会信用代码：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="socialcredit_no" value="{$socialcredit_no}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">纳税人识别号：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="taxpayer_no" value="{$taxpayer_no}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">工商注册号：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="registration_no" value="{$registration_no}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">组织机构代码：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="organization_no" value="{$organization_no}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">纳税信用等级：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <select class="form-control" name="taxlevel" id="taxlevel">
+                      {widget:name=list action=taxlevelWidget}
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">出口退税企业?：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <div class="checkbox checkbox-success">
+                      <input name="is_returntax" id="is_returntax" type="checkbox" {if:isset($is_returntax) && $is_returntax} checked {/if} value="1">
+                      <label for="is_returntax"> 是</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">纳税责任人：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="tax_responsible" value="{$tax_responsible}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">一般纳税人?：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <div class="checkbox checkbox-success">
+                      <input name="is_general_taxpayer" id="is_general_taxpayer" type="checkbox" {if:isset($is_general_taxpayer) && $is_general_taxpayer} checked {/if} value="1">
+                      <label for="is_general_taxpayer"> 是</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">纳税机关：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <input type="text" class="form-control" name="tax_office" value="{$tax_office}">
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-group">
+                  <label class="col-md-5 col-sm-5 control-label">纳税人状态?：</label>
+                  <div class="col-md-7 col-sm-7">
+                    <div class="checkbox checkbox-success">
+                      <input name="tax_status" id="tax_status" type="checkbox" {if:isset($tax_status) && $tax_status} checked {/if} value="1">
+                      <label for="tax_status"> 是</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 税务信息 -->
+          <!-- 股东信息 -->
+          <div  id="tab_5" class="tab-pane fade" role="tabpanel">
+            <table class="table table-responsive table-hover">
+          <thead>
+              <tr>
+                  <th>#</th>
+                  <th>股东名称</th>
+                  <th>股东类型</th>
+                  <th>持股比例</th>
+                  <th>认缴出资额</th>
+              </tr>
+          </thead>
+          <tbody>
+              {list:items=$adata["data"]}
+              <tr>
+                  <td>{echo:Common::gridIndex($adata["page"],$key)}</td>
+                  <td>{$item["name"]}</td>
+                  <td>{$item["typename"]}</td>
+                  <td>{echo:number_format($item["hold_rate"],2)}</td>
+                  <td>{echo:number_format($item["invested_amount"])}</td>
+              </tr>
+              {/list}
+          </tbody>
+      </table>
+          </div>
+          <!-- 股东信息 -->
+        </div>
+      </div>
+      <div class="clearfix"></div>
+  </form>
+</div>
+
+
+
+
+<script type="text/javascript">
+
+  $(function(){
+    $("#registration_status").val({$registration_status});
+    $("#taxlevel").val({$taxlevel});
+    $("#enterprise_type").val({$enterprise_type});
+    $("#legal_identificationtype").val({$legal_identificationtype});
+  });
+ 
+
+  
+</script>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>税务智能客服</title>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.css" >
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes/no">
+</head>
+<style>
+body{
+	background-image:linear-gradient(rgb(53 135 210),rgb( 163 150 175));
+	height: 100vh;
+}
+#container_body{
+padding-top:30px
+}
+	.adminSpeak{
+		
+		letter-spacing: 1px;
+		font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+		padding-bottom:8px;
+	}
+		.pp1{
+			margin-left: 30px;
+			display: inline-block;
+			
+		}
+		.pp12{position: relative;}
+		.pp1 span{
+			background-color: #fff;
+			padding: 5px 8px;
+			display: inline-block;
+			border-radius: 4px;
+			margin:10px 0 10px 10px;
+			position: relative;
+			z-index: 40;
+			margin-top: 0 !important;
+		}
+		.pp1 span::after{
+			content: '';
+			border: 8px solid #ffffff00;
+			border-right: 8px solid #fff;
+			position: absolute;
+			top: 8px;
+			left: -16px;
+		}
+		/* 客服对话框 */
+		.userSpeak{
+			
+			letter-spacing: 1px;
+			font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+			padding-bottom:8px;
+		}
+		.pp2{
+			text-align: right;
+			margin-right: 40px;
+		}
+		.pp21{position: relative;}
+		.pp2 span{
+			background-color: #fff;
+			padding: 5px 8px;
+			display: inline-block;
+			border-radius: 4px;
+			margin:10px 0 10px 10px;
+			position: relative;
+			    margin-top: 5px!important;
+				text-align: left;
+			
+		}
+		.pp2 span::after{
+			content: '';
+			border: 8px solid #ffffff00;
+			border-left: 8px solid #fff;
+			position: absolute;
+			top: 6px;
+			right: -16px;
+		}
+
+.navbar{
+	margin: 0 !important;
+}	
+.col-md-8,.col-md-4,.col-lg-8,.col-lg-4,.col-xs-12{
+	padding: 0!important;
+}	
+.jumbotron{
+	padding-right: 15px !important; 
+	padding-left: 15px !important; 
+	/*position: relative;*/
+	margin: 0!important;
+	min-height: 600px !important;
+	height:70vh;
+	overflow-x: hidden; overflow-y: auto;
+}
+#inputArea{
+	min-height: 12.5rem !important;
+}
+#inputArea textarea{height:98%;min-height: 12.5rem;z-index: 50;}
+a{	text-decoration:none !important}
+li{list-style-type: none;}
+
+@media (max-width: 768px){
+#container_body{
+	padding-top:0px;
+	height:100vh;
+}
+.jumbotron{
+height:90vh;
+min-height: 70vh !important;
+    padding-top: 5px !important;
+	padding-bottom: 50px;
+}
+#inputArea{
+/*height:12vh;*/
+min-height: 0.5rem !important;
+position:fixed ; bottom:0px;width:100%
+}
+#inputArea textarea{
+    position: absolute;
+    bottom: 0;
+	z-index: 50;
+	font-size: medium;
+height:40px;min-height: 6.25rem}
+.userSpeak{padding-right: 10px;padding-left: 10px;padding-bottom:8px;padding-top:10px}
+.adminSpeak{padding-right: 10px;padding-bottom:8px;}
+.jumbotron p{
+	font-size: medium;
+}
+.navbar-toggle{
+display:none;
+}
+
+}
+</style>
+<body id="bodys">
+<script src="./static/js/jquery.js"></script>
+<script src="./bootstrap/js/bootstrap.js"></script>
+<div class="container" id="container_body">
+    <div class="row visible-on" >
+        <div id="contentsC" class="col-xs-12 col-md-12 col-lg-12" style="background-image: linear-gradient(rgb(216 233 247),rgb(  231 237 247),rgb(  244 243 246));">
+			<nav class="navbar navbar-default" style="height: 10%;">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header" style="text-align: center;">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			      </button>
+			      <a class="navbar-brand"  href="#">为您提供税收政策咨询服务</a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">Link</a></li>
+			      </ul>
+			    </div> --><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+			<!-- 导航栏 -->
+			
+			<div class="col-xs-12 col-md-8 col-lg-8" style="height: 80%;position: relative;">
+				
+				 <div class="jumbotron">
+					 <p id="nowTime" style="text-align: center;margin-bottom:10px">xxxx-xx-xx</p>
+					<!-- <div class="userSpeak">
+						 <div class="pp21">
+						  	<span ><img style="width: 50px;position: absolute;right: 0;" src="static/img/WeChat Image_20200303132230.png" >
+						 		<span style="width: 60px;position: absolute;right: 0;top: 50px;text-align: center;">用户</span>
+						  	</span>
+						  </div>
+					 	<div class="pp2">
+					 			<span>文本文本文本文本文本文本文本文本文本</span>
+					 	</div>
+						
+					 </div>-->
+					 
+					 
+					 <div class="adminSpeak" style="padding:0 !important">
+					 	<div class="pp12">
+					 	 	<span  ><img style="width: 35px;position: absolute;" src="static/img/WeChat%20Image_20200303132220.png" >
+					 			<!--<span style="width: 70px;position: absolute;top:50px;">前海客服</span>-->
+					 	 	</span>
+					 	 </div>
+					 	<div class="pp1">
+					 			<span>您好，请问有什么可以帮您？<br>
+温馨提示：本次咨询仅供参考，具体以法律法规及相关规定为准。请注意保护企业或个人信息安全，不要在对话过程录入账号密码等敏感信息。</span>
+					 	</div>
+					 </div>
+					
+					
+				</div>
+
+				<div id="inputArea" style="z-index:52">
+					<div id="autoCom">
+					</div>
+					<textarea style="width: 100%;padding:10px" id="inputData" onblur="changeBlur()" onkeyup="keyLogin()" placeholder="请输入您要咨询的问题"></textarea>
+					<button  type="button" class="btn btn-default" style="position: absolute;bottom: 4px;right: 20px;z-index: 54;"  onclick="showData1()">发送</button>
+					</div>
+				
+			</div><!-- 左边侧栏 -->
+			<div class="col-md-4 col-lg-4 visible-lg visible-md" >
+				
+				 <div class="panel-group"  id="accordion">
+				 	<div class="panel panel-default">
+				     	<div class="panel-heading">
+				         	<div class="panel-title">
+				             	<a href="#panel1" class="panel-toggle" data-toggle="collapse" data-parent="#accordion">
+				                 	疫情防控税收优惠政策热点
+				                 </a>
+				             </div>
+				         </div>
+				         <div id="panel1" class="panel-collapse collapse in">
+				         	<div class="panel-body">
+				             	
+				         		<li><a target="_blank" href="https://12366.chinatax.gov.cn/sscx/rddetail?bh=8dd70b7793ba4222a98cc0d17ff709bf">防控疫情税收优惠政策热点问答（第八期）</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/rdwd/202003/50341af409a948cebc8acca0a38e748a.shtml">防控疫情税收优惠政策热点问答（第七期）</a></li>
+								<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=ae410b54983c4763aca8b0b51a4cffe9&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第六期）</a></li>
+								<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=7c70007867454de9b01a91db215e99fb&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第五期）</a></li>
+								<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=1d3b8a479ba34bcb880920db938cceea&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第四期）</a></li>
+								<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=763d24728d0c44319e22f85d327162ff&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第三期）</a></li>
+								<li><a target="_blank" href="https://12366.chinatax.gov.cn/zqdetail/getcontentPage?lmbm=13e254fcdfd147e7be18e35463c69c19&contentId=689957f814b94d399ef642dd1c9b1d70&logoid=e48cc09d6fb3012101702e63f6cb2273">防控疫情税收优惠政策热点问答（第二期）</a></li>
+								<li><a target="_blank" href="http://www.chinatax.gov.cn/chinatax/n810356/n3010387/c5143796/content.html">防控疫情税收优惠政策热点问答（第一期）</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zcjd/202002/8940507936df4c0d87fa30a39b6bd899.shtml">关于《国家税务总局关于支持新型冠状病毒感染的肺炎疫情防控有关税收征收管理事项的公告》的解读</a></li>
+
+				             </div>
+				         </div>
+				     </div>
+				     <div class="panel panel-default">
+				     	<div class="panel-heading">
+				         	<div class="panel-title">
+				             	<a href="#panel2" class="panel-toggle" data-toggle="collapse" data-parent="#accordion">
+				                 	最新文件
+				                 </a>
+				             </div>
+				         </div>
+				         <div id="panel2" class="panel-collapse collapse in">
+				         	<div class="panel-body">
+				             	
+				         		<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/d3debecf82d245c6a52a2c01a1936f1b.shtml">国家税务总局关于延长2020年3月纳税申报期限有关事项的通知</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/95eb09fcfddc4285b2444c547c42534a.shtml">国家税务总局关于支持个体工商户复工复业等税收征收管理事项的公告</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/c82731072bdc43c0beac75cc68099c1e.shtml">国家税务总局关于开展2020年“便民办税春风行动”的意见</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/3bcee1c35ab544e18dc35fd09a82b29a.shtml">国家税务总局关于贯彻落实阶段性减免企业社会保险费政策的通知</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202003/441566cda715491a9d88ff4fc82017f6.shtml">财政部 税务总局关于支持个体工商户复工复业增值税政策的公告</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/54520c0355fa49a1a67570aab2fc83dc.shtml">国家税务总局关于做好新型冠状病毒感染的肺炎疫情防控期间出口退（免）税有关工作的通知</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/90c53065b7fb4060ab72fdba9f6fe872.shtml">国家医保局 财政部 税务总局关于阶段性减征职工基本医疗保险费的指导意见</a></li>
+								<li><a target="_blank" href="https://shenzhen.chinatax.gov.cn/sztax/zcwj/zxwj/202002/3f937632bd18495d809ecf3bb8769520.shtml">财政部 海关总署 税务总局关于取消“十三五”进口种子种源税收政策免税额度管理的通知</a></li>
+
+
+				             </div>
+				         </div>
+				     </div>
+				 </div>
+			</div><!-- 右边侧栏 -->
+			
+			
+			
+        </div>
+    </div>
+</div>
+
+<script>
+if(navigator.userAgent.indexOf("Trident")!=-1){ 
+document.getElementById('contentsC').style.backgroundColor="#C6E2FF";
+document.getElementById('bodys').style.backgroundColor="#97CBFF";
+//document.getElementById('contentext').style.backgroundColor="#C6E2FF";
+ }
+sessionStorage.setItem("lastNum", 1);
+function changeBlur(){
+ var currentPosition,timer;
+    var speed=1;//页面滚动距离
+    timer=setInterval(function(){
+        currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+		//console.log(currentPosition);
+        currentPosition-=speed; 
+        window.scrollTo(0,currentPosition);//页面向上滚动
+        currentPosition+=speed; //speed变量
+        window.scrollTo(0,currentPosition);//页面向下滚动
+        clearInterval(timer);
+    },1);
+}
+
+var content='';//文本输入内容
+var isclick= true;//是否点击
+var xyy_url="./getQueryX.php";//分词
+var timer=0;//输入时间的定义
+$("body").click(function(){
+	$('#autoCom').hide(); 
+ }) 
+ 
+$('.collapse').collapse({
+  toggle: true,parent:'#accordion'
+})
+$('.panel-heading').on('click', function () {
+    var self = this;
+    $(self).nextAll().eq(0).collapse("show");
+})
+var myDates = new Date();
+var mytimes=myDates.toLocaleString();
+$('#nowTime').text(mytimes); 
+
+function showName(name){
+$('#inputData').val(name.replace(/\s/g,""));
+showData1();
+}
+function keyLogin(){
+	if(event.keyCode==13){
+		showData1()
+	}//判断回车键
+
+}
+function showData(name){
+//console.log(name.innerHTML);
+$('#inputData').val((name.innerHTML).replace(/<[^>]+>/g,""));
+showData1();
+}
+function showData1(){
+content=$('#inputData').val();
+content=content.replace(/\s/g,"");
+$('#inputData').val('');
+if(content!=''){
+	addUserDom(content);
+var href = window.location.href;
+var ss=href.split('/');
+var xyy_params={query:content,urls:ss[ss.length-1]};
+var xyy_params=common_false(xyy_url,xyy_params);//
+var tpls='<strong>用户问题：</strong>'+content+'</br></br>';
+xyy_datas=JSON.parse(xyy_params);
+console.log(content);
+console.log(tpls);
+
+if(xyy_datas['dk']['data']['domain']=='闲聊'){
+		if(xyy_datas['dk']['data']['intent']=='chat'){
+			switch(parseInt(sessionStorage.getItem("lastNum"))){
+				case 1:
+				tpls+=talk1();
+				sessionStorage.setItem("lastNum", 2);
+				break;
+				case 2:
+				tpls+=talk1();
+				sessionStorage.setItem("lastNum", 3);
+				break;
+				default:
+				tpls+=talk2();
+			}
+		}	
+		if(xyy_datas['dk']['data']['intent']=='chat_full_match'){
+			tpls+=xyy_datas['dk']['data']['bot_answer'];
+		}
+		
+	}else{
+	if(content=='人工'){
+		tpls+="您好！深圳市税务局纳税服务热线是：12366。";
+	}else{
+		
+		sessionStorage.setItem("lastNum", 1);
+		if(xyy_datas['dk']['data']['intent']=='es_full_match'){
+			tpls+=xyy_datas['dk']['data']['bot_answer'];
+		}else{
+			var list_data=[];
+			var list_data1=[];
+			$.each(xyy_datas['dk']['data']['sptag_info']['a_list'],function(index,item){
+				if(list_data.indexOf(item['answer'])==-1){
+					list_data.push(item['answer']);
+					list_data1.push(item);
+				}
+			})
+		//$.each(xyy_datas['dk']['data']['sptag_info']['a_list'],function(index,item){
+		$.each(list_data1,function(index,item){
+			if(index==0){ 
+				tpls+='<strong>问:</strong>'+item['question']+'</br>';
+				tpls+='<strong>答:</strong>'+item['answer']+'</br>';
+				tpls+='<strong>你是不是想问:</strong></br>';
+			}
+			if(index>0){
+			tpls+='<a href="javascript:showName(\''+item['question']+'\')">'+item['question']+'</a></br>';
+			} 
+		})
+	}//是不是白名单
+		
+	}
+		
+		 
+}
+var save_url='http://server81.raisound.com:22080/formApi/public/?service=App.Dxport.SaveDataList';
+var save_params={};
+save_params.biz_id=-1;
+save_params.bot_answer=tpls;
+save_params.bot_name=xyy_datas['dk']['data']['domain'];
+save_params.question=content;
+save_params.type='前海客服';
+save_params.intent_confident='';
+save_params.intent=xyy_datas['dk']['data']['intent'];
+	addAdminDoms(tpls);
+	save_paramss=common_false(save_url,save_params);
+
+$('.jumbotron')[0].scrollTop=$('.jumbotron')[0].scrollHeight;
+//console.log($('#contentText')[0].scrollHeight);
+}else{
+	alert('输入的内容不能为空哦～');
+}
+}
+
+
+
+
+//------------------dom-----------------------------------
+function addAdminDoms(data){
+var tpls='';
+tpls+='<div class="adminSpeak">'
+tpls+='					 	<div class="pp12">'
+tpls+='					 	 	<span ><img style="width: 35px;position: absolute;" src="./static/img/WeChat%20Image_20200303132220.png" >'
+//tpls+='					 			<span style="width: 70px;position: absolute;top:50px;">前海客服</span>'
+tpls+='					 	 	</span>'
+tpls+='					 	 </div>'
+tpls+='					 	<div class="pp1">'
+tpls+='					 			<span>'+data+'</span>'
+tpls+='					 	</div>'
+tpls+='					 </div>'
+$('.jumbotron').append(tpls);
+}
+
+
+function addUserDom(data){
+var tpls='';
+tpls+='<div class="userSpeak">'
+tpls+='					 <div class="pp21">'
+tpls+='					  	<span ><img style="width: 30px;position: absolute;right: 0;" src="./static/img/WeChat Image_20200303132230.png" >'
+//tpls+='					 		<span style="width: 60px;position: absolute;right: 0;top: 50px;text-align: center;">用户</span>'
+tpls+='				  	</span>'
+tpls+='						  </div>'
+tpls+='					 	<div class="pp2">'
+tpls+='					 			<span>'+data+'</span>'
+tpls+='					 	</div>	'					
+tpls+='					 </div>'
+$('.jumbotron').append(tpls);
+}
+
+
+function talk1(){
+var tpls='';
+tpls+='您好，我是税务小秘书，可以帮您解决各类税务问题哦~<br>小秘书为您推荐以下热点内容，请点击查看~<br>'
+tpls+='<a target="_blank"href="https://12366.chinatax.gov.cn/sscx/rddetail?bh=0fbc1a41c5e14adf8be27cde8df88973">防控疫情税收优惠政策热点问答（第九期）</ a><br>'
+tpls+='<a target="_blank"href="http://www.chinatax.gov.cn/chinatax//n810356/n3010387/c5147687/5147687/files/936a47c7c6ee4048947fc8db145cd86b.pdf">个人所得税综合所得年度汇算政策常见问题</ a><br>'
+tpls+='<a onclick="showData(this)">代开发票</ a><br>'
+tpls+='<a onclick="showData(this)">作废发票原发票收回联次</ a><br>'
+tpls+='<a onclick="showData(this)">税控盘不能正常使用</ a><br>'
+tpls+='<a onclick="showData(this)">纳税服务热线电话</ a><br>';
+return tpls;
+}
+function talk2(){
+var tpls='';
+	tpls+='你好，税务小秘书更善于解答税务问题哦，您也可以换个问法试试。<br>'
+tpls+='如代开发票、企业所得税、增值税优惠等等。';
+return tpls;
+}
+
+//检查输入内容是否存在换行、空格
+function check(strValue){
+	strValue=strValue.replace(/\n/g,'');
+    if(strValue=="")
+    {
+        return false;
+    }  
+}
+function common_false(url,params,types){
+	
+	var types = arguments.length > 1 && arguments[2] !== undefined ? arguments[2] : 'GET';
+	var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+var data_list='';
+	$.ajax({
+	type:types,
+	url:url,//硬匹配
+	async:false,
+	data:params,
+	success: function(data){
+		data_list=data;
+	},
+	error:function(data){
+		data_list=data;
+	}
+});
+return data_list;
+}
+</script>
+</body>
+</html>
+

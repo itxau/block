@@ -1,0 +1,28 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>咨询服务</title>
+    <link rel="stylesheet" type="text/css" href="./layui/css/layui.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="./static/css/icon.css">
+    <link rel="shortcut icon"  href="./static/img/bitbug_favicon.ico">
+</head>
+  <div style="position:absolute;right:20px;width:100px;height:100px" id="ad"><a onclick="show()" href="#"><i style="font-size:50px;color:#484891" class="iconfont icon-hudong"></i></a></div>
+<body>
+    <script type="text/javascript" src="./static/js/jquery-1.8.1.min.js"></script>
+	<script language="JavaScript" type="text/javascript">
+	function show(){
+		window.location.href="demo.html?"+Date.parse(new Date());
+	}
+		function rightBottomAd(){
+		 var abc = document.getElementById("ad");
+		 abc.style.top = document.documentElement.scrollTop+document.documentElement.clientHeight-100+"px"; 
+		 setTimeout(function(){rightBottomAd();},50);
+		}
+		rightBottomAd();
+</script>
+<table><tr><td height="1220"></tr></tr></table>
+</body>
+</html>

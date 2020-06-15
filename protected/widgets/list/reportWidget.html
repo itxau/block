@@ -1,0 +1,4 @@
+<option value="">报表类别</option>
+{list:items=FinancialdocsService::reportTypeMap($doctype)}
+    <option value="{$key}">{$item}</option>
+{/list}

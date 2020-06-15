@@ -1,0 +1,24 @@
+<style type="text/css">
+	#OnlineMachine {
+		position: fixed;
+		bottom: 60px;
+		right: 10px;
+		width: 80px;
+		cursor: pointer;
+		background-color: #4c7430;
+		color: #fff;
+		padding: 15px 5px;
+		border-radius: 4px;
+		text-align: center;;
+	}
+	#OnlineMachine i { font-size: 26px; }
+</style>
+<div id="OnlineMachine" onclick="show()">
+		<i class="fa fa-comments"></i>
+		<p>在线咨询</p>
+</div>
+  <script language="JavaScript" type="text/javascript">
+    function show(){
+      window.open("http://183.60.4.181/h5tax/demo.html?"+Date.parse(new Date()),'online');
+    }   
+</script>

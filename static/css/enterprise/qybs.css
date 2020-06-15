@@ -1,0 +1,30 @@
+.qybs-head{
+    height:96px;
+}
+.qybs-body{
+    height: 700px;
+    background-color: rgb(246,246,246);
+}
+.qybs-footer{
+    height: 140px;
+}
+/* .layui-breadcrumb, .layui-tree-btnGroup {
+    visibility: visible;
+} */
+.qybs-content{
+    width: 840px;
+    margin: 0 auto;
+}
+.content-top{
+    box-sizing: border-box;
+    height: 60px;
+    padding-top: 26px;
+    font-size: 14px;
+}
+.content-center{
+    height: 610px;
+    background-color: #fff;
+}
+.blue-text{
+    color:rgb(12,83,167);
+}

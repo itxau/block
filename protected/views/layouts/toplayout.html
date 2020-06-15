@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>前海区块链云平台</title>
+    <meta name="author" content="designer:sunxiangen, date:2019-10-12" />
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{url:@favicon.ico}">
+    <link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+    <link href="{url:@static/vendors/ali-icon/iconfont.css}" rel="stylesheet" type="text/css"/>
+    <link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+    <link href="{url:@static/vendors/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css"/>
+    <link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css"/>
+    <link href="{url:@static/css/custom-styles.css}" rel="stylesheet" />
+
+    <script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+    {echo:JS::import('form');}
+    {echo:JS::import('dialog?skin=tinysimple');}
+    {echo:JS::import('dialogtools');}
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader-it">
+        <div class="la-anim-1"></div>
+    </div>
+    <div id="wrapper">
+        <nav class="navbar navbar-default top-navbar">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{url:/index/index}">
+                <img src="{url:@static/images/logo_nin2.png}" style="height: 40px;">
+                </a>
+            </div>
+           
+        </nav>
+       
+		<div id="page-wrapper">
+            <div id="container-fluid">
+                <div class="row" style="padding: 15px 0px;">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                      <h5 class="txt-dark" style="padding-top: 10px;">{$title}</h5>
+                    </div>
+                    <!-- Breadcrumb -->
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                      <ol class="breadcrumb">
+                        <li><a href="{url:/enterprise/index}">首页</a></li>
+                        <li class="active"><span>{$title}</span></li>
+                      </ol>
+                    </div>
+                </div>
+                <div class="page-body">
+                    {__viewcontents}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="{url:@static/js/common.js}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+    <!-- Slimscroll JavaScript -->
+    <script src="{url:@static/js/jquery.slimscroll.js}"></script>
+    <!-- Sweet-Alert  -->
+    <script src="{url:@static/vendors/sweetalert/dist/sweetalert.min.js}"></script>
+    <!-- Init JavaScript -->
+    <script src="{url:@static/js/init.js}"></script>
+</body>
+</html>

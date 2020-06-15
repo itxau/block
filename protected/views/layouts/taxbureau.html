@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{$site_full_name}</title>
+	<meta name="author" content="designer:sunxiangen, date:2019-10-12" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{url:@favicon.ico}">
+	<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+	<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+	<link href="{url:@static/vendors/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/vendors/ali-icon/iconfont.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css"/>
+
+	{echo:JS::import('dialog?skin=tinysimple');}
+	{echo:JS::import('dialogtools');}
+
+</head>
+<body>
+	<!-- Preloader -->
+	<div class="preloader-it">
+		<div class="la-anim-1"></div>
+	</div>
+	<!-- /Preloader -->
+    <div class="wrapper theme-6-active pimary-color-pink">
+		<!-- Top Menu Items -->
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="mobile-only-brand pull-left">
+				<div class="nav-header pull-left" style=" background: #4c7430; ">
+					<div class="logo-wrap">
+						<a href="{url:/index/index}">
+							<img class="brand-img" src="{url:@static/images/logo2.png}" alt="brand"/>
+							<span class="brand-text">{$site_name}</span>
+						</a>
+					</div>
+				</div>	
+				<a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block ml-20 pull-left" href="javascript:void(0);">
+					<i class="zmdi zmdi-menu"></i>
+				</a>
+			</div>
+			<div id="mobile_only_nav" class="mobile-only-nav pull-right">
+				<ul class="nav navbar-right top-nav pull-right">
+					<li class="dropdown">
+						<a href="void(0)" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-fw fa-user"></i>
+							{$this->manager['name']}
+							<span class="caret"></span> 
+						</a>
+						<ul class="dropdown-menu" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+							<li>
+								<a id="myinfo"><i class="zmdi zmdi-account"></i><span>我的信息</span></a>
+							</li>
+							<li>
+								<a id="mypassword"><i class="zmdi zmdi-key"></i><span>修改密码</span></a>
+							</li>
+							<!--
+							<li>
+								<a id="facetest"><i class="fa fa-meh-o"></i><span>人脸验证</span></a>
+							</li>
+						-->
+							<li class="divider"></li>
+							<li>
+								<a href="{url:/taxbureau/logout}"><i class="zmdi zmdi-power"></i><span>登出</span></a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<!-- /Top Menu Items -->
+		<!-- Left Sidebar Menu -->
+		<div class="fixed-sidebar-left">
+			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><br></li>
+				<!-- User Profile -->
+				<!--
+				<li>
+					<div class="user-profile text-center">
+						<img src="{url:@static/images/shuiwu.png}" class="user-auth-img img-circle"/>
+					</div>
+				</li>
+				<li><hr class="light-grey-hr mb-10"/></li>
+			-->
+				<!-- /User Profile -->
+				{list:items=$menu->getSubMenu("system") item=$main}
+				{if:$main["name"]=="hr"}
+				<li><hr class="light-grey-hr mb-10"/></li>
+				{else:}
+				{set:$clink=$currentMenu['link']==$main['url']}
+				{set:$csub=$currentMenu['subKey']==$main['link']}
+				{if:$main['url']}
+				<li>
+					<a {if:$clink} class="active" {/if} href="{url:$main[url]}">
+						<div class="pull-left">
+							<i class="fa fa-fw {$main['icon']}  mr-10"></i>
+							<span class="right-nav-text">{$main['name']}</span>
+						</div>
+						<div class="clearfix"></div>
+					</a>
+				</li>
+				{else:}
+				<li>
+					<a {if:$csub} class="active" {/if} 
+					 href="javascript:;" data-toggle="collapse" data-target="#main_{$key}">
+						<div class="pull-left">
+							<i class="fa fa-fw {$main['icon']} mr-10"></i>
+							<span class="right-nav-text">{$main['name']}</span>
+						</div>
+						<div class="pull-right"><i class="zmdi zmdi-caret-down"></i></div>
+						<div class="clearfix"></div>
+					</a>
+					<ul id="main_{$key}" class="collapse collapse-level-1 {if:$csub} in {/if}">
+						{list:items=$menu->getNodes($main['link']) item=$node}
+						{set:$currNod=$node["link"]==$currentMenu["link"]}
+						{if:substr($node['link'],-4)!='edit'}
+						<li>
+							<a {if:$currNod} class="active" {/if}  href="{url:$node[link]}">
+								<i class="fa fa-fw {$node['icon']} mr-10"></i>
+								<span class="right-nav-text">
+									{$node['name']}
+								</span>
+							</a>
+						</li>
+						{/if}
+						{/list}
+					</ul>
+				</li>
+				{/if}
+				{/if}
+				{/list}
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+		<!-- /Left Sidebar Menu -->
+		<div class="page-wrapper">
+            <div class="container-fluid">
+            	<div class="row heading-bg">
+				    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+				      <h5 class="txt-dark">{$admin_title}</h5>
+				    </div>
+				    <!-- Breadcrumb -->
+				    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+				      <ol class="breadcrumb">
+				        <li><a href="{url:/taxbureau/index}">首页</a></li>
+				        
+				        {if:$currentMenu["nodeKey"]}
+				        <li><a href="#"><span>{$currentMenu["subName"]}</span></a></li>
+				        {/if}
+				        <li class="active"><span>{$admin_title}</span></li>
+				      </ol>
+				    </div>
+				    <!-- /Breadcrumb -->
+				</div>
+				<div class="panel panel-default card-view">
+	            	{__viewcontents}
+	            </div>
+            </div>
+            <!-- Footer -->
+			<footer class="footer container-fluid pl-30 pr-30">
+				<div class="row">
+					<div class="col-sm-12">
+						<p></p>
+					</div>
+				</div>
+			</footer>
+			<!-- /Footer -->
+        </div>
+    </div>
+    <!-- /Main Content -->
+    <!-- /#wrapper -->
+	<script src="{url:@static/vendors/bootstrapvalidator/dist/js/bootstrapValidator.min.js}"></script>
+	<!-- JavaScript -->
+	<script src="{url:@static/js/common.js}"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+    <script src="{url:@static/vendors/switchery/dist/switchery.min.js}"></script>
+	<!-- Slimscroll JavaScript -->
+	<script src="{url:@static/js/jquery.slimscroll.js}"></script>
+	<!-- Sweet-Alert  -->
+	<script src="{url:@static/vendors/sweetalert/dist/sweetalert.min.js}"></script>
+	<script src="{url:@static/vendors/jquery.counterup/jquery.counterup.min.js}"></script>
+	<!-- Init JavaScript -->
+	<script src="{url:@static/js/init.js}"></script>
+
+	<script type="text/javascript">
+		$("#mypassword").on("click",function(){
+			open_dialog("{url:/taxbureau/password}","修改密码",600,300,false);
+		});
+
+		$("#myinfo").on("click",function(){
+			open_dialog("{url:/taxbureau/headpic}","我的头像",600,400,false);
+		});
+	</script>
+{set: $address_id =Constants::TAX_ADDR_ID;}
+	{widget:name=public action=layimWidget con=enterprise type=2 uid=$this->manager["id"] address_id=$address_id}
+</body>
+</html>
+
+

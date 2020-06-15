@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color:#666;
+    font-size: 16px;
+}
+.footer-content1{
+    margin: 30px auto;
+    width: 500px;
+}
+.footer-content1 span{
+    margin-left: 50px;
+}

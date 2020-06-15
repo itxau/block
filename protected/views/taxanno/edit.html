@@ -1,0 +1,50 @@
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+    <div class="col-md-11 col-sm-11 col-xs-11">
+      <form action="{url:/taxanno/save}" class="form-horizontal" id="edit-form" name="edit-form" method="post">
+        {if:isset($id)}
+        <input type="hidden" name="id" value="{$id}">
+        {/if}
+        <div class="form-body">
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-3">公告标题:</label>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <input type="text" class="form-control" name="title" value="{$title}" pattern="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-3">公告地址:</label>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <input type="text" class="form-control" name="url" value="{$url}" placeholder="http://"  pattern="required">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-3 col-sm-3 col-xs-3">公告范围:</label>
+            <div class="col-md-9 col-sm-9 col-xs-9">
+              <select class="form-control seach" name="scope" id="scope"  pattern="required">
+                  {widget:name=list action=announcescopeWidget}
+              </select>
+            </div>
+          </div>
+          <div class="form-actions mt-30">
+            {token:key=form}
+            <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+              <div class="col-md-9 col-sm-9 col-xs-9">
+                <button type="submit" class="btn btn-primary" id="btnsave">发布</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+ 
+
+<script type="text/javascript">
+   $(document).ready(function() {
+        $("#scope").val({$scope});
+    });
+
+</script>

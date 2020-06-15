@@ -1,0 +1,44 @@
+
+li, ol { list-style:none; }
+
+/******右侧导航******/
+.ce_nav{ position:fixed; right:10px; top:50%; transform: translateY(-50%); z-index:9}
+.ce_nav ul{ overflow: hidden;}
+.ce_nav li{ margin-bottom:5px;}
+.ce_nav li:after{ content: ''; display: block; clear:both; line-height:0px; overflow:hidden; zoom:1; font-size:0px;}
+.ce_nav li a{ float: right; display:block; width:54px; height:54px; background-color:#fff; -moz-border-radius:4px;-webkit-border-radius:4px; border-radius:4px; color:#198ede; font-size:12px; text-align:center; box-shadow: 1px 1px 3px rgba(102,102,102,0.5); border:1px solid #198ede; }
+.ce_nav li a span{ display: block; line-height: 12px;}
+.ce_nav .ceNav-icon{ font-size: 22px; line-height: 30px; padding-top: 5px;}
+.ce_nav .li-codeBtn{ position: relative;}
+.ce_nav .code-con{position: absolute; right:60px; bottom: -30px; padding-right:20px; display: none;}
+.ce_nav .code-con-m{  width: 155px; background-color: #fff; text-align: center; -moz-border-radius:5px;-webkit-border-radius:5px; border-radius:5px; overflow: hidden;}
+.ce_nav .code-con img{ width: 120px; height: 120px; border: 2px solid #eaeaea; display: inline-block; margin: 15px 0;}
+.ce_nav .code-con p{ line-height:34px; width: 100%; background-color: #46dba4; font-size: 14px; color: #fff;}
+.ce_nav .code-con:after{ content: ""; display: block; position: absolute; bottom: 55px; right: 5px;  border:7px solid transparent; border-left: 8px solid #fff;width: 0; height: 0px;}
+.ce_nav .li-codeBtn:hover .code-con{ display: block;}
+.ce_nav li:hover a{ background:#46dba4; color:#fff;}
+.ce_nav li:active a{ background:#3fcb97}
+.ce_nav li.li-cxBtn a{ background-color: #fb5a00; border-color: #fb5a00; color: #fff;}
+.ce_nav li.li-cxBtn img{ display: inline-block; padding: 7px 0 5px;}
+.ce_nav li.li-designBtn a{color: #fff; background-color: #00c36e; border-color: #00c36e;}
+.ce_nav li.li-designBtn img{ display: inline-block; padding: 8px 0 5px;}
+.ce_nav li.li-cxBtn a:hover,.ce_nav li.li-designBtn a:hover{filter: alpha(opacity=90);/*IE滤镜，透明度50%*/-moz-opacity: 0.9;opacity: 0.9;}
+
+@font-face {font-family: "siteStar-font";
+          src: url('./fonts/iconfont.eot'); /* IE9*/
+          src: url('./fonts/iconfont.eot#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('./fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+          url('./fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+          url('./fonts/iconfont.svg#siteStar-font') format('svg'); /* iOS 4.1- */
+        }
+
+        .siteStar-font {
+          font-family:"siteStar-font" !important;
+          font-size:16px;
+          font-style:normal;
+          -webkit-font-smoothing: antialiased;
+          -webkit-text-stroke-width: 0.2px;
+          -moz-osx-font-smoothing: grayscale;
+        }
+
+

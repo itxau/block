@@ -1,0 +1,28 @@
+<form action="{url:/$con/attach_upl}" class="form-horizontal" name="upl-form" id="upl-form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="sourceid" value="{$sourceid}">
+    <input type="hidden" name="type" value="{$type}">
+    <div class="form-group">
+      <label class="control-label col-md-3 col-sm-3 col-xs-3">*文档说明:</label>
+      <div class="col-md-9 col-sm-8 col-xs-8">
+        <input class="form-control" type="text" name="title" pattern="required">
+      </div>
+    </div>
+    <div class="form-group">
+        <label class="col-md-3 col-sm-3 col-xs-3 control-label">*文档名称：</label>
+        <div class="md-9 col-sm-8 col-xs-8">
+          <input type="file" class="form-control" name="upfile" id="upfile" pattern="required">
+        </div>
+    </div>
+    <div class="form-actions mt-30">
+      <div class="form-group">
+        <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+          <button type="submit" class="btn btn-primary" id="btnsave">上传</button>
+        </div>
+      </div>
+    </div>
+</form>
+{widget:name=list action=attachmentUnauthorizedWidget
+ sourceid=$sourceid type=$type}
+
+

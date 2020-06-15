@@ -1,0 +1,360 @@
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$eptNum|0}</span></span>
+									<span class="weight-500 uppercase-font block font-13 txt-light">企业数量</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+									<i class="icon-people data-right-rep-icon txt-light"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient1">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$docNum|0}</span></span>
+									<span class="weight-500 uppercase-font block txt-light">财务报表</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+									<i class="icon-book-open data-right-rep-icon txt-light"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient2">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 txt-light data-wrap-left">
+									<span class="block counter"><span class="counter-anim">{$prdNum|0}</span></span>
+									<span class="weight-500 uppercase-font block">支付备案</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 txt-light data-wrap-right">
+									<i class="icon-flag data-right-rep-icon"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient3">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$dclNum|0}</span></span>
+									<span class="weight-500 uppercase-font block txt-light">一键申请</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 txt-light data-wrap-right">
+									<i class="icon-layers data-right-rep-icon"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Row -->
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">上链企业数走势图</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="e_chart_1" class="" style="height:330px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">风控状态分析图</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh mr-15">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="e_chart_2" style="height:330px;"></div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">接入文档比例态图(数量)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="e_chart_3" class="" style="height:330px;"></div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+	
+</div>
+<!-- /Row -->
+
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">最新支付报备信息(TOP10)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body row pa-0">
+					<div class="table-wrap">
+						<div class="table-responsive">
+							<table class="table display product-overview border-none table-hover" id="order_table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>支付方</th>
+										<th>收款人</th>
+										<th>报备时间</th>
+										<th>付汇金额</th>
+										<th>报备状态</th>
+									</tr>
+								</thead>
+								<tbody>
+									{list:items=$prdlist}
+										<tr>
+											<td>{echo:$key+1}</td>
+											<td>{$item["fld_01"]}</td>
+											<td>{$item["fld_10"]}</td>
+											<td>{$item["created_time"]}</td>
+											<td>{$item["fld_20"]}</td>
+											<td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
+										</tr>
+									{/list}
+								</tbody>
+							</table>
+						</div>
+					</div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">最新一键申报信息(TOP10)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh" onclick="dochart(5);">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body row pa-0">
+					<div class="table-wrap">
+						<div class="table-responsive">
+							<table class="table display product-overview border-none table-hover" id="balance_table">
+								<thead>
+									<tr>
+										<th>#</th>
+										<th>企业名称</th>
+										<th>年份</th>
+										<th>季度</th>
+										<th>状态</th>
+									</tr>
+								</thead>
+								<tbody>
+									{list:items=$dclist}
+										<tr>
+											<td>{echo:$key+1}</td>
+											<td>{$item["full_name"]}</td>
+											<td>{$item["year"]}</td>
+											<td>{$item["quarter"]}</td>
+											<td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
+										</tr>
+									{/list}
+								</tbody>
+							</table>
+						</div>
+					</div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Row -->
+<script src="{url:@static/vendors/waypoints/lib/jquery.waypoints.min.js}"></script>
+<script src="{url:@static/vendors/jquery.counterup/jquery.counterup.min.js}"></script>
+
+<!-- EChartJS JavaScript -->
+<script src="{url:@static/vendors/echarts/dist/echarts-en.min.js}"></script>
+<script src="{url:@static/vendors/echarts-liquidfill.min.js}"></script>
+
+<script type="text/javascript">
+	OrderTrend();
+
+	var titles= ['严重','异常','正常'];
+	var datas=[
+		{value:34, name:'严重'},
+        {value:123, name:'异常'},
+        {value:335, name:'正常'},
+    ];
+
+	chartPie("风控企业状态图","e_chart_2",titles,datas);
+	
+	var titles=['财务凭证','会计报表','会计帐册','其他文档'];
+	var datas=[
+		{value:335, name:'财务凭证'},
+        {value:123, name:'会计报表'},
+        {value:64, name:'会计帐册'},
+        {value:34, name:'其他文档'},
+    ];
+    chartPie("接入文档比例态图","e_chart_3",titles,datas);
+	
+	
+
+	
+	function OrderTrend() {
+		option = {
+			title: {
+		        text: '最近10天上链企业',
+		        //subtext: '最近十天成功交易订单',
+		        x: 'center'
+		    },
+		    xAxis: {
+		        type: 'category',
+		        data:  ['08','09','10','11','12','13','14','15','16','17']
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [{
+		        data: [1,0,0,2,0,0,3,0,0,0],
+		        type: 'line',
+		        //smooth: true
+		    }]
+		};
+		var chart = echarts.init(document.getElementById('e_chart_1'));
+		chart.setOption(option);
+		chart.resize();
+	}
+
+	function chartPie(title,chartId,titles,datas) {
+		option = {
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    legend: {
+		        orient: 'vertical',
+		        left: 'left',
+		        data: titles
+		    },
+		    series : [
+		        {
+		            name: title,
+		            type: 'pie',
+		            radius : '55%',
+		            center: ['50%', '60%'],
+		            data:datas,
+		            itemStyle: {
+		                emphasis: {
+		                    shadowBlur: 10,
+		                    shadowOffsetX: 0,
+		                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+		                }
+		            }
+		        }
+		    ]
+		};
+		var chart = echarts.init(document.getElementById(chartId));
+		chart.setOption(option);
+		chart.resize();
+	}
+
+	
+
+</script>

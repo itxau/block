@@ -1,0 +1,137 @@
+{echo:JS::import('dialog?skin=tinysimple');}
+{echo:JS::import('dialogtools');}
+<style type="text/css">
+	.input-group-addon {border:0px;}
+	.input-group-addon img {width: 35px;height: 30px; border:1px; border-radius: 10px;}
+	.input-group span {height: 30px;line-height: 30px; padding: 10px; vertical-align: middle; border-radius: 5px;}
+	.input-group span.left {background-color: #f3f278;}
+	div.left span {background-color: #f3f278;}
+	div.right span {background-color: #94f446;}
+	p {padding: 10px 0px;font-size: 12px;color: #999;}
+	.panel {background-color: #fcfcfc; min-height: 500px;}
+	.right {text-align: right;}
+
+	a.onmsg {color: blue; text-decoration: underline;}
+</style>
+<div id="messages"></div>
+<br><br>
+<div style="bottom: 10px;position: fixed;padding-right: 50px;">
+	<form class="form-horizontal" method="post" id="main_form" name="main_form">
+		<input type="hidden" name="etp_id" id="etp_id" value="{$etp_id}">
+		<div class="form-group">
+			<div class="input-group">
+		        <input type="text" class="form-control" name="message" id="message" style="background-color: #efefbc;" placeholder="请输入您要发送的信息">
+		        <div class="input-group-addon" style="cursor: pointer;background-color: #878787;color: #fff;"><i onclick="messageSave();">发送信息</i> | <i onclick="senddoc();">发送文档</i></div>
+		    </div>
+		</div>
+	</form>
+</div>
+{widget:name=public action=downWidget} 
+
+<script type="text/javascript">
+  	function senddoc(){
+  		var id=$("#etp_id").val();
+    	art.dialog.open("{url:/taxbureau/senddoc/id/}"+id,{id:'edit_dialog',title:'发送文档',resize:false,width:600,height:300});
+    	return false;
+    }
+
+    function close_dialog()  {
+        art.dialog({id: "edit_dialog"}).close();
+        messageLoad();
+    }
+</script>
+	
+<script type="text/javascript">
+
+	messageLoad();
+
+	var timer = setInterval(function() {
+        messageLoad();
+    }, 3000);
+
+	function messageSave() {
+		var id=$("#etp_id").val();
+		var message=$("#message").val();
+		if (message!="") {
+			$.ajax({
+				type: 'POST',
+				url:  '{url:/taxbureau/messagesave}',
+				data:{id:id,message:message},
+				dataType:"json",
+				success:function(result){
+					if (result["status"]=="success") {
+						message=$("#message").val("");
+						messageLoad();
+					}
+					else {
+						swal(result["msg"]);
+					}
+				},
+				error:function(result) {
+					swal("信息发送出现错误.");  
+				}
+		    });
+		}
+
+		return false;
+
+	}
+
+	function messageLoad() {
+		var id=$("#etp_id").val();
+		//alert(id);
+		$.ajax({
+			type: 'GET',
+			url:  '{url:/taxbureau/getmsg}',
+			data:{id:id},
+			dataType:"json",
+			success:function(result){
+				if (result["status"]=="success") {
+					messageShow(result['data']);
+				}
+				else {
+					swal(result["msg"]);
+				}
+			},
+			error:function(result) {
+				swal("加载数据出现错误.");  
+			}
+	    });
+	}
+
+	function messageShow(data) {
+		$("#messages").html("");
+		var html="";
+		$.each(data, function(i,item){
+			if(item['sender']==2) {
+				html+="<div class='input-group'>";
+				html+="<div class='input-group-addon'><img src='{url:@static/images/header2.png}'></div>";
+				html+="<div class='left'>";
+				html+="<p>"+item['created_time']+"</p>";
+				if(item['type']==1) {
+					html+="<span>" + item['message'] +"</span></div>";
+				} else {
+					var addrid=item["address_id"];
+					var txid=item["txid"];
+					html+="<span onclick=\'down(" + addrid + ",\"" + txid + "\")\'><a class='onmsg' href='javascript:;' style='color:blue;'>" + txid +"</a></span></div>";
+				}
+				html+="</div>";
+			} else {
+				html+="<div class='input-group'>";
+				html+="<div class='right'>";
+				html+="<p>"+item['created_time']+"</p>";
+				if(item['type']==1) {
+					html+="<span>" + item['message'] +"</span></div>";
+				} else {
+					var addrid=item["address_id"];
+					var txid=item["txid"];
+					html+="<span onclick=\'down(" + addrid + ",\"" + txid + "\")\'><a class='onmsg' href='javascript:;' style='color:blue;'>" + txid +"</a></span></div>";
+				}
+				html+="<div class='input-group-addon'><img src='{url:@static/images/header1.png}'></div></div>";
+            }
+		});
+		$("#messages").append(html);
+	}
+</script>
+
+	

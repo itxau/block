@@ -1,0 +1,93 @@
+<div class="panel-body">
+  <form id="edit-form" name="edit-form" class="form-horizontal" action="{url:/taxmagr/save}" method="post">
+    {if:isset($id) && $id>0}
+    <input type="hidden" name="id" value="{$id}">
+    {/if}
+    <div class="col-md-11 col-sm-11">
+      {if:isset($errmsg)}
+      <div class="message">{$errmsg}</div>
+      {/if}
+      <div class="col-md-8 col-sm-8">
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 用户名称：</label>
+          <div class="col-md-9 col-sm-9">
+            <input class="form-control" name="name" id="name" type="text" value="{$name}" pattern="required">
+          </div>
+        </div>
+	<div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 真实名称：</label>
+          <div class="col-md-9 col-sm-9">
+            <input class="form-control" name="username" id="username" type="text" value="{$username}" >
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 所属部门：</label>
+          <div class="col-md-9 col-sm-9">
+            <select class="form-control" name="dept_id" id="dept_id" pattern="required">
+              {widget:name=list action=deptWidget status=0}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 用户角色：</label>
+          <div class="col-md-9 col-sm-9">
+            <select class="form-control" name="role_id" id="role_id" pattern="required">
+                {widget:name=list action=roleWidget status=0}
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">参与互动：</label>
+          <div class="col-md-3 col-sm-3">
+            <div class="checkbox checkbox-success">
+              <input name="is_msgofetp" id="is_msgofetp" type="checkbox" {if:isset($is_msgofetp) && $is_msgofetp} checked {/if} value="1">
+              <label for="is_msgofetp"> 企业互动 </label>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="checkbox checkbox-success">
+              <input name="is_msgofgov" id="is_msgofgov" type="checkbox" {if:isset($is_msgofgov) && $is_msgofgov} checked {/if} value="1">
+              <label for="is_msgofgov"> 政务互动 </label>
+            </div>
+          </div>
+        </div>
+        {if:!isset($id) || !$id}
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 密码：</label>
+          <div class="col-md-9 col-sm-9">
+            <input class="form-control" name="password" id="password" type="password" autocomplete="new-password"  bind="repassword" pattern=".{6,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-3 col-sm-3 control-label">* 密码确认：</label>
+          <div class="col-md-9 col-sm-9">
+            <input type="password" class="form-control" name="repassword" id="repassword"  bind="password" pattern=".{6,}">
+          </div>
+        </div>
+        {/if}
+        <div class="form-actions mt-30">
+          <div class="form-group">
+            <label class="col-md-3 col-sm-3 control-label"></label>
+            <div class="col-md-9 col-sm-9">
+              {token:key=form}
+              <button type="submit" class="btn btn-sm btn-primary op-save" style="width: 200px;">保存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="text-center">
+          {set:$head_pic=Common::getAvatar(isset($head_pic)?$head_pic:"")}
+          {widget:name=public action=headpicWidgetUser head_pic=$head_pic}
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#dept_id").val({$dept_id});
+    $("#role_id").val({$role_id});
+  });
+</script>

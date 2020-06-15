@@ -1,0 +1,1 @@
+86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:9:{s:2:"id";s:7:"int(11)";s:6:"etp_id";s:7:"int(11)";s:4:"name";s:11:"varchar(50)";s:9:"hold_rate";s:12:"decimal(5,2)";s:4:"type";s:10:"tinyint(3)";s:15:"invested_amount";s:7:"int(11)";s:6:"status";s:10:"tinyint(3)";s:12:"created_time";s:8:"datetime";s:12:"updated_time";s:8:"datetime";}}

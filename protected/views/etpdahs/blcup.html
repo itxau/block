@@ -1,0 +1,218 @@
+<div class="panel-wrapper">
+    <div class="panel-body">
+        <div  class="tab-struct custom-tab-1">
+            <ul role="tablist" class="nav nav-tabs" id="tablist">
+                <li class="active"><a data-toggle="tab" role="tab" href="#tab_1">财务凭证</a></li>
+                <li><a data-toggle="tab" role="tab" href="#tab_2">会计报表</a></li>
+                <li><a data-toggle="tab" role="tab" href="#tab_3">会计帐册</a></li>
+                <li><a data-toggle="tab" role="tab" href="#tab_4">其他</a></li>
+            </ul>
+            <div class="tab-content mt-15" id="tabcontent">
+                <div id="tab_1" class="tab-pane fade active in" role="tabpanel">
+                    <form class="form-horizontal" action="{url:/etpdahs/blcup_act}" method="post" id="upd-form1" name="upd-form1" enctype="multipart/form-data">
+                        <input type="hidden" name="doctype_id" value="1">
+                        {if:isset($errmsg)}
+                        <div class="message">{$errmsg}</div>
+                        {/if}
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*资料年月：</label>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="year" id="year" pattern="required">
+                                {widget:name=list action=yearWidget}
+                              </select>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="month" id="month" pattern="required">
+                                {widget:name=list action=monthWidget}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*财务凭证类别：</label>
+                            <div class="col-md-4 col-sm-4">
+                              <select class="form-control" name="reptype_id" id="reptype_id" pattern="required">
+                                {widget:name=list action=reportWidget doctype=1}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*文档名称：</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input type="file" class="form-control" name="upfile" id="upfile" pattern="required">
+                              <div class="text-gray" style="padding-top: 5px">*文档不能大于 1M </div>
+                            </div>
+                        </div>
+                        <div class="form-actions mt-30">
+                          <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label"></label>
+                            <div class="col-md-9 col-sm-9">
+                              {token:key=form}
+                              <button type="button" class="btn btn-sm btn-primary" id="btnUpload1" onclick="formSubmit(1)">立刻上链</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="tab_2" class="tab-pane in fade" role="tabpanel">
+                    <form class="form-horizontal" action="{url:/etpdahs/blcup_act}" method="post" id="upd-form2" name="upd-form2" enctype="multipart/form-data">
+                        <input type="hidden" name="doctype_id" value="2">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*资料年月：</label>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="year" id="year" pattern="required">
+                                {widget:name=list action=yearWidget}
+                              </select>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="month" id="month" pattern="required">
+                                {widget:name=list action=monthWidget}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*会计报表类别：</label>
+                            <div class="col-md-4 col-sm-4">
+                              <select class="form-control" name="reptype_id" id="reptype_id" pattern="required">
+                                {widget:name=list action=reportWidget doctype=2}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*文档名称：</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input type="file" class="form-control" name="upfile" id="upfile" pattern="required">
+                              <div class="text-gray" style="padding-top: 5px">*文档不能大于 1M </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions mt-30">
+                          <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label"></label>
+                            <div class="col-md-9 col-sm-9">
+                              {token:key=form}
+                              <button type="button" class="btn btn-sm btn-primary" id="btnUpload2" onclick="formSubmit(2)">立刻上链</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="tab_3" class="tab-pane in fade" role="tabpanel">
+                    <form class="form-horizontal" action="{url:/etpdahs/blcup_act}" method="post" id="upd-form3" name="upd-form3" enctype="multipart/form-data">
+                        <input type="hidden" name="doctype_id" value="3">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*资料年月：</label>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="year" id="year" pattern="required">
+                                {widget:name=list action=yearWidget}
+                              </select>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="month" id="month" pattern="required">
+                                {widget:name=list action=monthWidget}
+                              </select>
+                            </div>
+                        </div>
+                        <div  class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*会计帐册类别：</label>
+                            <div class="col-md-4 col-sm-4">
+                              <select class="form-control" name="reptype_id" id="reptype_id" pattern="required">
+                                {widget:name=list action=reportWidget doctype=3}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*文档名称：</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input type="file" class="form-control" name="upfile" id="upfile" pattern="required">
+                              <div class="text-gray" style="padding-top: 5px">*文档不能大于 1M </div>
+                            </div>
+                        </div>
+                        <div class="form-actions mt-30">
+                          <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label"></label>
+                            <div class="col-md-9 col-sm-9">
+                              {token:key=form}
+                              <button type="button" class="btn btn-sm btn-primary" id="btnUpload3" onclick="formSubmit(3)">立刻上链</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="tab_4" class="tab-pane in fade" role="tabpanel">
+                    <form class="form-horizontal" action="{url:/etpdahs/blcup_act}" method="post" id="upd-form4" name="upd-form4" enctype="multipart/form-data">
+                        <input type="hidden" name="doctype_id" value="4">
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*资料年月：</label>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="year" id="year" pattern="required">
+                                {widget:name=list action=yearWidget}
+                              </select>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                              <select class="form-control" name="month" id="month" pattern="required">
+                                {widget:name=list action=monthWidget}
+                              </select>
+                            </div>
+                        </div>
+                        <div  class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*备案文件类别：</label>
+                            <div class="col-md-4 col-sm-4">
+                              <select class="form-control" name="reptype_id" id="reptype_id" pattern="required">
+                                {widget:name=list action=reportWidget doctype=4}
+                              </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label">*文档名称：</label>
+                            <div class="col-md-6 col-sm-6">
+                              <input type="file" class="form-control" name="upfile" id="upfile" pattern="required">
+                              <div class="text-gray" style="padding-top: 5px">*文档不能大于 1M </div>
+                            </div>
+                        </div>
+                        <div class="form-actions mt-30">
+                          <div class="form-group">
+                            <label class="col-md-3 col-sm-3 control-label"></label>
+                            <div class="col-md-9 col-sm-9">
+                              {token:key=form}
+                              <button type="button" class="btn btn-sm btn-primary" id="btnUpload4" onclick="formSubmit(4)">立刻上链</button>
+                            </div>
+                          </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+  var submited=false;
+
+   function formSubmit(id) {
+      if (submited) return ;
+      $("#btnUpload"+id).text("上链中...");
+      $("#btnUpload"+id).attr("disabled","disabled");
+      $("#btnUpload"+id).addClass("disable");
+      $("#upd-form"+id).submit();
+   }
+
+    $(document).ready(function() {
+        $("#year").val("{$year}");
+        $("#month").val("{$month}");
+        $("#reptype_id").val("{$reptype_id}");
+
+        {if:isset($doctype_id)}
+          {if:$doctype_id==2}
+            $("#tabs_1 li").eq(1).addClass('active').siblings().removeClass('active');
+            $('#tab_2').addClass('active').siblings().removeClass('active');
+          {/if}
+          {if:$doctype_id==3}
+            $("#tabs_1 li").eq(2).addClass('active').siblings().removeClass('active');
+            $('#tab_3').addClass('active').siblings().removeClass('active');
+          {/if}
+          {if:$doctype_id==4}
+            $("#tabs_1 li").eq(3).addClass('active').siblings().removeClass('active');
+            $('#tab_4').addClass('active').siblings().removeClass('active');
+          {/if}
+        {/if}
+    });
+</script>

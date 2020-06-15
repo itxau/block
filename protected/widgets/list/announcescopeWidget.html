@@ -1,0 +1,4 @@
+<option value="">公告范围</option>
+{list:items=(new AnnounceEntity())->scopeMap}
+<option value="{$key}">{$item}</option>
+{/list}

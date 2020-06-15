@@ -1,0 +1,34 @@
+<div class="panel-body">
+  	<div class="col-md-5 col-sm-5 col-xs-5">
+  		<br>
+  		<form class="form-horizontal">
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">账号编码：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$account}</label>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">企业名称：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$name}</label>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">验证手机：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$mobile}</label>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">企业状态：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$statusname}</label>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">注册时间：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$created_time}</label>
+	      	</div>
+	      	<div class="form-group">
+	        	<label class="col-sm-5 col-xs-5 control-label text-right">最近登录：</label>
+	        	<label class="col-sm-7 col-xs-7 text-left">{$last_login}</label>
+	      	</div>
+      	</form>
+  	</div>
+  	<div class="col-sm-7 col-xs-7">
+  		{widget:name=public action=headpicWidget con=enterprise src=$headpicSrc}
+  	</div>
+</div>

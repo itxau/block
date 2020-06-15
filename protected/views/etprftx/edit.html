@@ -1,0 +1,124 @@
+{echo:JS::import('date');}
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+    <div  class="tab-struct custom-tab-1">
+      <ul role="tablist" class="nav nav-tabs" id="tabs_1">
+          <li class="active"><a data-toggle="tab" role="tab" href="#tab_1">基本信息</a></li>
+          {if:isset($id) && $id}
+          <li><a data-toggle="tab" role="tab" href="#tab_2">附件资料</a></li>
+          {/if}
+      </ul>
+      <div class="tab-content" id="tab_content">
+        <div  id="tab_1" class="tab-pane fade active in" role="tabpanel">
+            <div class="col-md-11 col-sm-11 col-xs-11">
+              <form action="{url:/etprftx/save}" class="form-horizontal" id="edit-form" name="edit-form" method="post">
+                  {if:isset($id) && $id}
+                  <input type="hidden" name="id" value="{$id}">
+                  {/if}
+                  <input type="hidden" name="status" id="status" value="{$status}">
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">退税类型:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <select class="form-control" name="taxation_id" id="taxation_id" pattern="required">
+                        {widget:name=list action=taxationWidget}
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">税款所属期：从</label>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <input type="text" class="Wdate form-control" name="tax_period_start" value="{$tax_period_start}"  onfocus="WdatePicker()" pattern="required">
+                    </div>
+                    <label class="control-label col-md-1 col-sm-1 col-xs-1">到：</label>
+                    <div class="col-md-4 col-sm-4 col-xs-4">
+                      <input type="text" class="Wdate form-control" name="tax_period_end" value="{$tax_period_end}" onfocus="WdatePicker()" pattern="required">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">税票号码：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="tax_ticket" id="tax_ticket" value="{$tax_ticket}" pattern="required">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">实缴金额：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="actual_payamt" id="actual_payamt" value="{$actual_payamt}" pattern="required">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">申请退税金额：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="apply_amount" id="apply_amount" value="{$apply_amount}" pattern="required">
+                    </div>
+                  </div>
+                  {if:isset($status) && ($status==3 || $status==4)}
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">受理说明:</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <textarea class="form-control" name="approved_note1" readonly>{$approved_note}</textarea>
+                    </div>
+                  </div>
+                  {/if}
+                  <div class="form-actions mt-30">
+                    {token:key=form}
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                        {if:!isset($id) || $status==1}
+                        <button type="button" class="btn btn-primary mr-20" id="btnsave">保存申请</button>
+                        {/if}
+                        {if:!isset($id) || $status==1 || $status==3}
+                        <button type="button" class="btn btn-success" id="btnsubmit">提交申请</button>
+                        {/if}
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+        </div>
+        {if:isset($id) && $id}
+        <div id="tab_2" class="tab-pane fade in" role="tabpanel">
+          {if:$status==1 || $status==3}
+            {widget:name=list action=uploadUnauthorizedWidget sourceid=$id type=$this->attachType con=etprftx}
+          {else:}  
+            {widget:name=list action=attachmentUnauthorizedWidget
+ sourceid=$id type=$this->attachType}
+          {/if}
+        </div>
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
+{widget:name=public action=downWidget} 
+
+<script type="text/javascript">
+    $("#btnsave").on("click",function(){
+      $("#status").val(1);
+      $("#edit-form").submit();
+    });
+
+    $("#btnsubmit").on("click",function(){
+      swal({   
+        title: "您确认要提交申请吗？",   
+        text: "申请提交后将无法对其修改/删除！",   
+        showCancelButton: true,  
+        cancelButtonText: "否，暂不提交",   
+        confirmButtonColor: "#76c880",   
+        confirmButtonText: "是，立刻提交",   
+        closeOnConfirm: false 
+      }, function(){
+        $("#status").val(2);
+        $("#edit-form").submit();
+      });
+    });
+
+    $(document).ready(function() {
+        $("#taxation_id").val({$taxation_id});
+        {if:isset($upld) && $upld==1}
+        $("#tabs_1 li").eq(1).addClass('active').siblings().removeClass('active');
+        $('#tab_2').addClass('active').siblings().removeClass('active');
+        {/if}
+    });
+</script>

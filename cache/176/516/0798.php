@@ -1,0 +1,1 @@
+86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:10:{s:2:"id";s:7:"int(11)";s:6:"gov_id";s:7:"int(11)";s:4:"name";s:11:"varchar(50)";s:9:"parent_id";s:7:"int(11)";s:8:"have_son";s:6:"bit(1)";s:3:"url";s:12:"varchar(255)";s:4:"icon";s:11:"varchar(50)";s:7:"default";s:6:"bit(1)";s:4:"sort";s:7:"int(11)";s:6:"status";s:10:"tinyint(3)";}}

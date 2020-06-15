@@ -1,0 +1,1 @@
+86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:6:{s:2:"id";s:7:"int(11)";s:10:"doctype_id";s:10:"tinyint(3)";s:12:"doctype_name";s:12:"varchar(250)";s:10:"reptype_id";s:10:"tinyint(3)";s:12:"reptype_name";s:11:"varchar(50)";s:6:"status";s:10:"tinyint(3)";}}

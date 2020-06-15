@@ -1,0 +1,4 @@
+<option value="">税种类别</option>
+{list:items=(new TaxationEntity())->queryAll()}
+    <option value="{$item['id']}">{$item['name']}</option>
+{/list}

@@ -1,0 +1,38 @@
+<form id="password_form" action="{url:/$con/password_act}" class="form-horizontal" method="post">
+    <input type="hidden" name="password_id" id="password_id" value="{$password_id}">
+    <div class="col-md-11 col-sm-11 col-xs-11">
+        <br>
+        {if:isset($showold) && $showold}
+        <div class="form-group">
+            <label class="col-md-4 col-sm-4 col-xs-4 control-label text-right">*旧密码：</label>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+              <input class="form-control" name="oldpasswd" type="password" autocomplete="new-password" pattern="required" alt="请输入正确的旧密码">
+              <label class="valid-msg"></label>
+            </div>
+        </div>
+        {/if}
+        <div class="form-group">
+            <label class="col-md-4 col-sm-4 col-xs-4 control-label text-right">*新密码：</label>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+              <input class="form-control" name="newpasswd" type="password" autocomplete="new-password" pattern=".{6,}" alt="密码长度不能小于6位长度">
+              <label class="valid-msg"></label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 col-sm-4 col-xs-4 control-label text-right">*密码确认：</label>
+            <div class="col-md-8 col-sm-8 col-xs-8">
+              <input class="form-control" name="repasswd" type="password" autocomplete="new-password" bind="newpasswd" alt="密码必须一致"  pattern=".{6,}">
+              <label class="valid-msg"></label>
+            </div>
+        </div>
+        <div class="form-actions mt-30">
+            <div class="form-group">
+              <label class="col-md-4 col-sm-4 col-xs-4 control-label"></label>
+              <div class="col-md-8 col-sm-8 col-xs-8">
+                {token:key=form}
+                <button type="submit" class="btn btn-sm btn-primary">立刻修改</button>
+              </div>
+            </div>
+        </div>
+    </div>
+</form>

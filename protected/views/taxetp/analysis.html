@@ -1,0 +1,136 @@
+<div class="panel-heading mt-10 mb-20">
+    <h5 style="text-align: center;">{$etpname}</h5>
+</div>
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">2019年毛利率走势图(%)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="chart_1" class="" style="height:300px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">2019年利润率走势图(%)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh mr-15">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="chart_2" class="" style="height:300px;"></div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">2019年流动比率走势图(%)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="chart_3" class="" style="height:300px;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view panel-refresh">
+			<div class="refresh-container">
+				<div class="la-anim-1"></div>
+			</div>
+			<div class="panel-heading">
+				<div class="pull-left">
+					<h6 class="panel-title txt-dark">2019年资产负债率走势图(%)</h6>
+				</div>
+				<div class="pull-right">
+					<a href="javascript:;" class="pull-left inline-block refresh mr-15">
+						<i class="zmdi zmdi-replay"></i>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body">
+					<div id="chart_4" class="" style="height:300px;"></div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+<br><br><br>
+<!-- /Row -->
+<!-- EChartJS JavaScript -->
+<script src="{url:@static/vendors/echarts/dist/echarts-en.min.js}"></script>
+<script src="{url:@static/vendors/echarts-liquidfill.min.js}"></script>
+
+<script type="text/javascript">
+   chartLine("chart_1",{$titles},{$data1});
+   chartLine("chart_2",{$titles},{$data2});
+   chartLine("chart_3",{$titles},{$data3});
+   chartLine("chart_4",{$titles},{$data4});
+   	
+	function chartLine(chart_id,titles,data) {
+		option = {
+		    xAxis: {
+		        type: 'category',
+		        data:  titles
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [{
+		        data: data,
+		        type: 'line',
+		        //smooth: true
+		    }]
+		};
+		var chart = echarts.init(document.getElementById(chart_id));
+		chart.setOption(option);
+		chart.resize();
+	}
+	
+
+</script>

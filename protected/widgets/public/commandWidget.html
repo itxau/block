@@ -1,0 +1,51 @@
+<script type="text/javascript">
+
+    function changeStatus(id,status) {
+        doAjaxRequest("{url:/$con/status}",{ids:id,status:status},true);
+    }
+
+    $('.op-handle').on('click',function(){
+        var id=$(this).parent().parent().attr("data-refid");
+        open_dialog("{url:/$con/handle/id/}"+id,"{$title}-受理",{$width},{$height},false);
+        return false;
+    });
+
+    $('.op-info').on('click',function(){
+        var id=$(this).parent().parent().attr("data-refid");
+        open_dialog("{url:/$con/info/id/}"+id,"{$title}-查看",{$width},{$height},false);
+        return false;
+    });
+   
+    $('.op-new').on('click',function(){
+        open_dialog("{url:/$con/edit}","{$title}-新增",{$width},{$height},false);
+        return false;
+    });
+
+    $('.op-new2').on('click',function(){
+        open_dialog("{url:/$con/edit}","{$title}-新增",{$width},{$height},true);
+        return false;
+    });
+
+    $('.op-edit').on('click',function(){
+        var id=$(this).parent().parent().attr("data-refid");
+        open_dialog("{url:/$con/edit/id/}"+id,"{$title}-修改",{$width},{$height},false);
+        return false;
+    });
+
+    $('.op-delete').on('click',function(){
+        var id=$(this).parent().parent().attr("data-refid");
+        if (id>0) {
+            deleteRecord("{url:/$con/delete}",{ids:id});
+        }
+        return false;
+    });
+
+    $('.op-deletes').on('click',function(e){
+        var ids=idsSelected();
+        if (ids.length>0) {
+            deleteRecord("{url:/$con/delete}",{ids:ids});
+        }
+        return false;
+    });
+
+</script>

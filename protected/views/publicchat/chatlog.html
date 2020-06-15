@@ -1,0 +1,57 @@
+ <link rel="stylesheet" href="{url:@static/layui/css/layui.css}" media="all">
+<link id="layuicss-skinlayimcss" rel="stylesheet" href="{url:@static/layui/css/modules/layim/layim.css}" media="all">
+<link id="layuicss-layer" rel="stylesheet" href="{url:@static/layui/css/modules/layer/default/layer.css}" media="all"></head>
+<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+<script src="{url:@static/layui/layui.js}"></script>
+
+<style>
+  .layim-chat-main{height: auto;}
+</style>
+<div class="layim-chat-main">
+    <ul id="LAY_view"> 
+    </ul>
+</div> 
+<script>
+layui.use(['layim','flow'], function(){
+  var $ = layui.jquery; //不用额外加载jQuery，flow模块本身是有依赖jQuery的，直接用即可。
+  var flow = layui.flow;
+  flow.load({
+    elem: '#LAY_view' //指定列表容器
+    ,done: function(page, next){ //到达临界点（默认滚动触发），触发下一页
+      var lis = [];
+      $.getJSON("{url:/publicchat/detail}", {'id' : {$id}, 'type' : "{$type}" ,'uid':{$uid},'send_type':{$send_type},'page':page}, function(res){
+          var _html = '';
+          if( 1 == res.code ){
+              var sdata =[];
+              sdata['send_type']={$send_type};
+              sdata['address_id']={$address_id};
+              sdata['send_href']="{url:/publicchat/downfile/address_id/$address_id/txid/}";
+              $.each(res.data, function(k, v){
+                  if(v.send_id=={$id}){
+                    _html += '<li>';
+                    _html += '<div class="layim-chat-user">';
+                    _html += '<img src="'+v.avatar+'">';
+                    _html += '<cite>'+v.username+'<i>'+v.created_time+'</i></cite></div>';
+                    _html += '<div class="layim-chat-text">'+layui.data.content(v.content,sdata)+'</div>';
+                    _html += '</li>';
+                  }else{
+                    _html += '<li class="layim-chat-mine">';
+                    _html += '<div class="layim-chat-user">';
+                    _html += '<img src="'+v.avatar+'">';
+                    _html += '<cite><i>'+v.created_time+'</i>'+v.username+'</cite>';
+                    _html += '</div>';
+                    _html += ' <div class="layim-chat-text">'+layui.data.content(v.content,sdata)+'</div>';
+                    _html += '</li> ';
+                  }
+              });
+              lis.push(_html);
+              next(lis.join(''), page < res.pages); 
+          }
+      })
+    }
+  });
+});
+
+</script>
+
+{widget:name=public action=downWidget}

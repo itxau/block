@@ -1,0 +1,177 @@
+
+
+
+/*----------------------------------------------
+    COMMON  STYLES    
+------------------------------------------------*/
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #3E3E3E;
+    padding: 0px;
+    margin:0px;
+}
+
+#wrapper {
+    width: 100%;
+    padding: 0px;
+    margin:0px;
+}
+
+#page-wrapper {
+    margin: 0 0 0 180px;
+    padding: 15px 10px 60px 10px;
+    background: #eee;
+    position: relative;
+    top: 35px;
+}
+
+#page-inner {
+    padding: 15px;
+}
+
+.breadcrumb { background:none ; margin-bottom: 0px;}
+
+
+.text-center { text-align:center; }
+
+.square-btn-adjust {
+  border: 0px solid transparent; 
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.navbar-side {
+    z-index: 0; 
+}
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
+
+.navbar-side .nav > li > a > i{color: #8C8C8C;padding: 8px;width: 30px;text-align: center;}
+.top-navbar {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 300;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.05);
+}
+.navbar-side {
+  z-index: 1;
+  position: fixed;
+  width: 180px;
+  top: 80px;
+}
+
+
+.badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 4px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #4c7430;
+  border-radius: 10px;
+}
+
+/*----------------------------------------------
+   DASHBOARD STYLES    
+------------------------------------------------*/
+.page-body {
+  background-color: #fff;
+  min-height: 600px;
+  padding: 15px;
+  box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.page-header {
+  margin: 0;
+  border-bottom: 1px solid transparent;
+  text-align: left;
+  background-color: rgb(237, 237, 237);
+  padding: 32px 22px 32px 0;
+  color: #323232;
+}
+
+ 
+/*----------------------------------------------
+    MENU STYLES    
+------------------------------------------------*/
+div#sideNav:hover {
+    color: #F09B22;
+}
+
+.top-navbar{margin:0px;}
+.top-navbar .navbar-brand {
+  color: #fff;
+  width: 180px;
+  text-align: left;
+  height: 60px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  background: #4c7430;
+  padding: 10px 15px;
+}
+
+.active-menu, .active-menu i {
+    background-color: #EDEDED !important;
+    color: #4c7430 !important;
+}
+.active-menu i{color: #4c7430 !important;}
+.arrow {
+    float: right;
+    margin-top: 8px;
+}
+
+.fa.arrow:before {
+    content: "\f104";
+}
+
+.active > a > .fa.arrow:before {
+    content: "\f107";
+}
+
+.sidebar, .sidebar .nav{
+	background:none;
+}
+.sidebar .nav {
+	padding:0;
+}
+.sidebar .nav > li > a {
+	color: #B8B8B8;
+	background:transparent;
+	text-shadow:none;
+	font-size: 14px;
+}
+.sidebar > .nav > li > a {
+	padding: 4px 10px;
+}
+ 
+.navbar-side {
+	border:none;
+	background: #3E3E3E;
+}
+
+.top-navbar .navbar-brand:hover {color: #FFFFFF;background-color: #4c7430;}
+.dropdown-user li {margin: 8px 0;}
+.navbar-default {border:0px solid black;}
+.navbar-header { background: transparent;}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #283643;
+}
+
+.head-pic {
+  width: 32px;height: 32px;
+}

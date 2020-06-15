@@ -1,0 +1,60 @@
+<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+	<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+
+
+<div class="panel-body" style="margin-bottom: 60px;">
+    <div class="col-md-12 col-sm-12">
+      {list:items=$data}
+      <div>
+        <label>{set:echo $key+1}. {$item['name']}</label>
+        <div class="form-group" style="padding:10px 0px 0px 30px;">
+          {set:$values = $item['child']}
+          {list:items=$values item=$value}
+          <div class="col-md-12 col-sm-12">
+            <p style="width:100%;display: -webkit-box;"><label>
+              {$value["name"]}</label>
+            </p>
+              {set:$child = $value['child']}
+              {list:items=$child item=$val}
+              <div class="col-md-4 col-sm-4">
+                  <input type="checkbox" class="items_{$val[id]}" data-top="{$item['name']}" data-parent="{$value['name']}" data-this="{$val['name']}" name="distount[]" value="{$val['id']}" > 
+                  {$val["name"]}
+              </div>
+              {/list}
+          </div>
+          {/list}
+        </div>
+        <div class="clear"></div>
+      </div>
+      {/list}
+      <div style="text-align: center; position: fixed; bottom: 0px; background: #fff; left: 0; right: 0;  height: 40px; line-height: 40px; ">
+        <button type="button" class="btn btn-sm btn-primary btn-save" onclick="savedistount()" >确定</button>
+      </div>
+    </div>
+</div>
+{echo:JS::import('jquery')}
+{echo:JS::import('form')}
+{echo:JS::import('dialog?skin=brief');}
+{echo:JS::import('dialogtools');}
+<script type="text/javascript">
+
+$(function(){
+  var cid = art.dialog.data('cid');
+      cid = cid.slice(0,-1).split(',');
+  $($("input[name='distount[]']")).each(function(){
+    var index = $.inArray($(this).val(), cid); 
+      if(index >= 0){
+        console.log($(this).val());
+        $(this).attr('checked',true);
+      }
+   });
+})
+  function savedistount(){
+    var cid="";
+    $($("input[name='distount[]']:checked")).each(function(){
+      cid += $(this).val()+',';
+    });
+    art.dialog.opener.addDist(cid);
+  }
+
+</script>

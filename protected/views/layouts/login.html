@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{$site_full_name}</title>
+        <meta name="author" content="designer:sunxiangen, date:2019-10-12" />
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="{url:@favicon.ico}">
+        <link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
+       
+        <link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
+        <link href="{url:@static/vendors/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css">
+        <link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
+        {echo:JS::import('form');}
+        
+        <style type="text/css">
+            .addonext {
+                padding:0px;background-color: #1a78c2;border-color: #1a78c2;
+            }
+            #captcha_img {border: 0px;cursor: pointer;}
+            .btn-rounded {padding: 8px 25px; width: 220px;margin-top: 10px;}
+            .message {text-align: center;color: red;}
+            .auth-form {float: right;padding: 30px 50px;}
+            .login-wrapper{
+                position:fixed;top: 0; left: 0; width:100%; height:100%;
+                min-width: 1000px;z-index:-10;zoom: 1;background-color: #fff;
+                background-repeat: no-repeat;background-size: cover;
+                -webkit-background-size: cover;
+                -o-background-size: cover;
+                background-position: center 0;
+            }
+            .sp-logo-wrap img{
+                height: 30px;width: 30px; display:inline;vertical-align:middle;
+            }
+            .sp-logo-wrap span{ vertical-align:middle;}
+            .auth-form-wrap > .auth-form{ margin-right: 100px; }
+        </style>
+    </head>
+    <body>
+        <!-- Preloader -->
+        <div class="preloader-it">
+            <div class="la-anim-1"></div>
+        </div>
+        <div class="login-wrapper login-bg">
+            {__viewcontents}
+        </div>
+        <!-- jQuery -->
+        <script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
+        
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{url:@static/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+
+        <!-- Slimscroll JavaScript -->
+        <script src="{url:@static/js/jquery.slimscroll.js}"></script>
+
+        <!-- Sweet-Alert  -->
+        <script src="{url:@static/vendors/sweetalert/dist/sweetalert.min.js}"></script>
+
+        <!-- Init JavaScript -->
+        <script src="{url:@static/js/init.js}"></script>
+    </body>
+</html>

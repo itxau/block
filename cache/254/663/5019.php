@@ -1,0 +1,1 @@
+86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:7:{s:2:"id";s:7:"int(11)";s:5:"title";s:12:"varchar(255)";s:3:"url";s:12:"varchar(255)";s:5:"scope";s:10:"tinyint(3)";s:6:"status";s:10:"tinyint(3)";s:12:"created_time";s:8:"datetime";s:12:"updated_time";s:8:"datetime";}}

@@ -1,0 +1,103 @@
+<div class="panel-body">
+  <form id="edit-form" name="edit-form" class="form-horizontal" action="{url:/taxrole/save}" method="post">
+    {if:isset($id)}
+    <input type="hidden" name="id" value="{$id}">
+    {/if}
+    <div class="col-md-12 col-sm-12">
+      {if:isset($errmsg)}
+      <div class="message">{$errmsg}</div>
+      {/if}
+      <div class="form-group">
+        <label class="col-md-2 col-sm-2 control-label">*角色名称：</label>
+        <div class="col-md-9 col-sm-9">
+          <input class="form-control" name="name" id="name" type="text" value="{$name}">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-2 col-sm-2 control-label">授权：</label>
+        <div class="col-md-3 col-sm-3">
+          <div class="checkbox checkbox-success">
+            <input name="is_grantofetp" id="is_grantofetp" type="checkbox" {if:isset($is_grantofetp) && $is_grantofetp} checked {/if} value="1">
+            <label for="is_grantofetp"> 查看企业信息需要授权 </label>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3">
+          <div class="checkbox checkbox-success">
+            <input name="is_grantofgov" id="is_grantofgov" type="checkbox" {if:isset($is_grantofgov) && $is_grantofgov} checked {/if} value="1">
+            <label for="is_grantofgov"> 查看政务信息需要授权 </label>
+          </div>
+        </div>
+      </div>
+      {list:items=$modules item=$main}
+      {set:$mkey=$key}
+      <div>
+        {$main} <input type="checkbox" class="group" id="items_{$mkey}">
+        <div class="form-group" style="padding:10px 0px 0px 30px;">
+          {query:name=adm_right where=module eq '$mkey' order=sort }
+          {set:$flag=true;}
+          {if:stripos($rights,$item['rights'])===false}
+             {set:$flag=false;}
+          {/if}
+          <div class="col-md-3 col-sm-3">
+            <label><input type="checkbox" class="items_{$mkey}" name="right[]" value="{$item['id']}" {if:$flag}checked = "checked"{/if}> {$item["name"]}</label>
+          </div>
+          {/query}
+        </div>
+        <div class="clear"></div>
+      </div>
+      {/list}
+      <div class="col-md-offset-1 col-sm-offset-1">
+        {token:key=form}
+        <button type="submit" class="btn btn-sm btn-primary btn-save">保存</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<script type="text/javascript">
+//全选
+$(".group").each(function(){
+  $(this).on("click",function(){
+    var id = $(this).attr('id');
+    var checked = $(this).is(':checked');
+    if (checked) 
+      $("."+id).prop('checked','checked');
+    else
+      $("."+id).removeAttr('checked');
+  })
+});
+//单选某一个互动全选
+$("input[name='right[]']").on("click",function(){
+  var group = $(this).attr("class");
+  var flag = true;
+  $("."+group).each(function(){
+    var checked = $(this).is(':checked');
+    if(!checked){
+      flag = false;
+      return;
+    }
+  })
+  if (flag) 
+    $("#"+group).prop('checked','checked');
+  else
+    $("#"+group).removeAttr('checked');
+});
+//设置全选按钮状态
+$(".group").each(function(){
+  var id = $(this).attr('id');
+  var flag = true;
+  $("."+id).each(function(){
+    var checked = $(this).is(':checked');
+    if(!checked){
+      flag = false;
+      return;
+    }
+  });
+  if (flag) 
+    $(this).prop('checked','checked');
+  else
+    $(this).removeAttr('checked');
+});
+
+</script>

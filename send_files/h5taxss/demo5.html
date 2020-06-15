@@ -1,0 +1,404 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>电力模型</title>
+<link rel="stylesheet" href="./bootstrap/css/bootstrap.css" >
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes/no">
+</head>
+<style>
+body{
+	background-image:linear-gradient(rgb(53 135 210),rgb( 163 150 175));
+	height: 100vh;
+}
+#container_body{
+padding-top:30px
+}
+	.adminSpeak{
+		padding-top: 20px;
+		letter-spacing: 1px;
+		font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+		padding-bottom:8px;
+	}
+		.pp1{
+			margin-left: 60px;
+			display: inline-block;
+			
+		}
+		.pp12{position: relative;}
+		.pp1 span{
+			background-color: #fff;
+			padding: 5px 8px;
+			display: inline-block;
+			border-radius: 4px;
+			margin:10px 0 10px 10px;
+			position: relative;
+			z-index: 40;
+		}
+		.pp1 span::after{
+			content: '';
+			border: 8px solid #ffffff00;
+			border-right: 8px solid #fff;
+			position: absolute;
+			top: 6px;
+			left: -16px;
+		}
+		/* 客服对话框 */
+		.userSpeak{
+			padding-top: 20px;
+			letter-spacing: 1px;
+			font: 14px Helvetica Neue,Helvetica,PingFang SC,Tahoma,Arial,sans-serif;
+			padding-bottom:8px;
+		}
+		.pp2{
+			text-align: right;
+			margin-right: 60px;
+		}
+		.pp21{position: relative;}
+		.pp2 span{
+			background-color: #fff;
+			padding: 5px 8px;
+			display: inline-block;
+			border-radius: 4px;
+			margin:10px 0 10px 10px;
+			position: relative;
+			
+		}
+		.pp2 span::after{
+			content: '';
+			border: 8px solid #ffffff00;
+			border-left: 8px solid #fff;
+			position: absolute;
+			top: 6px;
+			right: -16px;
+		}
+
+.navbar{
+	margin: 0 !important;
+}	
+.col-md-8,.col-md-4,.col-lg-8,.col-lg-4,.col-xs-12{
+	padding: 0!important;
+}	
+.jumbotron{
+	padding-right: 15px !important; 
+	padding-left: 15px !important; 
+	/*position: relative;*/
+	margin: 0!important;
+	min-height: 600px !important;
+	height:70vh;
+	overflow-x: hidden; overflow-y: auto;
+}
+#inputArea{
+	min-height: 12.5rem !important;
+}
+#inputArea textarea{height:98%;min-height: 12.5rem;z-index: 50;}
+a{	text-decoration:none !important}
+li{list-style-type: none;}
+
+@media (max-width: 768px){
+#container_body{
+	padding-top:0px;
+	height:100vh;
+}
+.jumbotron{
+height:90vh;
+min-height: 70vh !important;
+}
+#inputArea{
+/*height:12vh;*/
+min-height: 0.5rem !important;
+position:fixed ; bottom:0px;width:100%
+}
+#inputArea textarea{
+    position: absolute;
+    bottom: 0;
+	z-index: 50;
+height:40px;min-height: 6.25rem}
+.userSpeak{padding-right: 10px;padding-left: 10px;padding-bottom:8px;}
+.adminSpeak{padding-left: 10px;padding-right: 10px;padding-bottom:8px;}
+
+}
+</style>
+<body id="bodys">
+<script src="./static/js/jquery.js"></script>
+<script src="./bootstrap/js/bootstrap.js"></script>
+<div class="container" id="container_body">
+    <div class="row visible-on" >
+        <div id="contentsC" class="col-xs-12 col-md-12 col-lg-12" style="background-image: linear-gradient(rgb(216 233 247),rgb(  231 237 247),rgb(  244 243 246));">
+			<nav class="navbar navbar-default" style="height: 10%;">
+			  <div class="container-fluid">
+			    <!-- Brand and toggle get grouped for better mobile display -->
+			    <div class="navbar-header" style="text-align: center;">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			        <span class="sr-only">Toggle navigation</span>
+			      </button>
+			      <a class="navbar-brand"  href="#">为您提供电力咨询服务</a>
+			    </div>
+			
+			    <!-- Collect the nav links, forms, and other content for toggling -->
+			    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			      <ul class="nav navbar-nav">
+			        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+			        <li><a href="#">Link</a></li>
+			      </ul>
+			    </div> --><!-- /.navbar-collapse -->
+			  </div><!-- /.container-fluid -->
+			</nav>
+			<!-- 导航栏 -->
+			
+			<div class="col-xs-12 col-md-12 col-lg-12" style="height: 80%;position: relative;">
+				
+				 <div class="jumbotron">
+					 <p id="nowTime" style="text-align: center;">xxxx-xx-xx</p>
+					<!-- <div class="userSpeak">
+						 <div class="pp21">
+						  	<span ><img style="width: 50px;position: absolute;right: 0;" src="static/img/WeChat Image_20200303132230.png" >
+						 		<span style="width: 60px;position: absolute;right: 0;top: 50px;text-align: center;">用户</span>
+						  	</span>
+						  </div>
+					 	<div class="pp2">
+					 			<span>文本文本文本文本文本文本文本文本文本</span>
+					 	</div>
+						
+					 </div>-->
+					 
+					 
+					 <div class="adminSpeak">
+					 	<div class="pp12">
+					 	 	<span ><img style="width: 50px;position: absolute;" src="static/img/WeChat%20Image_20200303132220.png" >
+					 			<span style="width: 70px;position: absolute;top:50px;">电力客服</span>
+					 	 	</span>
+					 	 </div>
+					 	<div class="pp1">
+					 			<span>您好，请问有什么可以帮您？<br>
+温馨提示：本次咨询仅供参考，具体以法律法规及相关规定为准。请注意保护企业或个人信息安全，不要在对话过程录入账号密码等敏感信息。</span>
+					 	</div>
+					 </div>
+					
+					
+				</div>
+
+				<div id="inputArea" style="z-index:52">
+					<div id="autoCom">
+					</div>
+					<textarea style="width: 100%;padding:10px" id="inputData" onblur="changeBlur()" onkeyup="keyLogin()" placeholder="请输入您要咨询的问题"></textarea>
+					<button  type="button" class="btn btn-default" style="position: absolute;bottom: 4px;right: 20px;z-index: 54;"  onclick="showData1()">发送</button>
+					</div>
+				
+			</div><!-- 左边侧栏 -->
+			
+			
+			
+			
+        </div>
+    </div>
+</div>
+
+<script>
+if(navigator.userAgent.indexOf("Trident")!=-1){ 
+document.getElementById('contentsC').style.backgroundColor="#C6E2FF";
+document.getElementById('bodys').style.backgroundColor="#97CBFF";
+//document.getElementById('contentext').style.backgroundColor="#C6E2FF";
+ }
+function changeBlur(){
+ var currentPosition,timer;
+    var speed=1;//页面滚动距离
+    timer=setInterval(function(){
+        currentPosition=document.documentElement.scrollTop || document.body.scrollTop;
+		//console.log(currentPosition);
+        currentPosition-=speed; 
+        window.scrollTo(0,currentPosition);//页面向上滚动
+        currentPosition+=speed; //speed变量
+        window.scrollTo(0,currentPosition);//页面向下滚动
+        clearInterval(timer);
+    },1);
+}
+
+var content='';//文本输入内容
+var isclick= true;//是否点击
+var xyy_url="./getQueryX.php";//分词
+var timer=0;//输入时间的定义
+$("body").click(function(){
+	$('#autoCom').hide(); 
+ }) 
+ 
+$('.collapse').collapse({
+  toggle: true,parent:'#accordion'
+})
+$('.panel-heading').on('click', function () {
+    var self = this;
+    $(self).nextAll().eq(0).collapse("show");
+})
+var myDates = new Date();
+var mytimes=myDates.toLocaleString();
+$('#nowTime').text(mytimes); 
+
+function showName(name){
+$('#inputData').val(name.replace(/\s/g,""));
+showData1();
+}
+function keyLogin(){
+	if(event.keyCode==13){
+		showData1()
+	}//判断回车键
+
+}
+
+function showData1(){
+content=$('#inputData').val();
+content=content.replace(/\s/g,"");
+$('#inputData').val('');
+if(content!=''){
+	addUserDom(content);
+var href = window.location.href;
+var ss=href.split('/');
+var xyy_params={query:content,urls:ss[ss.length-1]};
+var xyy_params=common_false(xyy_url,xyy_params);//
+
+/*if(item['answer'].indexOf('http')){
+		var temp=item['answer'].split(['https,shtml']);
+		console.log(temp);
+	}*/
+var tpls='<strong>用户问题：</strong>'+content+'</br>';
+xyy_datas=JSON.parse(xyy_params);
+tpls+=xyy_datas['dk']['data']['bot_answer'];
+// $.each(xyy_datas['xyy']['matched_question'],function(index,item){
+// 	if(index==0){
+// 		tpls+='<strong>问:</strong>'+item[0]+'</br>';
+// 		tpls+='<strong>答:</strong>'+item[1]+'</br>';
+// 		tpls+='<strong>你是不是想问:</strong></br>';
+// 	}
+// 	tpls+='<a href="javascript:showName(\''+item[0]+'\')">'+item[0]+'</a>';
+// })
+// tpls+='<strong>DK的问题:</strong></br>';
+//console.log(xyy_datas['dk']);
+/*if(xyy_datas['dk']['data']['domain']!='闲聊'){
+	var list_data=[];
+			var list_data1=[];
+			$.each(xyy_datas['dk']['data']['sptag_info']['a_list'],function(index,item){
+				if(list_data.indexOf(item['answer'])==-1){
+					list_data.push(item['answer']);
+					list_data1.push(item);
+				}
+			})
+	
+var result = list_data1.sort(function(a,b){
+          return b['score']-a['score'];
+        });
+//console.log(result);
+	//$.each(xyy_datas['dk']['data']['sptag_info']['a_list'],function(index,item){
+	$.each(result,function(index,item){
+	if(index<=4){
+		if(index==0){
+				tpls+='<strong>问:</strong>'+item['question']+'</br>';
+				tpls+='<strong>答:</strong>'+item['answer']+'</br>';
+				tpls+='<strong>你是不是想问:</strong></br>';
+			}
+			tpls+='<a href="javascript:showName(\''+item['question']+'\')">'+item['question']+'</a>';
+	}
+	})
+}else{
+	tpls+='<span>我更擅长回答办税指南和抗疫情政策相关的问题，其它业务咨询您可以拨打12366热线电话。</span>';
+}*/
+//var save_url='http://server81.raisound.com:22080/formApi/public/?service=App.Dxport.SaveDataList';
+var save_params={};
+save_params.biz_id=-1;
+save_params.bot_answer=tpls;
+save_params.bot_name='demo8.html';
+save_params.question=content;
+save_params.type='DK';
+save_params.intent_confident='';
+	addAdminDoms(tpls);
+	//save_paramss=common_false(save_url,save_params);
+
+$('.jumbotron')[0].scrollTop=$('.jumbotron')[0].scrollHeight;
+//console.log($('#contentText')[0].scrollHeight);
+}else{
+	alert('输入的内容不能为空哦～');
+}
+}
+
+
+
+
+//------------------dom-----------------------------------
+function addAdminDoms(data){
+var tpls='';
+tpls+='<div class="adminSpeak">'
+tpls+='					 	<div class="pp12">'
+tpls+='					 	 	<span ><img style="width: 50px;position: absolute;" src="./static/img/WeChat%20Image_20200303132220.png" >'
+tpls+='					 			<span style="width: 70px;position: absolute;top:50px;">前海客服</span>'
+tpls+='					 	 	</span>'
+tpls+='					 	 </div>'
+tpls+='					 	<div class="pp1">'
+tpls+='					 			<span>'+data+'</span>'
+tpls+='					 	</div>'
+tpls+='					 </div>'
+$('.jumbotron').append(tpls);
+}
+
+
+function addUserDom(data){
+var tpls='';
+tpls+='<div class="userSpeak">'
+tpls+='					 <div class="pp21">'
+tpls+='					  	<span ><img style="width: 50px;position: absolute;right: 0;" src="./static/img/WeChat Image_20200303132230.png" >'
+tpls+='					 		<span style="width: 60px;position: absolute;right: 0;top: 50px;text-align: center;">用户</span>'
+tpls+='				  	</span>'
+tpls+='						  </div>'
+tpls+='					 	<div class="pp2">'
+tpls+='					 			<span>'+data+'</span>'
+tpls+='					 	</div>	'					
+tpls+='					 </div>'
+$('.jumbotron').append(tpls);
+}
+
+
+function talk1(){
+var tpls='';
+tpls+='您好，我是税务小秘书，可以帮您解决各类税务问题哦~<br>小秘书为您推荐以下热点内容，请点击查看~<br>'
+tpls+='<a target="_blank"href="https://12366.chinatax.gov.cn/sscx/rddetail?bh=0fbc1a41c5e14adf8be27cde8df88973">防控疫情税收优惠政策热点问答（第九期）</ a><br>'
+tpls+='<a target="_blank"href="http://www.chinatax.gov.cn/chinatax//n810356/n3010387/c5147687/5147687/files/936a47c7c6ee4048947fc8db145cd86b.pdf">个人所得税综合所得年度汇算政策常见问题</ a><br>'
+tpls+='<a onclick="showData(this)">代开发票</ a><br>'
+tpls+='<a onclick="showData(this)">作废发票原发票收回联次</ a><br>'
+tpls+='<a onclick="showData(this)">税控盘不能正常使用</ a><br>'
+tpls+='<a onclick="showData(this)">纳税服务热线电话</ a><br>';
+return tpls;
+}
+function talk2(){
+var tpls='';
+	tpls+='<p>你好，税务小秘书更善于解答税务问题哦，您也可以换个问法试试。<br>'
+tpls+='如代开发票、企业所得税、增值税优惠等等。</p>';
+return tpls;
+}
+
+//检查输入内容是否存在换行、空格
+function check(strValue){
+	strValue=strValue.replace(/\n/g,'');
+    if(strValue=="")
+    {
+        return false;
+    }  
+}
+function common_false(url,params,types){
+	
+	var types = arguments.length > 1 && arguments[2] !== undefined ? arguments[2] : 'GET';
+	var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+var data_list='';
+	$.ajax({
+	type:types,
+	url:url,//硬匹配
+	async:false,
+	data:params,
+	success: function(data){
+		data_list=data;
+	},
+	error:function(data){
+		data_list=data;
+	}
+});
+return data_list;
+}
+</script>
+</body>
+</html>

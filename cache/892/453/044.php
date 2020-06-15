@@ -1,0 +1,1 @@
+86400      a:2:{s:11:"primary_key";s:2:"id";s:6:"fields";a:7:{s:2:"id";s:7:"int(11)";s:6:"etp_id";s:7:"int(11)";s:11:"document_id";s:10:"bigint(11)";s:7:"message";s:12:"varchar(255)";s:4:"type";s:10:"tinyint(3)";s:6:"sender";s:10:"tinyint(3)";s:12:"created_time";s:8:"datetime";}}

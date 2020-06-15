@@ -1,0 +1,212 @@
+
+<!-- Row -->
+<div class="row">
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient2">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$num1}</span></span>
+									<span class="weight-500 uppercase-font block font-13 txt-light">财务凭证</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+									<i class="iconfont icon-activity_fill data-right-rep-icon txt-light"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient1">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$num2}</span></span>
+									<span class="weight-500 uppercase-font block txt-light">会计报表</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+									<i class="iconfont icon-huizongshenqingdanguanli data-right-rep-icon txt-light"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 txt-light data-wrap-left">
+									<span class="block counter"><span class="counter-anim">{$num3}</span></span>
+									<span class="weight-500 uppercase-font block">会计帐册</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 txt-light data-wrap-right">
+									<i class="iconfont icon-createtask_fill data-right-rep-icon"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+		<div class="panel panel-default card-view pa-0 bg-gradient3">
+			<div class="panel-wrapper collapse in">
+				<div class="panel-body pa-0">
+					<div class="sm-data-box">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+									<span class="txt-light block counter"><span class="counter-anim">{$num4}</span></span>
+									<span class="weight-500 uppercase-font block txt-light">其他文档</span>
+								</div>
+								<div class="col-xs-6 text-center  pl-0 pr-0 txt-light data-wrap-right">
+									<i class="iconfont icon-yundidanguanli data-right-rep-icon"></i>
+								</div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- /Row -->
+<!-- Row -->
+<div class="row">
+	<div class="panel panel-default card-view panel-refresh">
+		<div class="refresh-container">
+			<div class="la-anim-1"></div>
+		</div>
+		<div class="panel-heading">
+			<div class="pull-left">
+				<h6 class="panel-title txt-dark">最新 10 条上链数据</h6>
+			</div>
+			<div class="pull-right">
+				<a href="javascript:;" class="pull-left inline-block refresh" onclick="dochart(4);">
+					<i class="zmdi zmdi-replay"></i>
+				</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="panel-wrapper collapse in">
+			<div class="panel-body row pl-15 pr-15">
+				<div class="table-wrap">
+					<div class="table-responsive">
+						<table class="table display product-overview border-none table-hover" id="order_table">
+							<thead>
+								<tr>
+			                      <th>#</th>
+			                      <th>年月</th>
+			                      <th>文档类别</th>
+			                      <th>报表类别</th>
+			                      <th>区块地址</th>
+			                      <th>类型</th>
+			                      <th>上链时间</th>
+			                  </tr>
+							</thead>
+							<tbody>
+								{list:items=$data}
+				                  <tr>
+				                      <td>{echo:$key+1}</td>
+				                      <td>{$item["year"]}-{echo:str_pad($item["month"],2,'0',STR_PAD_LEFT)}</td>
+				                      <td>{$item["doctype_name"]}</td>
+				                      <td>{$item["reptype_name"]}</td>
+				                      <td>{$item["txid"]}</td>
+				                      <td class="text-center"><i class="fa fa-lg {echo:Common::getExtensionIcon($item['ext'])}"></i></td>
+				                      <td>{$item["created_time"]}</td>
+				                  </tr>
+				                  {/list}
+							</tbody>
+						</table>
+					</div>
+				</div>	
+			</div>	
+		</div>
+	</div>
+</div>
+<!-- /Row -->
+
+<!-- /Row -->
+<script src="{url:@static/vendors/waypoints/lib/jquery.waypoints.min.js}"></script>
+<script src="{url:@static/vendors/jquery.counterup/jquery.counterup.min.js}"></script>
+
+<script type="text/javascript">
+
+	for(i=4;i<=5;i++) {
+		dochart(i);
+	}
+
+	function dochart(num) {
+		switch(num) {
+			case 4:
+				
+				break;
+			case 5:
+				
+				break;
+		}
+	}
+
+	function dochartAjax(url,callback) {
+		$.ajax({
+			type: 'POST',
+			url: url,
+			dataType:"json",
+			success:function(result){
+				if (result["status"]=="success") {
+					callback(result);
+				}
+				else {
+					swal(result["msg"]);
+				}
+			},
+			error:function(result) {
+				swal("数据出现错误.");  
+			}
+	    });
+	}
+
+	function orderTableData(tableData) {
+		$("#order_table tbody").html("");
+		var html="";
+		$.each(tableData["data"], function(i,item){
+			idx=i+1;
+			html+="<tr><td>" + idx + "</td>";
+			html+="<td>" + item["order_no"] + "</td>";
+			html+="<td>" + item["created_time"] + "</td>";
+			html+="<td>" + item["amount"] + "</td>";
+			html+="<td><span class='label label-" + item["label"] + "'>" + item["statusname"] + "</span></td></tr>";
+		});
+		$("#order_table tbody").append(html);
+	}
+
+	function balanceTableData(tableData) {
+		$("#balance_table tbody").html("");
+		var html="";
+		$.each(tableData["data"], function(i,item){
+			idx=i+1;
+			html+="<tr><td>" + idx + "</td>";
+			html+="<td>" + item["order_no"] + "</td>";
+			html+="<td>" + item["created_time"] + "</td>";
+			html+="<td><span class='label label-" + item["label"] + "'>" + item["typename"] + "</span></td>";
+			html+="<td>" + item["actual_amt"] + "</td></tr>";
+		});
+		$("#balance_table tbody").append(html);
+	}
+</script>
