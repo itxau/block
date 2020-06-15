@@ -35,10 +35,14 @@ class DBMysql
 		self::$dbinfo = $dbinfo;
 		if(!self::$dbo instanceof self)
 		{
-			$host=Crypt::decode($dbinfo['host'],"host");
-            $user=Crypt::decode($dbinfo['user'],"user");
-            $password=Crypt::decode($dbinfo['password'],"password");
-            $name=Crypt::decode($dbinfo['name'],"name");
+			// $host=Crypt::decode($dbinfo['host'],"host");
+            // $user=Crypt::decode($dbinfo['user'],"user");
+            // $password=Crypt::decode($dbinfo['password'],"password");
+			// $name=Crypt::decode($dbinfo['name'],"name");
+			$host=$dbinfo['host'];
+            $user=$dbinfo['user'];
+            $password=$dbinfo['password'];
+            $name=$dbinfo['name'];
             self::$conn=mysqli_connect($host,$user,$password,$name,$dbinfo['port']);
 
 			//self::$conn=mysql_connect($dbinfo['host'].':'.$dbinfo['port'],$dbinfo['user'],$dbinfo['password']);

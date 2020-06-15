@@ -6,19 +6,20 @@
           2 => 'classes.payments.*',
         ),
   'theme' => 'default',
-  'urlFormat' => 'path',
+  'urlFormat' => 'get',
   'db' => 
           array (
             'type' => 'mysql',
             'tablePre' => '',
-            'host'=>'11346d7a18BwICVFUEAwZTUlRRAwBXUgNTVQFSAQRTXVAJDwtWUQYJBwQWBU0CSAM',
-            'port'=>'3306',
-            'user'=>'6c46cad104BAFRBlYAVgFRUVUBBwMDVVFUWgRQBQUAAFQIBVdTUlZEWloR',
-            'password'=>'f53f599106UVFVAVNWVAFSBgIHDl0CBlAEAwZTUFgPAQ5XV1wNBVBEABx2TQ5FMXUFVgsCEhER',
-            'name'=>'9c6571f1f6UggHVABVAlYDUlwLBVwDUVQBAwEGUVVQBVVdVg5VAlEUWxADHlMA',
+			'host' => '127.0.0.1',
+            'port' => '3306',
+            'user' => 'root',
+            'password' => '123456',
+			'name'=>'qhtaxdb',
           ),
   'route' => 
           array (
+           
           ),
   'extConfig' => 
           array (
