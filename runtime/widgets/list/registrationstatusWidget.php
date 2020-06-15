@@ -1,0 +1,6 @@
+<!--企业登记状态：-->
+<option value=""></option>
+<option value="1">新注册</option>
+<option value="2">存续</option>
+
+ <!-- Powered by baxgsun@163.com -->

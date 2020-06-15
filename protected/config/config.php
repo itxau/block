@@ -11,11 +11,11 @@
           array (
             'type' => 'mysql',
             'tablePre' => '',
-			'host' => '127.0.0.1',
+			'host' => '183.60.4.181',
             'port' => '3306',
-            'user' => 'root',
-            'password' => '123456',
-			'name'=>'qhtaxdb',
+            'user' => 'topwe',
+            'password' => 'toPwe@ha0Feng$!#',
+			'name'=>'topwechain',
           ),
   'route' => 
           array (
