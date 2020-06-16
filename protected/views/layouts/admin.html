@@ -4,24 +4,21 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Square Management System</title>
+	<title>{$site_full_name}</title>
 	<meta name="author" content="designer:sunxiangen, date:2019-10-12" />
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="{url:@favicon.ico}">
 	<link rel="icon" href="{url:@favicon.ico}" type="image/x-icon">
 	<script src="{url:@static/vendors/jquery/dist/jquery.min.js}"></script>
 	<link href="{url:@static/vendors/sweetalert/dist/sweetalert.css}" rel="stylesheet" type="text/css"/>
+	<link href="{url:@static/vendors/ali-icon/iconfont.css}" rel="stylesheet" type="text/css"/>
 	<link href="{url:@static/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet" type="text/css"/>
 	<link href="{url:@static/css/style.css}" rel="stylesheet" type="text/css"/>
 	<link href="{url:@static/css/style-fixed.css}" rel="stylesheet" type="text/css"/>
 
- 	<style type="text/css">
- 		.fixed-sidebar-left .side-nav > li > ul > li a {padding: 7px 15px 7px 35px;}
- 		.fixed-sidebar-left .side-nav li a[aria-expanded="true"] {color: #f742aa;}
- 		.fixed-sidebar-left .side-nav li a[aria-expanded="true"] > i {color: #f742aa;}
- 		.fixed-sidebar-left .side-nav > li ul.collapse li a.active {color: #f742aa;}
- 		.fa {width: 20px;}
-	</style>
+	{echo:JS::import('dialog?skin=tinysimple');}
+	{echo:JS::import('dialogtools');}
+
 </head>
 <body>
 	<!-- Preloader -->
@@ -33,11 +30,11 @@
 		<!-- Top Menu Items -->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="mobile-only-brand pull-left">
-				<div class="nav-header pull-left">
+				<div class="nav-header pull-left" style=" background: #4c7430; ">
 					<div class="logo-wrap">
-						<a href="index.html">
-							<img class="brand-img" src="{url:@static/images/logo.png}" alt="brand"/>
-							<span class="brand-text">Square</span>
+						<a href="{url:/admin/index}">
+							<img class="brand-img" src="{url:@static/images/logo2.png}" alt="brand"/>
+							<span class="brand-text">{$site_name}</span>
 						</a>
 					</div>
 				</div>	
@@ -47,20 +44,27 @@
 			</div>
 			<div id="mobile_only_nav" class="mobile-only-nav pull-right">
 				<ul class="nav navbar-right top-nav pull-right">
-					<li class="dropdown auth-drp">
-						<a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><i class="fa fa-fw fa-user"></i>{$manager['name']}<span class="user-online-status"></span></a>
-						<ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+					<li class="dropdown">
+						<a href="void(0)" class="dropdown-toggle" data-toggle="dropdown">
+							<i class="fa fa-fw fa-user"></i>
+							{$this->manager['name']}
+							<span class="caret"></span> 
+						</a>
+						<ul class="dropdown-menu" data-dropdown-in="flipInX" data-dropdown-out="flipOutX">
+							<li>
+								<a id="myinfo"><i class="zmdi zmdi-account"></i><span>我的信息</span></a>
+							</li>
+							<li>
+								<a id="mypassword"><i class="zmdi zmdi-key"></i><span>修改密码</span></a>
+							</li>
 							<!--
 							<li>
-								<a href="JavaScript:;" onclick="swal('你好，{$this->manager['name']}');"><i class="zmdi zmdi-account"></i><span>我的信息</span></a>
+								<a id="facetest"><i class="fa fa-meh-o"></i><span>人脸验证</span></a>
 							</li>
-							-->
-							<li>
-								<a href="javascript:;" id="btn-password"><i class="zmdi zmdi-key"></i><span>修改密码</span></a>
-							</li>
+						-->
 							<li class="divider"></li>
 							<li>
-								<a href="{url:/admin/logout}"><i class="zmdi zmdi-power"></i><span>登出</span></a>
+								<a href="{url:/taxbureau/logout}"><i class="zmdi zmdi-power"></i><span>登出</span></a>
 							</li>
 						</ul>
 					</li>
@@ -71,15 +75,21 @@
 		<!-- Left Sidebar Menu -->
 		<div class="fixed-sidebar-left">
 			<ul class="nav navbar-nav side-nav nicescroll-bar">
+				<li><br></li>
 				<!-- User Profile -->
+				<!--
 				<li>
 					<div class="user-profile text-center">
-						<img src="{url:@static/images/no-img.png}" class="user-auth-img img-circle"/>
+						<img src="{url:@static/images/shuiwu.png}" class="user-auth-img img-circle"/>
 					</div>
 				</li>
 				<li><hr class="light-grey-hr mb-10"/></li>
+			-->
 				<!-- /User Profile -->
 				{list:items=$menu->getSubMenu("system") item=$main}
+				{if:$main["name"]=="hr"}
+				<li><hr class="light-grey-hr mb-10"/></li>
+				{else:}
 				{set:$clink=$currentMenu['link']==$main['url']}
 				{set:$csub=$currentMenu['subKey']==$main['link']}
 				{if:$main['url']}
@@ -109,8 +119,10 @@
 						{if:substr($node['link'],-4)!='edit'}
 						<li>
 							<a {if:$currNod} class="active" {/if}  href="{url:$node[link]}">
-								<i class="fa {$node['icon']}"></i>
-								{$node['name']}
+								<i class="fa fa-fw {$node['icon']} mr-10"></i>
+								<span class="right-nav-text">
+									{$node['name']}
+								</span>
 							</a>
 						</li>
 						{/if}
@@ -118,7 +130,10 @@
 					</ul>
 				</li>
 				{/if}
+				{/if}
 				{/list}
+				<li></li>
+				<li></li>
 				<li></li>
 				<li></li>
 			</ul>
@@ -134,10 +149,11 @@
 				    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 				      <ol class="breadcrumb">
 				        <li><a href="{url:/admin/index}">首页</a></li>
+				        
 				        {if:$currentMenu["nodeKey"]}
 				        <li><a href="#"><span>{$currentMenu["subName"]}</span></a></li>
 				        {/if}
-				        <li class="active"><span>{$currentMenu["title"]}</span></li>
+				        <li class="active"><span>{$admin_title}</span></li>
 				      </ol>
 				    </div>
 				    <!-- /Breadcrumb -->
@@ -154,43 +170,10 @@
 					</div>
 				</div>
 			</footer>
-			<!-- /Footer -->
+			<!-- /Footer --> 
         </div>
     </div>
     <!-- /Main Content -->
-    <!--password-->
-    <div id="passwordmodal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" style="display: none;">
-	    <form id="passwordform" action="{url:/manager/changepwd}">
-	    <div class="modal-dialog">
-	        <div class="modal-content">
-	            <div class="modal-header">
-	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-	                <h5 class="modal-title">修改密码</h5>
-	            </div>
-	            <div class="modal-body">
-	            	<div class="form-group">
-	                    <label class="control-label">原密码*：</label>
-	                    <input class="form-control" name="oldpwd" id="oldpwd" type="password">
-	                </div>
-	                <div class="form-group">
-	                    <label class="control-label">新密码*：</label>
-	                    <input class="form-control" name="newpwd" id="newpwd" type="password">
-	                </div>
-	                <div class="form-group">
-	                    <label class="control-label"> 密码确认*：</label>
-	                    <input type="password" class="form-control" name="renewpwd" id="renewpwd">
-	                </div>
-	            </div>
-	            <div class="modal-footer">
-	                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-	                <button type="submit" class="btn btn-primary">保存密码</button>
-	            </div>
-	        </div>
-	    </div>
-	    </form>
-	</div>
-	<!-- password end-->
-
     <!-- /#wrapper -->
 	<script src="{url:@static/vendors/bootstrapvalidator/dist/js/bootstrapValidator.min.js}"></script>
 	<!-- JavaScript -->
@@ -205,97 +188,19 @@
 	<script src="{url:@static/vendors/jquery.counterup/jquery.counterup.min.js}"></script>
 	<!-- Init JavaScript -->
 	<script src="{url:@static/js/init.js}"></script>
+
+	<script type="text/javascript">
+		$("#mypassword").on("click",function(){
+			open_dialog("{url:/taxbureau/password}","修改密码",600,300,false);
+		});
+
+		$("#myinfo").on("click",function(){
+			open_dialog("{url:/taxbureau/headpic}","我的头像",600,400,false);
+		});
+	</script>
+{set: $address_id =Constants::TAX_ADDR_ID;}
+	{widget:name=public action=layimWidget con=enterprise type=2 uid=$this->manager["id"] address_id=$address_id}
 </body>
-
-<script type="text/javascript">
- 	$(document).ready(function() {
-        passwdValidator();
-    });
-
-    $('#btn-password').on('click',function(){
-        //$('#password-modal').find('[type="password"]').val("");
-        $('#passwordmodal').modal();
-        return false;
-    });
-
-    $("#passwordmodal").on("hide.bs.modal", function(){
-        var $form = $('#passwordform'),
-            bv    = $form.data('bootstrapValidator');
-        $form
-            .bootstrapValidator('disableSubmitButtons', false)  
-            .bootstrapValidator('resetForm', true);             
-    });
-
-    function passwdValidator() {
-        $('#passwordform').bootstrapValidator({
-            message: '输入不正确',
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh'
-            },
-            fields: {
-            	oldpwd: {
-                    validators: {
-                        notEmpty: {
-                            message: '不能为空'
-                        }
-                    }
-                },
-                newpwd: {
-                    validators: {
-                        notEmpty: {
-                            message: '不能为空'
-                        },
-                        stringLength: {
-                            min: 6,
-                            max: 30,
-                            message: '长度必须在 6 到 30 个字符'
-                        },
-                        identical: {
-                            field: 'renewpwd',
-                            message: ' '
-                        }
-                    }
-                },
-                renewpwd: {
-                    validators: {
-                        notEmpty: {
-                            message: '不能为空'
-                        },
-                        identical: {
-                            field: 'newpwd',
-                            message: '密码必须一致'
-                        }
-                    }
-                }
-            }
-        }).on('success.form.bv', function(e) {
-            e.preventDefault();
-            var $form = $(e.target),
-                bv    = $form.data('bootstrapValidator');
-            $form.bootstrapValidator('disableSubmitButtons', true);
-            //$('button[type="submit"]').hide();
-            $.post(
-                $(this).attr('action'),
-                $(this).serialize(), 
-                function (result) {
-                    swal({   
-                        title: result.msg,   
-                        //text: "2 秒钟后自动关闭.",   
-                        timer: 2000,   
-                        showConfirmButton: true 
-                    },function(){
-                    	if (result.status == "success") {
-	                        $('#passwordmodal').modal("hide");
-	                        location.href="{url:/admin/logout}";
-	                    }
-                    });
-            }, 'json');
-        });
-    }
- </script>
-
 </html>
 
 

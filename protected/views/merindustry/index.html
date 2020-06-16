@@ -1,0 +1,116 @@
+<style type="text/css">
+    td >img.head-pic {width: 32px;height: 32px;}
+</style>
+<form action="{url:/merindustry/index}" method="post" id="main_form" name="main_form">
+    <div class="panel-heading">
+        <div class="pull-left">
+            <div class="button-list">
+                <a class="btn btn-sm btn-primary op-new">
+                    <i class="fa fa-plus"></i>
+                    <span>新增</span>
+                </a>
+                <a class="btn btn-sm btn-primary op-deletes">
+                    <i class="fa fa-trash"></i>
+                    <span>删除</span>
+                </a>
+            </div>
+        </div>
+        <div class="pull-right">
+            <div class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="ct__name" placeholder="名称" value="{$ct__name}">
+				</div>
+				
+                <div class="form-group">
+                    {widget:name=list action=statusWidget statusMap=$this->entity->statusMap}
+                </div>
+                <button type="button" class="btn btn-primary btn-rounded btn-sm" id="btn_searchId">查找</button>
+             </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="panel-wrapper">
+        <div class="panel-body">
+            <div class="table-wrap">
+                <table class="table table-responsive table-hover">
+                    <thead>
+                        <tr>
+                            <th width=30>
+                                <input type="checkbox" id="selectall" name="selectall" >
+                            </th>
+                            <th width=30>#</th>
+							<th >名称</th>
+                            <th width=180>时间</th>
+                            <th width=100>状态</th>
+                            <th style="width: 200px; text-align: center;">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {list:items=$data["data"]}
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="selectone[]" value="{$item['id']}">
+                            </td>
+                            <td>{echo:Common::gridIndex($data["page"],$key)}</td>
+                           
+                            <td>{$item["name"]}</td>
+                          
+                            <td>{$item["created_time"]}</td>
+                            <td><span class="label label-{$item['label']}">{$item["statusname"]}</span></td>
+                            <td style="text-align: center;">
+                                <div class="dropdown">
+                                    <button aria-expanded="false" data-toggle="dropdown" class="btn btn-xs btn-default btn-rounded dropdown-toggle btn-op" type="button">
+                                        处理
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul role="menu" class="dropdown-menu" data-refid="{$item['id']}">
+                                       
+                                        <li>
+                                            <a class="op-edit"><i class="fa fa-fw fa-pencil"></i><span>修改</span></a>
+                                        </li>
+                                      
+                                        {if:$item["status"]==1}
+                                        <li>
+                                            <a href="javascript:;" onclick="changeStatus({$item['id']},2);"><i class="fa fa-fw fa-lock"></i><span>禁止</span></a>
+                                        </li>
+                                        {else:}
+                                        <li>
+                                            <a href="javascript:;" onclick="changeStatus({$item['id']},1);"><i class="fa fa-fw fa-unlock-alt"></i><span>正常</span></a>
+                                        </li>
+                                        {/if}
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="javascript:;" class="op-delete"><i class="fa fa-fw fa-trash"></i><span>删除</span></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        {/list}
+                    </tbody>
+                </table>
+                <div class="page_nav">
+                {echo:$data['html']}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{widget:name=public action=commandWidget con=$con width=600 height=300 title=用户}
+
+<script type="text/javascript">
+    $(function() {
+
+        $("#status").val("{$status}");
+        $("#role_id").val("{$role_id}");
+        $("#dept_id").val("{$dept_id}");
+
+        $('.op-password').on('click',function(){
+            var id=$(this).parent().parent().attr("data-refid");
+            if (id>0) {
+               open_dialog("{url:/taxmagr/password/password_id/}"+id,"修改密码",780,300,false);
+            }
+            return false;
+        });
+    });
+</script>

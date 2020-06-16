@@ -11,7 +11,7 @@
           array (
             'type' => 'mysql',
             'tablePre' => '',
-			'host' => '183.60.4.181',
+			      'host' => '183.60.4.181',
             'port' => '3306',
             'user' => 'topwe',
             'password' => 'toPwe@ha0Feng$!#',

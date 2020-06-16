@@ -1,0 +1,65 @@
+{echo:JS::import('date');}
+<div class="panel-wrapper collapse in">
+  <div class="panel-body">
+            <div class="col-md-11 col-sm-11 col-xs-11">
+              <form action="{url:/merindustry/save}" class="form-horizontal" id="edit-form" name="edit-form" method="post">
+                  {if:isset($id) && $id}
+                  <input type="hidden" name="id" value="{$id}">
+                  {/if}
+                  <input type="hidden" name="status" id="status" value="{$status}">
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-3">所属名称：</label>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <input type="text" class="form-control" name="name" id="name" value="{$name}" pattern="required">
+                    </div>
+                  </div>
+                  <div class="form-actions mt-30">
+                    {token:key=form}
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-3"></label>
+                      <div class="col-md-9 col-sm-9 col-xs-9">
+                       
+                        <button type="button" class="btn btn-primary mr-20" id="btnsave">保存</button>
+                      
+                        <!-- <button type="button" class="btn btn-success" id="btnsubmit">提交</button> -->
+                       
+                      </div>
+                    </div>
+                  </div>
+              </form>
+            </div>
+    </div>
+  </div>
+</div>
+{widget:name=public action=downWidget} 
+
+<script type="text/javascript">
+    $("#btnsave").on("click",function(){
+      $("#status").val(1);
+      $("#edit-form").submit();
+    });
+
+    $("#btnsubmit").on("click",function(){
+      swal({   
+        title: "您确认要提交申请吗？",   
+        text: "申请提交后将无法对其修改/删除！",   
+        showCancelButton: true,  
+        cancelButtonText: "否，暂不提交",   
+        confirmButtonColor: "#76c880",   
+        confirmButtonText: "是，立刻提交",   
+        closeOnConfirm: false 
+      }, function(){
+        $("#status").val(2);
+        $("#edit-form").submit();
+        
+      });
+    });
+
+    $(document).ready(function() {
+        $("#taxation_id").val({$taxation_id});
+        {if:isset($upld) && $upld==1}
+        $("#tabs_1 li").eq(1).addClass('active').siblings().removeClass('active');
+        $('#tab_2').addClass('active').siblings().removeClass('active');
+        {/if}
+    });
+</script>

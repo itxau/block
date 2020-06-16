@@ -1,0 +1,188 @@
+<style type="text/css">
+    .login-bg {
+        background-image: url({url:@static/images/tax_login.jpg});
+    }
+</style>
+{echo:JS::import('dialog?skin=tinysimple');}
+{echo:JS::import('dialogtools');}
+<script type="text/javascript" src="{url:@static/js/face/easyXDM.min.js}"></script>
+<header class="sp-header pa-10">
+    <div class="sp-logo-wrap pull-left">
+        <a href="{url:/index/index}">
+            <img src="{url:@static/images/logo2.png}">
+            <span class="brand-text">区块链云平台</span>
+        </a>
+    </div>
+    <div class="clearfix"></div>
+</header>
+<div class="table-struct full-width full-height">
+    <div class="table-cell vertical-align-middle auth-form-wrap">
+        <div class="auth-form card-view">
+            <div>
+                <h3 class="text-center txt-dark mb-10">
+                    <strong>{$site_full_name}</strong>
+                </h3>
+                <p class="text-center message">请输入你的账号信息</p>
+            </div>  
+            <div class="form-wrap">
+                <form id="form_login">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" class="form-control" name="name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-check"></i></div>
+                            <input type="text" class="form-control" name="verifyCode">
+                            <div class="input-group-addon addonext"><img id="captcha_img" src='{url:/index/captcha}' onclick="this.src='{url:/index/captcha/random/}'+Math.random()"/></div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        {token:key=form}
+                        <button type="button" class="btn btn-primary btn-rounded" onclick="uslogin();" id="btnLogin">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+</div>
+
+<div id="face_box" style="display: none;width:520px;height:520px; padding:0px; background-color: #213838;" class="box">
+    <input type="hidden" name="userface" id="userface" value="" /> 
+    <input type="hidden" name="username" id="username" value="" /> 
+    <div id="facecontainer" style="width: 520px;height: 516px;"></div>
+</div>
+
+<script type="text/javascript">
+    var loging=false;
+    function uslogin() {
+        if (loging) return false;
+        loging=true;
+        var name=$("#name").val();
+        var password=$("#password").val();
+        var verifyCode=$("#verifyCode").val();
+        if (name==""||password==""||verifyCode=="") {
+            swal("请输入完整后再登录！");
+            return false;
+        }
+        $("#btnLogin").text("登录中...");
+        $("#btnLogin").attr("disabled","disabled");
+        var datas = $("#form_login").serializeArray();
+        $.ajax({
+            type: 'POST',
+            url: "{url:/admin/login_act}",
+            data: datas,
+            dataType:"json",
+            success:function(result){
+                loging=false;
+                $("#btnLogin").text("登录");
+                $("#btnLogin").removeAttr("disabled");
+                if(result.status=="success"){
+                    
+                    $("#userface").val(result.userface);
+                    $("#username").val(result.username);
+                  //  faceLogin();
+                    
+                    window.location.href="{url:/admin/index}";
+                } else {
+                    swal(result.msg);
+                }
+            },
+            error:function() {
+                loging=false;
+                $("#btnLogin").text("登录");
+                $("#btnLogin").removeAttr("disabled");
+                swal("登录失败");
+            }
+        });
+        return false;
+    }
+</script>
+
+<script type="text/javascript">
+
+    function faceLogin() {
+        $('#facecontainer').html("");
+        var title = "人脸验证";
+        art.dialog({
+            id: 'face_box', lock: true,  
+            title: title, width: 520, height: 520, 
+            padding: "0px", 
+            content: document.getElementById("face_box")
+        });
+
+        var domain = "http://www.nfcsjmj.com/ZTCloud/"; 
+        var isIE=checkIE();
+
+        var faceUrl = domain + 'appFaceIDInterface/login_toFaceLogin.do';
+        faceUrl += '?USERNAME='+$("#username").val();  
+        faceUrl += '&AUTHWAY=0'; //0-登录,1-注册
+        faceUrl += '&SRC=1';     //0-内部使用,1-区块链使用
+        faceUrl += '&isIE=true' ;
+
+        var socket;
+        var generateRpc = function (url) {
+            return new easyXDM.Rpc({
+                isHost: true,
+                remote: url,
+                hash: false,
+                protocol: '1',
+                container: document.getElementById('facecontainer'),
+                props: {
+                    frameBorder: 0,
+                    scrolling: 'no',
+                    style: {width: '100%', height: '100%'}
+                },
+                onReady: function (msg) {
+                    socket.pingIframe($("#userface").val(), function(response){
+                        
+                    }, function(errorObj){
+                        swal("人脸验证发送错误！");
+                    });
+               }
+            },
+            {
+                local: {
+                    echo: function (message) {
+                        $.ajax({
+                            type: 'POST',
+                            url: "{url:/admin/facelogin}",
+                            data: {username:$("#username").val()},
+                            dataType:"json",
+                            success:function(result){
+                                if(result.status=="success"){
+                                    window.location.href="{url:/taxbureau/index}"
+                                } else {
+                                    swal("人脸验证失败！");
+                                }
+                            },
+                            error:function() {
+                                swal("人脸验证失败");
+                            }
+                        });
+                    }
+                },
+                remote: {
+                    pingIframe: {}
+                }
+            });
+        };
+        socket = generateRpc(faceUrl);
+    }
+         
+    function checkIE() {
+        if(!!window.ActiveXObject || "ActiveXObject" in window){
+          return true;
+        }
+        return false;
+    }
+</script>
+                            

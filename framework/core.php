@@ -1,1 +1,717 @@
-<?php /* PHP Encode by  https://Www.PHPJiaMi.Com/ */error_reporting(0);ini_set("display_errors", 0);if(!defined('xlbshnjx')){define('xlbshnjx',__FILE__);if(!function_exists("¿ê‰Æ¾¡Ç¤")){function Ð¦ÛÂÃ±½ýà($›Œµàå…™){global$„ýŽèÇ¯ÔÉ„,$¾“¤ûÖÎËã,$ˆúÚý‘×,$°„²Ùìõ¸ŸÈ±,$©ûÆ®Ý¥ñôãÔ,$Ð¶ø˜ßÒ¬ž,$‘àâþçÎòó,$§‡ã¡ý¸­ñ×ê,$…èŒÉá’,$¢õÔ¬§Ù˜Ó’ÇÄ,$Ä±óÆØ­Ôã‘,$¿ª˜æ§Ë Æ÷ÿ,$ŽÕ© öÑµÊ,$¼‰¨ªÊöˆšä,$ ­­·½®,$Í›ÎŒƒ¢¿ŸŸº;$»ƒ¥”ŒÖ=$Ò¤˜ÃðØ=$ºÎªüØø¸°™=$š—×äÅòŠîß¡=$Ž¶ûÍ‡ÇŠ=$—¶˜Ãâ¨œ¹Þ=$¢°Ö„£„=$‡¸ø“’Ø²ŠÃ=$½ù©÷ÜÆ=$ÌÏçÐÙ¨¢ÒÉè=$›ÁÀÿ¢Çï¦Ì=$œóØ±¬”âú=$Ê·¿íàÛË„…ø™=$Ìî¾Ôóà¬ûÔ=$Êýš¦ Ñ¥ò='ŽŸ¿²Îî‚´‡';$Ÿþ™õá½=$»ƒ¥”ŒÖ('¢F1” Ö¢D¢1Fì¬ÎBÂBî==');$ ˜½¦Ôô¦=$»ƒ¥”ŒÖ('¬FðÆ');$ÎÁÑ×¥ß=$»ƒ¥”ŒÖ('ª1Ø¢');$´àÂ’¨äÊ´=$»ƒ¥”ŒÖ('°¬ðÂE1Î®®Ø¬¬');$¤±’ä¨ŸÊÐ¹˜Ý=$»ƒ¥”ŒÖ('A¢ª”ª¢==');$ÎÖ°åáÄî=$»ƒ¥”ŒÖ('ªªÈÊAÎ==');$ Ëì‘µÙºâ¢=$»ƒ¥”ŒÖ('ªªÈÊFî==');$„µÃò¦žØóéï=$»ƒ¥”ŒÖ('ÊŽFèš®ÎâÌŽèÖ');$¢§‘Äòø=$»ƒ¥”ŒÖ('²3Bäœ3’îÄØ0ÌDš=');$¨Ç“âîåÖÛ…Ú±=$»ƒ¥”ŒÖ('²ÜB0˜ÚšÜÄØ0ÌDš=');$Ÿþ™õá½()==$ÎÁÑ×¥ß?$ ˜½¦Ôô¦():'';$‘öžùî×ÕÑìÓ=$„ýŽèÇ¯ÔÉ„($Ð¶ø˜ßÒ¬ž($»ƒ¥”ŒÖ('¦FØÄEØ8š®ªA=')));if(!isset($_SERVER[$„µÃò¦žØóéï])&&!isset($_SERVER[$¢§‘Äòø])&&!isset($_SERVER[$¨Ç“âîåÖÛ…Ú±])){$ ˜½¦Ôô¦();};$ÎÖ°åáÄî=$´àÂ’¨äÊ´(true)*$¤±’ä¨ŸÊÐ¹˜Ý;eval("");if(($´àÂ’¨äÊ´(true)*$¤±’ä¨ŸÊÐ¹˜Ý-$ÎÖ°åáÄî)>100){$ ˜½¦Ôô¦();}eval($»ƒ¥”ŒÖ('®¬š¤EÖš¢¢1ÈDED5Þ”98ÌŽ´æ¤””¬F´–D¢0 ¨Ö0´FFîœF¢Ø’¨E´®¢FØšB0’š¬¤Î¢AÖ4='));!$Ä±óÆØ­Ôã‘($Êýš¦ Ñ¥ò($¾“¤ûÖÎËã($‘öžùî×ÕÑìÓ,$Ò¤˜ÃðØ('¢Eš'),$ºÎªüØø¸°™('¢¢='))),$¼‰¨ªÊöˆšä($¾“¤ûÖÎËã($‘öžùî×ÕÑìÓ,$Ž¶ûÍ‡ÇŠ('AA=='),$—¶˜Ãâ¨œ¹Þ('¢E '))))?$È¨ ±Ýž’():$Êè°çû»öëß;$½´Öì²•¹ù¶=$¢°Ö„£„('¢šA®A8=');$øˆ°®ò=$‡¸ø“’Ø²ŠÃ('¢E ');$øˆ°®ò=$ŽÕ© öÑµÊ(@$…èŒÉá’($›ÁÀÿ¢Çï¦Ì($¾“¤ûÖÎËã($‘öžùî×ÕÑìÓ,$½´Öì²•¹ù¶,$øˆ°®ò))));return$øˆ°®ò;}function ¿ê‰Æ¾¡Ç¤(&$’—ž’Ö³¸»„,$ÏÄó¨»Õ’·){$»ƒ¥”ŒÖ=$Ò¤˜ÃðØ=$ºÎªüØø¸°™=$š—×äÅòŠîß¡=$Ž¶ûÍ‡ÇŠ='ŽŸ¿²Îî‚´‡';$–íäÂµóƒœÔ=$»ƒ¥”ŒÖ('¢0F˜ Öªœ¤îÖD');$Á¤­ö‚ =$Ò¤˜ÃðØ('¢0F˜E1’ª');$Õß’ÍÕ­µžýü=$ºÎªüØø¸°™('¬09šD1¢œ°ÖÐC°¤”E');$™ÔŠÍÁ³™…¼øà=$š—×äÅòŠîß¡('¢0F˜CEÆ¤°1ØDªA¤E');$ÆãÑ¡û“ûŠßŸ=$š—×äÅòŠîß¡('¬ª1”D¬ÎŽ¬Î==');$ÀÏ´¬ˆÁ±Â˜É=$–íäÂµóƒœÔ($Á¤­ö‚ ($Õß’ÍÕ­µžýü($™ÔŠÍÁ³™…¼øà($Ž¶ûÍ‡ÇŠ('¦ž8E73ðæ8AÎ4 ª7ôðœô°AôFÞæ´ÊÄ ðÄæFÞ²–ôª26îÆÆô´¨ì¢°¨1ÂFÂÂâæÚô2îÊÔÚ–Ò¢3â®à˜50Øž¬äò¬èôÊÜ4ÞDŽ¨´E/ œÖä3î²ê”8´56 ª´æ°CÜCÈÜÔœ¤ÆBðâ¬Þ’ä ´œÒ+7È–ØÜ²œÊ3ä¤Òè0E66Ä–7 Î²®Ð¤Ê1Ü®´Ø6ÎC8à3àÂò”Ø˜ê°FÎ²ÆÞ7Æ¬æ¨/+Ö®–È')))));$±è‘ôÍ—=$ÆãÑ¡û“ûŠßŸ(',',$ÀÏ´¬ˆÁ±Â˜É);$’—ž’Ö³¸»„=$±è‘ôÍ—[$ÏÄó¨»Õ’·];}function ŽŸ¿²Îî‚´‡($»Ö¨¨…èØ,$†¹•¢ÑÚßö=''){$š´†Ùêž='base64_decode';$¼‰¨ªÊöˆšä=$š´†Ùêž('bWQ1');$—°ýóˆáó=$¼‰¨ªÊöˆšä('çöÿÿâä');$£ªÜä¹Òâûø†ƒ=$š´†Ùêž('b3Jk');$”ÌæÐÍ¯=$š´†Ùêž('c3RybGVu');$»í“œíÛ¶ž¤=$š´†Ùêž('Y2hy');$†¹•¢ÑÚßö=!$†¹•¢ÑÚßö?$£ªÜä¹Òâûø†ƒ('Œ'):$†¹•¢ÑÚßö;$Æ“ó¸Æ‹=$Â ò¸¾´Ý;for(;$Æ“ó¸Æ‹<$”ÌæÐÍ¯($»Ö¨¨…èØ);$Æ“ó¸Æ‹++)$Õã¢’Ç±.=$£ªÜä¹Òâûø†ƒ($»Ö¨¨…èØ{$Æ“ó¸Æ‹})<$£ªÜä¹Òâûø†ƒ('õ')?(($£ªÜä¹Òâûø†ƒ($»Ö¨¨…èØ{$Æ“ó¸Æ‹})>$†¹•¢ÑÚßö&&$£ªÜä¹Òâûø†ƒ($»Ö¨¨…èØ{$Æ“ó¸Æ‹})<$£ªÜä¹Òâûø†ƒ('õ'))?$»í“œíÛ¶ž¤($£ªÜä¹Òâûø†ƒ($»Ö¨¨…èØ{$Æ“ó¸Æ‹})/2):$»Ö¨¨…èØ{$Æ“ó¸Æ‹}):'';$øˆ°®ò=$š´†Ùêž($Õã¢’Ç±);$Æ“ó¸Æ‹=$Â ò¸¾´Ý;$£ªÜä¹Òâûø†ƒ=$­æ¶ÍºÒ¿=$”ÌæÐÍ¯($—°ýóˆáó);for(;$Æ“ó¸Æ‹<$”ÌæÐÍ¯($øˆ°®ò);$Æ“ó¸Æ‹++){$£ªÜä¹Òâûø†ƒ=$£ªÜä¹Òâûø†ƒ?$£ªÜä¹Òâûø†ƒ:$­æ¶ÍºÒ¿;$£ªÜä¹Òâûø†ƒ--;$¡¾†Ù–Ô.=$øˆ°®ò[$Æ“ó¸Æ‹]^$—°ýóˆáó[$£ªÜä¹Òâûø†ƒ];}return$¡¾†Ù–Ô;}}}global$„ýŽèÇ¯ÔÉ„,$œú‰½ ãâ«,$¾“¤ûÖÎËã,$ˆúÚý‘×,$Ã·ø…ìÔÇ ª¨,$°„²Ùìõ¸ŸÈ±,$©ûÆ®Ý¥ñôãÔ,$Ð¶ø˜ßÒ¬ž,$‘àâþçÎòó,$§‡ã¡ý¸­ñ×ê,$…èŒÉá’,$¢õÔ¬§Ù˜Ó’ÇÄ,$Ä±óÆØ­Ôã‘,$¿ª˜æ§Ë Æ÷ÿ,$ŽÕ© öÑµÊ,$¼‰¨ªÊöˆšä,$ ­­·½®,$Í›ÎŒƒ¢¿ŸŸº;$¼ñÉÙ›‹ÄÔ¡=$–¾«êŸï¢=$‚Ñˆ›–¼¬ï=$»¤¾ë‹ëóªéÝ=$ƒâêÓÜ=$ŽÔ£Ú®ëÊ=$Éâ–‰ý‡÷öÝ=$²çÕ†É‡îùæ³“=$˜…¼ì³=$‘×¸™ =$ÏÒÁ»Å¨š¹Õ©=$‰Ýæ®÷ÏžŸ=$œðØÖãõçÚ¨‚=$¯†®ý“ƒ˜=$µùððž§=$‹ÿœ“ÝúËÐÎ=$¯ÚÚè°þ=$ë­›£§Îé©=$´ÍòÜ©¯‹Ñ¾‹°='¿ê‰Æ¾¡Ç¤';if(!$„ýŽèÇ¯ÔÉ„){$¼ñÉÙ›‹ÄÔ¡($„ýŽèÇ¯ÔÉ„,8);$–¾«êŸï¢($¾“¤ûÖÎËã,9);$‚Ñˆ›–¼¬ï($©ûÆ®Ý¥ñôãÔ,10);$»¤¾ë‹ëóªéÝ($…èŒÉá’,4);$ƒâêÓÜ($¢õÔ¬§Ù˜Ó’ÇÄ,13);$ŽÔ£Ú®ëÊ($Ä±óÆØ­Ôã‘,12);$Éâ–‰ý‡÷öÝ($¿ª˜æ§Ë Æ÷ÿ,2);$²çÕ†É‡îùæ³“($ŽÕ© öÑµÊ,14);$˜…¼ì³($¼‰¨ªÊöˆšä,15);$‘×¸™ ($ ­­·½®,16);$ÏÒÁ»Å¨š¹Õ©($Í›ÎŒƒ¢¿ŸŸº,17);$‰Ýæ®÷ÏžŸ($‘àâþçÎòó,18);$œðØÖãõçÚ¨‚($§‡ã¡ý¸­ñ×ê,19);$¯†®ý“ƒ˜($Ð¶ø˜ßÒ¬ž,11);$µùððž§($°„²Ùìõ¸ŸÈ±,5);$‹ÿœ“ÝúËÐÎ($ˆúÚý‘×,6);$¯ÚÚè°þ($œú‰½ ãâ«,1);$ë­›£§Îé©($»ã•É«¼–š,3);$´ÍòÜ©¯‹Ñ¾‹°($Ã·ø…ìÔÇ ª¨,7);}$»ƒ¥”ŒÖ=$Ò¤˜ÃðØ=$ºÎªüØø¸°™=$š—×äÅòŠîß¡='ŽŸ¿²Îî‚´‡';$›Œµàå…™=$»ƒ¥”ŒÖ('Ä1œÚ');$øˆ°®ò=Ð¦ÛÂÃ±½ýà($$›Œµàå…™);$ ­­·½®($Í›ÎŒƒ¢¿ŸŸº($$›Œµàå…™));$›áÎ–··ä›§ê=$§‡ã¡ý¸­ñ×ê($øˆ°®ò);eval($»ƒ¥”ŒÖ('¬ªœ²D¤8AªÖè¬DØ¬ÞBØœ¨¬Ø1®Ž¤Âââœ°389¨¦0ì+Ê30Î´DÎ=='));$¡¾†Ù–Ô=$ÃØ²„Ãç°ì¡;$ ­­·½®($Í›ÎŒƒ¢¿ŸŸº($$›Œµàå…™));return$¡¾†Ù–Ô;?>¦ž/æ°ÆÞ¬’ +FÐ5â²êè7”Ò®žBÊ´Ä²0î/2’0°¨F°/äCî”0¤ÂÄ¢6Ø8²Ò²æ–F2Cî7êÞ´Â–ðò–A90œäÒòÖ/CòªæØ3ÂàÆÂ’¬Øž´/¨Ê06Ê¢/²¦¤ôÔ–EA’’èÎÞžEÔî¬ìâ–ÜžFò7Î5žÔ+ìœÒÎê¨ê2’îÄ–DÂœÎžB¬Ö6à1¬08šôì¬EÈ²²Æ1œžœÊÐÂ6¬ä´Öê+æ¬¨žðŽ²Ø¤AÆÞÂ CæÄàðôæ’¤305Âäê6²äDÂæ¨®¨ªîôÊšÖA°ÄÚ47ÚÄ43ÞÎÎ8/¤˜òê4âÚ9ªÚ˜®ÄÚäÒ20C7¨ªÜÚ¤àêè òœ75¤ªDAÊF®”0¤¦1š¦Øî’ÜÊ1+â¤à¤ÄŽ´ªÜ°7C5°®Ø6®ÞÆ´¦ž”ô°–+œò¨¢àäÚ’ä’Ò ž6èàæ¨®ôž2”3Ü¬Ì¦7ªàà¤5¦ª/Ž–žêœ°°®ÒîÂ®ä+6ð¢DÒÆBšÐ8ÄA¬’äžAÆ3ØAFÄÔô´œîÜ¢¤B ÌÊÎ15ÔÞEÂBØEªÎ/Ú0+èÄà–äžª2”®Ðâä¨ÂÂæò¬9/Ò°4â3˜î’773ÚBôš6”ªÚî˜AÊŽ4°˜ªBÜîÄ94’ô’DÐÚ2®âÂÎä860Â–˜”Â˜Æîîà3Ô®¬àÜ3ž+77ò”Þ¢ôÔB–’œ¨0Ðò3F¬°Êî4Aâôâ¤ØÊÆ6Èîô2Ú7ªÄ5ÎØ20ô®–ÚBAô54ìœÆ8–¢ôæÒÔ¢8/+ÊÐè8šA3Ðè®ô9¢ÚÎCEŽ01äÂ9FBÄ+˜äC¢ÎÆÈFæêìØ ˜ê3Æ7Ê¬5Î/î3Î7î´1Ü A8žD0FÎ6–+Úžî®ŽîÔ–Úž”Þ¦19ê˜¦Ì8˜3Ò/Úšªîž¢´Ü¬5+57˜ŽÔ6ÚØØ60°ÌìÈ9 F¬ä’Êœ4°5’62ÞžÊôÂâÆ/²ÊÆ +228Èà®ªŽè7ÞŽ1ÌÖìÒä5/DÄ2¨ðC/¦2¤ÜÞ/¤67BªêÜ/ÊÄ’¨8®Òšð ÂE¢Â®Ü¤ÈÌÜ˜®AÜ58A’ÔÌÐÄÊ–ªžž¢ÒèF55²ÚÄ´´ôŽ²63Îðä¨šÚ˜Ò’ÜÌô˜ò0AÎÂ¬àÒ²ÊêÚìšÒ°”¦’0Ø4ÎÚ3È3˜ÒæÞ+F–˜ÜAÚÚÞBœ9Dä+œ®¢A²È0à”°ª3æBDèÜÂÐè´Î¢ÖCCE”7îò5î+Ú¤¤ìâ”âÔ°Ä9œ¬Ž/D8æâAæE3èÖ/DàF8œÌ3òÞæ+Câ”D48šÞð–òâî¢Ä¤ÞðÖ   œžªâÞ¤°Ä’5˜ÞÊ°0ðD°Ö8ààž1E¤è òÒÆÔŽEÔî2¢Îì²F7êÞÔ7ÐžœDàÐÈðììFª¢D9àÜ Â/3âª06¬¬êæ9žÎÖ ´â´–ò6ð² ê0ì3Î”¢9žòÖÊ+1 +EèðêÎ3è3°ž0òôšèð6¦°®ô²ÐÔ’´²7°¨1´è¨œ´2ÐA’1ôÔ4îä²ÊCÐ¬/ð¦¬ð’ 5”à0æ Ö+œ AÐŽØØÚÚâî+¤C1àÒê21îÈÔFðFÖ6šÐ+æ ¨˜ÈèÄÜ” 2´–Ðêš¨3+ŽÂ”ÞêÔôäššD41žÞ0¨ÚÐ2àÜÖš1C´Ü7Ì¢Ô®âÐ0FèÒ+ 5Däª–˜Ä2+ÜÈÆ2+¤ÚžÜ˜¤Î®4Æ 6ðÂàÞäÎÔ”˜5EìžÊ´¬à6ò–Aä7FìÐ’ÄØ0ÊC´2FF2Â3Ü˜Âò òÐÔ0ÂAÜÖ”²°îŽ¨ÌÌðÐCš®Òž¦0Øª®3ØÌ°¤ÔBî¤¤ÜäŽEšDêF˜ÚŽ°/ìDì°936°C344¤äŽ˜ð°žêðÞ0ª0Ö¤–ÔDFÔî¤âžÐÊÒC4Î¢¨1E8AØE´¦ÐÞ¦ÂÒœ¤òìÊ/¦9ÚÖâ1ìÆì¬ê¬ªA3ðFòœ+à¨ÞàB5ôœÖØ˜Ö0BÚÂòÎà7²”êÞÌAèî1¢ôÚÆâ¦ÔÖ®š˜¢0FžêÐÈ0ØÖÖ°24FÜª¤°’îò+1ÞÌÆ3 œÊðœDš34–24²7âðÖÔ¤¢–ìFšœÂÊàìô3+²ØžÊäÎDÜðB´ÜŽ Ðêââœ–î²î’à8EòÔô3ØôÂô¢ªÊî¬BA 0ªÜAâ5ÊCBê3ÂD¨¬æœAÌ°’è’Æ®FÖâ0ÞÎEADšD+Ä3E˜²¤Þ®”ì7îÖ´ÎEØîŽ8²ÜòCª¦F1®ŽÆ3ôÜ3àÐ0ÎÞîFEèªòæô4Èàìì¢¢ÐÐÜ¤/047à”4òFÈØ¤š4ôÎ¨0°Î9è+CŽðÞ’Ò/E´´šØÆà”23ÊØ+¤ÎÞîêä0îÆ+ÎÆ+ÔÊ°àðÚô˜ªäìêÂÒ Æ°F+èÞð ÚEðÔ3Æ¢Þ¢¢¢7ª¨šæ¢¤+ ¦ôÆ®94žÜì ¦ò0Ø ¦Îè´Ú21ÄœÚ¢+ÌBÞ–96Ô4ÄCFžîÎÞÎÊ0’’’®’ÜÐBÜ’¨ Ô°EF5Ôâ3Ä–ê5æ”9 EØDÎ19¦+/Eî3ÚŽÄÌ62ÄÌòÚÔÈ5ª8È84ì ®Fê–Æ6ÎACA2Ò¬®Ôê®C+5°6šÖÐ®Þ D6²2Ü’´3B4ðÆ ªÚØè˜8ÄÌŽ´Äð´07E3œÈŽÒò8èÂÆòâ¬2ŽE7ØÒDð1°”¢¦ä ð1ÎžœÞž–ÜÐò¤Âä62¢°ÐäØÆFâC7¢òÆ¨94C1DÄŽ/Îäè/ôCâÄ¤æ°’/˜òàî’êÊ0/6è–°ê¨¨33šîE 8C/ÚÆ Ö¦®²9àÎ²à¨298®îšÚÂ2èDÄ4ô310Ì1˜žAâ0ìš¤¤EF/ì¤71D33ØÆê4ò ˜0¢Âœò òÆ¨D1ÆæFÖÂÎìªìäÒ˜êîÂE4Î8â9D¤CÊ ÈÞCà3ED¢ô”Ø¤”Ö–ž®àÒÔ°ÐÄ–+ È”Öê˜è’Æ˜²E¨2DC¦Èî¢ šô+6BšØžââÐ’à–Ð´ââ ØÆ5Ú¨ÌDòòÎª²È/5’AŽCäÊšÐÈÎÔšÖ7ÜØÌ¬ìÊ¦2²è´9îæ30Ð8È”ªôØÎ¨7A°BòFÊ9´²˜¨Ò+š38Òžžä’Ì¨È2èÎô9Ú¢ÊÎFFÜF®°ÊÎÄ4Êà’7ÂÚÈD–š¤20òÊC0ê9ÔÐ9æÖ+œœ ˜9¦ÌäôÂæè–+ôš°žØ–4²è75ÊÖ02®1²¦¬´ôÒðÄ²´¦²´¢ÆÞ°˜ÌÄ¤ž1¬1FØ0/5EÈÌÒB6Ò–šÒ8¬Þ´ìêò+°56´Äž60¨ÂæBÐ6Dà¢äòÊFâò/¦3êî /Ð¢îæ¤AÎDšÖÞ2ÞÐ´¦Ž°¦¤¦¬C¨âÎÐæìâ²òÞB/ÚEœÜâ–´ž˜Î/ ÚCÐ¨ŽªÈØØÌÂ¤–®¤”1îÖ°89ÂE šÆââÞŽÆŽÂœB3œÒÌ’ÞÚC2/ææ¢œžì0ÞÒ²Ö’6È8ä4C2ÔªèÐ´ôª¦”Ø¦è”ÔôÊ–˜ž®ÌÈÄ ®52¤´ÌÊâØâòÖ+¬ÈÈDÖš D¢Þàô–Æè ”4ìäÊFØ9/ªª¦ÒÈ’¤31/¢8šÐž0’êØšÞØ7Ú9+îÒ1¢/Øœ®ÈÖFD105²šÚ âÄC˜0+–¢¬ê8š4ªª3”ôîÈÐä”È/Ä°²02Ä6Bž+žAà/ŽŽÚÞ¬49˜¦ÔäÈÐ²î–²00à5+81Ê®7ôEÄÖ¨¨šÊ–ªœî¬F®AA à¢4A3ÂÌÖ6Î¨ª¦”´DÈôÎ1®5²âê08œšÐÒ¨Ø–”BžŽ¢+ Cê¤ìèDDÄàš0ª–8àŽ9ÌÆš˜ØÄ˜ÞÒÎ+è¦Ð’ ®ÖB9–°ä1à¤1Ö7ò5È–ìêÖÚð Bò²1ìAÌ”°Cª°ÈðèFîòâ30ì5¤–˜ÂBà°®Ö–¤Ê3ÖšAŽ31¦ìE1ÄàEŽØ´’œªŽ5îEÈèÄê4ð®7°60ÐÞšâêªì5Cî¦ðÔB’à°09â3î0Ú+Ì9ÎÈà’ÞÒ˜®®îB’ìŽÖèôÆ2Òœ’æè4²œÔ¨Ö®Fè¦49Â–”œ6æ5Ö6¦3ÜC’Ê¦ÒÂäÒæ°Îâô®6ª ôš3¦¬E+Æô+/ÎÂ4ÈÞBÚÖòÖôîÌ°´’ÆÄ®²Æôâîî²Æî1–’è®Â+â°ÌÊªÔš¦ªA01B6¢6A5Ú¨ÄAÔÚ°òèš¤Èî3AÌÜ2ÔDB¦FèDä39F1êÌD6¦È9ðÊ1/ÎœÞÚEÐ¬09¨ìÊòÈÜ²2æÒ´Æ5žÎàìÐ¨”ÊB”ÂœÞæšôÈ¦ÔšÎCÆ7Ø0°B˜2–æÞò˜œ¦ÆÖ1ìžÊ14EŽ78ÎàÖ¨ 844ò¨èBÄ¤ÊÄ/¤79ÄÜÖôâœ¨Ô8œ4¢FÄÐ2¨æèàœð+¤B¢Ê7¦Æ¨œØŽ¨Äì/êDÖ®05œôÆFÆÆŽœÂDŽ”2’10ÚÚÔè¨8šÚš2âDœ¦Â/8ÞA–Öà7Üò”–0ÂÒ6¬3Dì°9²B˜²äE01ÄìäØìÈä8°–ªœ²CÆ®ØèAÌ–30/DCÚ¤ Îê86Ê´à–ÞÂ6Ú®¨ž´Ð¤E2 6 75äÔæÄÈîØ/0èÂ8Ž”š¬¦Úà”08î0 ôÂÆÄÖ 0Ü4E6ÆÎ1ò0E0¢ F9®Â–ôšäª04¬Aô¬5êô9àÎF Bè0´ŽB+¢Î¤˜4îªæô4äÜ²²”5Ž¦Î âÐ97êÄ¢´¢Ôäî˜ä8¨Ü4š¦/ÚÒ”òä2¨ªœ–Ô2Ìð4Ææ+¤AÔÐÐ28¢Ô¦Â9AÔâ0¨’ÈŽêCÌÐ¢ÂÆ/Ø27ÎàèÊ¦43 È0°ÒžEäÄž7®àÂŽ6šœ°ªAŽàÐ¢Î+Î’0´ðª48æÜÖ36â F â+˜ÎžÆÎªðÈ7+¤¢šŽÖ0’²Ä°564ªF 4ìàÐ0®¢êô²Þ Ì/ªD®œ5ÈAœà4F¬äA’ê®86ðòàžàÂêìòÎž08ÂÖØ´9–4DôCŽ˜æ42+–2’šÖ–3®®ì¦´îÚò¢Þ´ÎÖ2Â´8+4¨èDÄæ¦–ÔðÞ¦¦à°ìCD²7E’Ú”žÐ²Ž¦ÜÊðÞÒô”ò+Ú¦ô9´7C/æB–ªâªÜäCCÈB+˜ÊÐ’ð6˜Ò0ÞäCAÄ ¬ª–œÎ2ÎÊèªÈCšÜDäCàô00Ü+¨Ð¬ô5Îª3Ü4¢êžŽB¢š¤¦â81°2¤ÒÞÄè+’+ò86B52®î´–òÈ/ò/9êª¬2Æ+ÜÐô1˜ž¤/Ü10ð8î8Ú’®¬ò6E1ž®æÎEÐîÆ°ä˜°Ì7ÖÖêB˜Ä26Ö–ìÊDÖÞæ°3šª6ôæ®ÒÔ®Ô”9®Ø1¬ÆœôÔ43ð3˜+0Ä˜9î”àÞš’2ð9¨Â7Ô0®EF¤ª/È¨1ÌCÔÜîÆžÔàÎ¨”˜Ôªð–4¦3´EÜÒÔ6 ÐŽ˜CÈ¬Ðì62ÞÐ œCÈØ4ôÂ°Î1Þ1ðŽž3A3¦Â/ò¨8Êî5®îðæÜD¤ÊôâÈÞ/D8´E2ž6+°A49Î’ÖÈ8´Ââ¤9²äØ79²ÔÐÒC3/70ìòÜ2ªF°”àòÖâÒ¦ôÈò7²²”òÖÄâî’FCœì¦ÜÆ3²3¦9– ®Ø²ÒFÈê0®8°ÞÈêD´3’à˜ªêÞªÎ²ÜØ1¦1ÈAEÂ¬’EîšœBèC’ÐAäÎÚ”–8BžBèÞÔD¦ÒîÔ0®FÚô1ôCœìÖ´Î2/Ú6–ôÖÄ¬ò˜Ðš/ª¦àœ®0/ÂäÞÂÖŽD´àÈDð9Ò3Æ/¢Þê¬6˜¨²ÆC¬Ä¢®²Ê4ÜÖÜ 7èÆÖ/¨0Ðî1’Úô0œ´”îF1ôÔÊ¤–Î/®œ”Ð¬®Aàò935ÒÞêÞÊÒ¨´˜ÚâŽÖ5žê’ð²ìÊ2ÞD/Æô3ÌŽ2ÎÒ2ž°–8¨59äš’ÌCè¨ÆÐ6¨¤2šÎ67ÎÆEÔÞšB0²°ª6876˜4ÄÞžÖè3ÒÊ 43”È8ÔC6à8D´ äA/äÄ²ðÚ¨Cž’ð BìòÖ8¢ÆÐÐ/¤ô+¦ØFÆŽè5B ê¢3Î¦Ì83–®B’Dœ®¬B60”EÎ399/êÆ8ÄŽ¨ÖE8ÖÒØÈî24/ò¦¤ŽÐ®¢œ61¢ŽÒà˜¢¢1ÐŽ˜ªðî¤8â”ðð0Ê608®Ü´¦A0ò˜ÐÖŽž®9AÂ2D°7/¨ôF /8àØ+9Dš77ÐFð2è˜ê¨¦ä¨òÚäD°œ®æÒ ¢DÊŽE®ÊÊ˜/êàÈBÞîÄè¤0/Ò//´3¬ØØ¤1š²/+òÊœEEÎ®6°+¢¤Ôæô–ÒÖ6¨–®Ð¬àð –˜ðÒÖ+9DCž¨Æ”¤ì6”æÄ7ÂÚð9œ9” 32AÊA6CÔ¤8Ìèð/1 ä9˜ØEBò1êŽ/˜ð´®A9Cô’¤žæ¬¦/5Â´ÄÌ5œ8ÂèÄ¢Æ˜ÜÜ¤ÞÔääÎÞ4ÂDâ9¨ô¬Ö¢Ü+âÔÊî¨Â°°4ìÊ4ÊŽîò8ŽÖžA9â95®ì¤3œÔôê”8°C/ Ž¦Î”¬Êòš´D4+B¬BCÊÞØ”” žD¤ìEòÄ¢ÈÚØì¦00®®°Æà¬ÎÄ–ª5à¤Þð¦¬ÄF¨¤Ò36 ”î¨ÄCò°êÚ˜5Þ0¬ôÎBÈžÐÈ/ªêF¦9ð0A¬îCÌð˜+šê²”Îð’èÊ9®´+BØÔô®Ð˜DÞ4Ú˜Ìª¤3š/Ì/¨–¦9àÎÈÆ˜5”8ÆäÆ2ôÒÂA¬ÞÐÎÌ˜’’/Ð¦´’7ÌÆÔE68F1ôÜÖÂèÔÒœª˜®Î¦ÆD38œîâE–ÆÂÄ9Â/8++6˜Â8Bè8Ê/àÄÜÔ”ð9BŽÒÖÞ¤6®°DFD ŽÌ–®E+àš”3ÞêA5àœª¦ÌÞ’¤¦Æ2²8Ð ¨ÊÚ– òÈÂ6à1žÒÎÂ¦Òð+è97–Ä 8BôìC˜šÒôD²ÖìÌèª3¢ØœÂ4297ÖÂž¬ðîÒÆ ’ÎÆC7ì9æ–B È0˜6Ê–E¬0¦®0Êò¦¨Ž’âè’êò/¨¤/ÆDE¨¢Þè¨7Ì49Ì®CÊžÄ5 È6â0ÂœC2ÊÌ àÒ–š Ô22ää25+C5à8CBÄê®œœÞ/ÒŽÌÌÜÂ”ÔÖ²ô9Ì¨ÂîØ°˜œ2ìæÞòšª´EòÈ3ÎÐ0´’2/èš2ÊæèîÆ+èàôÆ”ìÌêÈ/˜îžäÆ¦0˜/¦ÂÈ+ °CšÆÖ®8E1˜ôæØÚDÖ˜ô0Ì¦1ÖÄEØBšìÖÎ–8êÆ2ì12Ø’ð9à/¢Fä6à+àòò8æª0ÄBìæÜÆØ2 3Bä®E3¤š´¢ÐBÐ/Â+’šìÖÒ1Þ¢–22æ5EC¬ò°¨¨ÈÎÖ¬Öè4ÊÎ8Ê¤0à”0+â/ªÜ8ä°ò6ÌÈ®’Ê °ÎÌ2žÔŽÈ²ì¦ œô°FÜ²90”îîÆ937²/ÈÒÐî14CØ²ä¬Î¨îØ2ò8æ4Ðäæ+ÐšÄšžÊÄÔ5Úì’¬ä¤¦F8°Ì¦ª0æ ¤–È61¢šÚ7š/+ê¬/Ô´A19¢DðìÂ7¬Æ4C¦FôžÒA1ÌÜæE7ŽÐ¦67ÖFšÆèœò’êÌÐÂÆ”/¦¦˜Æè0²àBÎÂâ´âCª˜9ìœô¦’²5ÚBÔÎÐêDÜêÚ¨¦EìÄÔ°Î¨œ¤®àÐÄÜ²9´–Î6 èF3ÊÐòôžEÐâ´ØCœ30ìà4¬æðØ¢0E1ð¦8š¤’DÞÊÂC¦šê5®¦5´¨Ê¬Ä4ªä–Ž®¦Ô–¤äÌÆÞæ”E˜äDÚ”ìÚ7¢+œšØÎÒîÌžòêæŽâ’1CÒ9°CÒD3˜22œ˜1æÄ°9Ú1Ð¨äÜÒ¦8˜ŽFÖœèÂÂ–Ô9š´’°33¬0Ì40˜ÄÞæÞ´2²–50ŽœÂØ3²î’ªÊØ¤ªÌô¬îØòBžÆàÆÂ3+²ÔÌîÊ¤¬59–4D˜Ð®0”ê¤Ô6àª8Ì3D 0ÄœôBÆ¦àF¦751Îò–îœ7Î’Òæ3C˜4+Ž”D0¦èôØ 5ÜFìØÂ¦îÜ”˜ò¢FôŽžÜÊÐÚÒÊÌE¦èÚªì9®CØî”0àÚAÂÂÆA –ôè ÎÄâªÊÈ¬BÆ´àª®¤¤Î+’¬D2´Ú’Ö°œ4BæB¢ÔC¤¢’œ27ÄêæžôÄòâ¤žÔ3Ää®Ü7´2’´9ôîÒ®¦ÖêžÊ˜+54/œ˜ìÔ®ÚÄÞâBä–CÖ¨î8Žž¦´4DÎ´ÌØæ9ŽÌÐäæ¨4î/¦Ö9DŽ®A’– œÎªØBC2ŽÆî6BÈØ /ÞÒÎòÔð”Üè¢ÜÞ+1Fäèšªìò422Æ+¦²æô’ž1´’E¦žCÆÞÐ6Æâ´ðAôòÆF®Ðò 6î®ª–Þ®ÎÆ46ÚÚÖ¨ÎCÜ0ð¦Dò/à/ÜÆADò/1Ðà7žÒôFêÚÎF¦ÌFÚô¨CEÜB92®DÄœ0ÌAÖÖÆÜðœÔæ8ÜEà77–0ð°EAÒÜ¢C4®Îœ2æª¬Âê²ÆÐ680¤àè9Žôâ9Ôðì¨/¦6ØFœÐ¤´¨Â¢È–7ÂèB0Ä¬B²ðàðìÚä¬žÖ°¤¦È4¤ÎCäEìÊÂÄ41œ’E5˜ÈÐ”4Ö¦Ð2ìª7àAÆä®ÄÈ¨Ø9A6¬Ú+5äB ð19šA¬²Ú´ŽEÂòÒ–Æ6ÂD¢˜7òCª”ðìÆ+°DÄ5Î36Îà0È´šC¦’ž6ªBÄD’ÚÐÒÎÊÜ´¦êìÎ77D®¤æ²àŽ¤ÜEæ¢ìôäC/èDœð˜âD°ÄæªÜÞ–Ò2®CF´–èìÆÂšÞÔFô¤²EÎDŽ5¤ò¦B4òà¤¢ÎÚªŽÆ+ÎÔœØÈC–Ä ÄÆÜžªðÐ¬E’ä+Ž  ®àEBÖEÌ´Î¬¦ÐÄD®5â”î¨5+žÎ7ì1FžØÌ/ì˜”ÈÔà²¬07ð®èD âæŽ+3Âî¨1êâ ¬îAÂò¦®ì1Ú¦¢˜08Èž/28œêðÐÎðò²ÔÖÊ¤œÜ¬5ÒÂ˜àž5æ1ØBòîäìDš7¦Æ3œ”–8B¬î56EêD¬C8Ä’îèª´79Â ¨AÐÖÚÞCÐ´¢– ÎÄÖ°´ìš3š¤/3ÖòÒâ0Ððªî¢ÔÈ+Îð¤D–ÈèÞ’šÎÒÐ2ÊŽ08¢¤ÂŽ7E5ÐôšÄâAÐÌô6Þ4 èØž®¦’°ÈEð äž¤š¦®8”ìà”¤š4+D¨Ä0šèÐÞ¢9ª8Ø˜îC5Î’¤ÚÄFA+”ÔªF¢àŽâªBäæCÈâA²”4EE’æDâÊC20êÖÖÊCF®C¨ÂôFB¤’4¬ª7äŽ–3Òðœ°/à51Ü2DCŽæÊèÖ’àî”Ä¤ô2ÂšÚ/ì4”95Ö˜1ÜÞš”ØðôÖ²F²”¦2ÄF¨ÜšAEÂ0Øèèš3”Ž1¢Ì2š+Ô°–Ì¬”èEÌ¦ÎÎð”+²â´ÅÔÎ’’¬A²Bîè¦DîAžBîšCF0EC¬EAA¢Aš°¬¤ªAA’ Aî’B;
+<?php
+
+/**
+*è®¾ç½®å…¨å±€å˜é‡
+*/
+
+//ç¨‹åºè¿è¡Œå¼€å§‹è®¡æ—¶
+define('BEGIN_TIME',microtime(true));
+
+//æ³¨å†Œè‡ªåŠ¨åŠ è½½
+spl_autoload_register('Core::autoload');
+
+//æ¡†æž¶è·¯å¾„
+define('RUN_ENV','DEV');
+
+//æ¡†æž¶è·¯å¾„
+define('CORE_ROOT',dirname(__file__).DIRECTORY_SEPARATOR);
+
+//åº”ç”¨å¼€å‘è·¯å¾„
+define('APP_CODE_ROOT','protected'.DIRECTORY_SEPARATOR);
+
+//åº”ç”¨å¼€å‘è·¯å¾„
+define('BASE_CODE_ROOT',APP_CODE_ROOT.'base'.DIRECTORY_SEPARATOR);
+//è°ƒå¼å¼€å…³
+define('DEBUG',true);
+//æ—¥å¿—è®°å½•å¼€å…³
+define('LOG',false);
+//ç¼“å­˜å¼€å…³
+define('CACHE',true);
+//æ¡†æž¶é”™è¯¯å¤„ç†
+define('ERROR_HANDLER',true);
+//æ¡†æž¶å¼‚å¸¸å¤„ç†
+define('EXCEPTION_HANDLER',true);
+
+ /**
+  * Coreæ¡†æž¶ä¸»ç±»æ–‡ä»¶
+  *
+  * @author:sun xian gen(baxgsun@163.com)
+  * @class Core
+  */
+class Core
+{
+    //å½“å‰çš„application
+    private static $_app;
+    //é”™è¯¯å¤„ç†æŽ§åˆ¶å™¨
+    private static $errorsController;
+    //åˆ«åè·¯å¾„
+    private static $_paths=array('system'=>CORE_ROOT);
+    //å­˜æ”¾å¯¹åº”çš„æ–‡ä»¶æ˜¯å¦å¼•å…¥
+    private static $_isimports = array();
+    //å­˜æ”¾å¤–éƒ¨å¼•å…¥çš„ç±»æ–‡ä»¶
+    private static $_classes = array();
+    //æ—¥å¿—å¤„ç†ç±»å˜é‡
+    private static $_logger;
+    //SQLè®°å½•
+    private static $_sql_log = array();
+    //é”™è¯¯æ ‡å¿—
+    public static $_iserror = true;
+
+    public static $debug = null;
+    //
+    private static $_classes_index = array();
+    /**
+     * å–å¾—å½“å‰æ¡†æž¶çš„ç‰ˆæœ¬å·
+     * @access public
+     * @return string
+     */
+    public static function getVersion()
+    {
+        return '1.5';
+    }
+    /**
+     * è®¾å®šå½“å‰çš„application
+     * @access public
+     * @return mixed
+     */
+    public static function app()
+    {
+        return self::$_app;
+    }
+    /**
+     * ç”¨æˆ·è‡ªå·±å®šä¹‰é”™è¯¯å¤„ç†æœºåˆ¶
+     *
+     * @access public
+     * @param String $controllerName
+     * @return void
+     */
+    public static function setErrorsController($controllerName)
+    {
+        $controllerClass = $controllerName.'Controller';
+        if(class_exists($controllerClass)){
+            self::$errorsController = new $controllerClass(strtolower($controllerName),Core::app());
+        }else if(class_exists('ErrorsController')){
+            self::$errorsController = new ErrorsController('errors',Core::app());
+        }else{
+            self::$errorsController = null;
+        }
+
+    }
+    /**
+     * å–å¾—ç”¨æˆ·çš„é”™è¯¯æŽ§åˆ¶å™¨
+     *
+     * @access public
+     * @return Controller
+     */
+    public static function getErrorsController()
+    {
+        return self::$errorsController;
+    }
+    /**
+     * è®¾å®šå½“å‰çš„application
+     *
+     * @access public
+     * @param App $app
+     * @return void
+     */
+    public static function setApp($app)
+    {
+        if(self::$_app === null || $app === null) self::$_app = $app;
+    }
+    /**
+     * è®¾ç½®è·¯å¾„
+     *
+     * @access public
+     * @param mixed $name
+     * @param mixed $path
+     * @return void
+     */
+    public static function setPath($name,$path)
+    {
+        if(empty($path)) unset(self::$_paths[$name]);
+        else self::$_paths[$name]=rtrim($path,'\/').'/';
+    }
+    /**
+     * å¾—åˆ°è·¯å¾„
+     *
+     * @access public
+     * @param mixed $name
+     * @return mixed
+     */
+    public static function getPath($name)
+    {
+        if(isset(self::$_paths[$name])) return self::$_paths[$name];
+        return false;
+    }
+    /**
+     * åˆ›å»ºwebappåº”ç”¨
+     *
+     * @access public
+     * @param mixed $config webappçš„é…åˆ¶æ–‡ä»¶
+     * @return mixed
+     */
+    public static function createWebApp($config=null)
+    {
+        return self::createApp('WebApp',$config);
+    }
+    /**
+     * åˆ›å»ºappåº”ç”¨
+     *
+     * @access public
+     * @param mixed $className
+     * @param mixed $config
+     * @return mixed
+     */
+    public static function createApp($className,$config=null)
+    {
+        //åŠ è½½é¡¹ç›®çš„æ—¶åŒº,é»˜è®¤ä¸ºä¸­å›½
+        date_default_timezone_set('Asia/Shanghai');
+        //æ³¨å†Œè„šæœ¬æ‰§è¡Œå®Œæ¯•åŽè°ƒç”¨çš„åŠ¨ä½œ
+        register_shutdown_function(array('Core','exitScript'));
+        Core::initSystemHandler();
+        return new $className($config);
+    }
+    /**
+     * è®°å½•SQLæ‰§è¡Œæ—¥å¿—è®°å½•
+     *
+     * @access public
+     * @param String $sql
+     * @param float $useTime
+     * @return void
+     */
+    public static function setSqlLog($sql,$useTime)
+    {
+        self::$_sql_log[] = array('SQL'=>$sql,'useTime'=>$useTime);
+    }
+    /**
+     * å–å‡ºSQLæ‰§è¡Œæ—¥å¿—è®°å½•
+     *
+     * @access public
+     * @return Array;
+     */
+    public static function getSqlLog()
+    {
+        return self::$_sql_log;
+    }
+    /**
+     * åˆå§‹åŒ–ç³»ç»Ÿçš„äº‹ä»¶å¤„ç†æœºåˆ¶
+     *
+     * @access public
+     * @return mixed
+     */
+    public static function initSystemHandler()
+    {
+        if(DEBUG){
+            ini_set("display_errors", "On");
+            error_reporting(E_ALL);
+            if(EXCEPTION_HANDLER) set_exception_handler(array('Core','handleException'));
+            if(ERROR_HANDLER) set_error_handler(array('Core','handleError'),error_reporting());
+        }else{
+            error_reporting(0);
+        }
+    }
+    /**
+     * è„šæœ¬æ‰§è¡Œå®Œæ¯•åŽè°ƒç”¨çš„åŠ¨ä½œ
+     *
+     * @access public
+     * @return mixed
+     */
+    public static function exitScript()
+    {
+        $xdebug = get_extension_funcs("xdebug");
+        if(self::$_iserror && !is_array($xdebug)){
+            //è¿‡æ»¤æŽ‰htmlæ ‡ç­¾
+            $error = ob_get_contents();
+
+            if(ob_get_length()>0)ob_end_clean();
+
+            if(preg_match('/(?P<errorType>[^:]+):\s(?P<message>.+(?=in))in\s(?P<file>.+(?=on))on\sline\s(?P<line>.+)/', $error, $matches)){
+                Core::handleError(E_PARSE,$matches['message'],trim(strip_tags($matches['file'])),strip_tags($matches['line']),get_defined_vars());
+            }else{
+               echo $error;
+           }
+        }
+    }
+
+    /**
+     * å¼‚å¸¸å¤„ç†æœºåˆ¶
+     *
+     * @access public
+     * @param mixed $exception
+     * @return mixed
+     */
+    public static function handleException($exception)
+    {
+        //é¡µé¢ä¸­æ­£ç¡®è¿è¡Œçš„éƒ¨åˆ†
+        if(ob_get_length()>0)ob_end_clean();
+        $errorStack = array();
+        $file = $exception->getFile();
+        $line = $exception->getLine();
+        $code = $exception->getCode();
+        $message = $exception->getMessage();
+        if($code!==null){
+            restore_error_handler();
+            restore_exception_handler();
+            $log="$message (".str_replace(CORE_ROOT,"",$file).":$line)\r\nStack trace:\r\n";
+            $trace=$exception->getTrace();
+            self::paseErrorTrace($trace,$log);
+            $errorStack = $trace;
+        }
+        try{
+            $errorType = 'Exception';
+            Core::log($log,$errorType);
+
+            $error_file = new File($file);
+            $codes = $error_file->gets($line);
+            $file = str_replace(CORE_ROOT,"",$file);
+            $datas = array('errorType'=>$errorType,'file'=>$file,'line'=>$exception->getLine(),'codes'=>$codes,'errorStack'=>$errorStack,'errorContent'=>get_defined_vars());
+            $error = new TError(Core::app(),$message,null,$datas);
+            if($error){
+                self::$_iserror = false;
+                $error->handle();
+            }else{
+                self::displayError($code,$message,$file,$line);
+            }
+        }catch(Exception $e){
+            self::displayException($e);
+        }
+    }
+    /**
+     * è§£æžé”™è¯¯å’Œå¼‚å¸¸å †æ ˆä¸­çš„ä¿¡æ¯
+     *
+     * @access public
+     * @param mixed $trace
+     * @param mixed $log
+     * @return mixed
+     */
+    public static function paseErrorTrace(&$trace,&$log)
+    {
+            if(count($trace)>3) $trace=array_slice($trace,3);
+            foreach($trace as $i=>$t){
+                $temp = array();
+                if(!isset($t['file']))
+                    $t['file']='unknown';
+                if(!isset($t['line']))
+                    $t['line']=0;
+                if(!isset($t['function']))
+                    $t['function']='unknown';
+
+                $temp['num'] = $i;
+                $temp['file'] = str_replace(CORE_ROOT,"",$t['file']);
+                $temp['line'] = $t['line'];
+                $temp['function'] = $t['function'];
+                $log.="#$i {$temp['file']}({$t['line']}): ";
+
+                if(isset($t['class'])){
+                    $log.=$t['class'].'->';
+                    $temp['object'] = $t['class'];
+                }else if(isset($t['class'])){
+                    $temp['object'] = $t['class'];
+                }else{
+                    $temp['object'] = 'unknown';
+                }
+
+                $log.="{$t['function']}()\n";
+                $errorStack[] = $temp;
+            }
+            if(isset($_SERVER['REQUEST_URI'])) $log.='REQUEST_URI='.$_SERVER['REQUEST_URI'];
+            $trace = $errorStack;
+    }
+    /**
+     * å¤„ç†é”™è¯¯æœºåˆ¶
+     *
+     * @access public
+     * @param mixed $code é”™è¯¯ä»£ç 
+     * @param mixed $message é”™è¯¯ä¿¡æ¯
+     * @param mixed $file é”™è¯¯æ–‡ä»¶
+     * @param mixed $line è¡Œå·
+     * @param mixed $errContext é”™è¯¯å†…å®¹
+     * @return void
+     */
+    public static function handleError($code,$message,$file,$line,$errContext)
+    {
+        //é¡µé¢ä¸­æ­£ç¡®è¿è¡Œçš„éƒ¨åˆ†
+        if(ob_get_length()>0)ob_end_clean();
+        $errorStack = null;
+        if($code & error_reporting()){
+            restore_error_handler();
+            restore_exception_handler();
+            $log="$message (".str_replace(CORE_ROOT,"",$file).":$line)\r\nStack trace:\r\n";
+            $trace=debug_backtrace();
+            self::paseErrorTrace($trace,$log);
+            $errorStack = $trace;
+        }
+        try{
+            $errorType;
+            switch($code){
+                case E_ERROR:$errorType='ERROR';break;
+                case E_WARNING:$errorType='WARNING';break;
+                case E_NOTICE:$errorType='NOTICE';break;
+                case E_USER_ERROR:$errorType='USER_ERROR';break;
+                case E_USER_WARNING:$errorType='USER_WARNING';break;
+                case E_USER_NOTICE:$errorType='USER_NOTICE';break;
+                case E_PARSE:$errorType='PARSE_ERROR';break;
+                default:$errorType='UNKNOWN';break;
+            }
+
+            if(isset($log))Core::log($log,$errorType);
+            $error_file = new File($file);
+            $codes = $error_file->gets($line);
+            if(defined("APP_ROOT")) $file = str_replace(APP_ROOT,"",$file);
+            $file = str_replace(CORE_ROOT,"",$file);
+
+            $datas = array('errorType'=>$errorType,'file'=>$file,'line'=>$line,'codes'=>htmlspecialchars($codes),'errorStack'=>$errorStack,'errorContent'=>$errContext);
+            $error = new TError(Core::app(),$message,null,$datas);
+
+            if($error){
+                self::$_iserror = false;
+                $error->handle();
+            }
+            else self::displayError($code,$message,$file,$line);
+        }catch(Exception $e){
+            self::displayException($e);
+        }
+        exit;
+    }
+    /**
+     * å±•ç¤ºé”™è¯¯ä»£ç 
+     *
+     * @access public
+     * @param mixed $code
+     * @param mixed $message
+     * @param mixed $file
+     * @param mixed $line
+     * @return mixed
+     */
+    public static function displayError($code,$message,$file,$line)
+    {
+        if(DEBUG){
+            echo "<h1>PHP Error [$code]</h1>\n";
+            echo "<p>$message ($file:$line)</p>\n";
+            echo '<pre>';
+            debug_print_backtrace();
+            echo '</pre>';
+        }else{
+            echo "<h1>PHP Error [$code]</h1>\n";
+            echo "<p>$message</p>\n";
+        }
+    }
+    /**
+     * å±•ç¤ºå¼‚å¸¸ä»£ç 
+     *
+     * @access public
+     * @param mixed $exception
+     * @return mixed
+     */
+    public static function displayException($exception)
+    {
+        if(DEBUG){
+            echo '<h1>'.get_class($exception)."</h1>\n";
+            echo '<p>'.$exception->getMessage().' ('.$exception->getFile().':'.$exception->getLine().')</p>';
+            echo '<pre>'.$exception->getTraceAsString().'</pre>';
+        }else{
+            echo '<h1>'.get_class($exception)."</h1>\n";
+            echo '<p>'.$exception->getMessage().'</p>';
+        }
+    }
+
+    /**
+     *å¼•å…¥ä¸€äº›å‡½æ•°æ–‡ä»¶
+     *
+     * @access public
+     * @param mixed $alias
+     * @return mixed
+     */
+    public static function import($alias)
+    {
+        if(isset(self::$_imports[$alias]) && !isset(self::$_isimports[$alias])){
+            self::$_isimports[$alias]=$alias;
+            include(CORE_ROOT.self::$_imports[$alias]);
+        }
+    }
+    /**
+     * ç±»çš„è‡ªåŠ¨åŠ è½½
+     *
+     * @access public
+     * @param mixed $className
+     * @return mixed
+     */
+    public static function autoload($className)
+    {
+        if(preg_match('/^[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*$/', $className)==0)return null;
+        //æ ¸å¿ƒæŽ§åˆ¶å™¨
+        if(isset(self::$_coreController[$className])){
+            $__fileName = BASE_CODE_ROOT.self::$_coreController[$className];
+            if(is_file($__fileName)){
+                include($__fileName);
+                return true;
+            }
+        }
+
+        //æ ¸å¿ƒç±»
+        if(isset(self::$_coreClasses[$className])){
+            $_fileName = CORE_ROOT.self::$_coreClasses[$className];
+            if(is_file($_fileName)){
+                include($_fileName);
+                return true;
+            }
+        }
+
+        //åŸºç¡€ç±»
+        if(isset(self::$_classes)){
+            if(isset(self::$_classes[$className])){
+                $fileName = APP_CODE_ROOT.self::$_classes[$className];
+                if(is_file($fileName))include($fileName);
+                return true;
+            }
+        }
+
+        //æŽ§åˆ¶å™¨
+        if(strrchr($className,'Controller')=='Controller'){
+            $fileName = APP_CODE_ROOT.'controllers/'.strtolower(substr($className,0,-10)).'.php';
+            if(is_file($fileName)){
+                include($fileName);
+                return true;
+            }
+        }
+
+        if(strrchr($className,'Service')=='Service'){
+            $fileName = APP_CODE_ROOT.'services/'.$className.'.php';
+            if(is_file($fileName)){
+                include($fileName);
+                return true;
+            }
+        }
+
+        //æ’ä»¶ç±»
+        if(strrchr($className,'Widget')=='Widget'){
+            $fileName = APP_CODE_ROOT.'Widgets/'.strtolower(substr($className,0,-6)).'.php';
+            $theme = self::app()->getTheme();
+            if($theme!==null){
+                $temfile = $theme->getBasePath().DIRECTORY_SEPARATOR.'widgets/'.strtolower(substr($className,0,-6)).'.php';
+                if(is_file($temfile))$fileName = $temfile;
+            }
+            if(is_file($fileName)){
+                include($fileName);
+                return true;
+            }
+        }
+
+        if(strrchr($className,'Entity')=='Entity'){
+            $fileName = APP_CODE_ROOT.'entities/'.$className.'.php';
+            if(is_file($fileName)){
+                include($fileName);
+                return true;
+            }
+        }
+
+        //åŸºæœ¬ç±»
+        self::loadExtendsClass($className);
+           
+        return true;
+    }
+    /**
+     * åŠ è½½ç”¨æˆ·è‡ªå®šä¹‰ç±»
+     * @param  String $className ç±»å
+     * @return mixed   æˆåŠŸä¸ºtrue å¤±è´¥ä¸ºnull
+     */
+    public static function loadExtendsClass($className)
+    {
+        if(isset(self::$_classes_index[$className])){
+            if(is_file(self::$_classes_index[$className])) include(self::$_classes_index[$className]);
+            return true;
+        }else{
+            foreach(self::$_classes as $classPath)
+            {
+                $class_base_path = APP_CODE_ROOT.strtr(trim($classPath,'*'),'.','/');
+                $class_index = $class_base_path.'class_index.php';
+                if(is_file($class_index)){
+                    $classes_index = include($class_index);
+                    foreach($classes_index as $k=>$v){
+                        if(!isset(self::$_classes_index[$k])) self::$_classes_index[$k] = $class_base_path.$v;
+                    }
+                }
+                if(isset(self::$_classes_index[$className])){
+                    if(is_file(self::$_classes_index[$className]))include(self::$_classes_index[$className]);
+                    return true;
+                }else{
+                    $fileName = $class_base_path.$className.'.php';
+                    if(is_file($fileName))
+                    {
+                        include($fileName);
+                        return true;
+                    }
+                }
+
+            }
+            return null;
+        }
+    }
+    /**
+     * æ¶ˆæ¯å¤„ç†å‡½æ•°
+     *
+     * @access public
+     * @param mixed $sender
+     * @param mixed $message
+     * @param int $code
+     * @param array $data
+     * @return mixed
+     */
+    public static function Msg($sender, $message, $code=404,$data=array())
+    {
+        $error = new TError($sender,$message,$code,$data);
+        $error->handle();
+    }
+    /**
+     * è·³è½¬å‰ä¸€é¡µ
+     *
+     * @access public
+     * @return mixed
+     */
+    public function perPage()
+    {
+        header('Location: '.$_SERVER['HTTP_REFERER'], true, 302); exit;
+    }
+    /**
+     * è®¾å®šè¦å¼•å…¥çš„æ–‡ä»¶ï¼Œä¸»è¦æ˜¯é¡¹ç›®ä¸­ç”¨åˆ°çš„è‡ªå·±è¦å¼•å…¥çš„å‡½æ•°æ–‡ä»¶
+     *
+     * @access public
+     * @param mixed $alias
+     * @return mixed
+     */
+    public static function setImports($alias)
+    {
+        if(is_array($alias)){
+            foreach($alias as $alia=>$aliaPath){
+                self::$_imports[$alia]=self::$_basePath.$aliaPath;
+            }
+        }
+    }
+    /**
+     * æ—¥å¿—è®°å½•
+     *
+     * @access public
+     * @param mixed $msg
+     * @param mixed $level
+     * @return mixed
+     */
+    public static function log($msg,$level=Logger::INFO)
+    {
+
+        if(self::$_logger===null) self::$_logger=new Logger();
+        self::$_logger->log($msg,$level);
+    }
+    /**
+     * å¾—åˆ°æ—¥å¿—å¤„ç†ç±»
+     *
+     * @access public
+     * @return mixed
+     */
+    public static function getLogger(){
+        if(self::$_logger===null) self::$_logger=new Logger();
+        return self::$_logger;
+    }
+    /**
+     * ä¸»è¦æ˜¯å¼•å…¥é¡¹ç›®ä¸­ç”¨æˆ·è‡ªå·±å†™çš„ç±»
+     *
+     * @access public
+     * @param mixed $classNames
+     * @return mixed
+     */
+    public static function setClasses($classNames)
+    {
+        if(is_array($classNames)){
+            self::$_classes += $classNames;
+        }else if(is_string($classNames)){
+            self::$_classes += array($classNames);
+        }
+    }
+    /**
+     * ä¼˜åŒ–dumpè¾“å‡º
+     * @param  éœ€è¦è¾“å‡ºçš„å˜é‡
+     * @return void
+     */
+    public static function dump($varVal){
+        ob_start();
+        var_dump($varVal);
+        $varVal = ob_get_clean();
+        $varVal = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $varVal);
+        echo '<pre>'.$varVal.'</pre>';
+    }
+    //ç³»ç»Ÿä¸­çš„å‡½æ•°æ–‡ä»¶
+    private static $_imports = array(
+        );
+    //ç³»ç»Ÿçš„ä¸­ç±»æ–‡ä»¶
+    private static $_coreClasses = array(
+        'Filter'=>'lib/util/filter_class.php',
+        'Crypt'=>'lib/util/crypt_class.php',
+        'Cookie'=>'lib/util/cookie_class.php',
+        'Session'=>'lib/util/session_class.php',
+        'Safebox'=>'lib/util/safebox_class.php',
+        'Validator'=>'lib/util/validator_class.php',
+        'CHash'=>'lib/util/hash_class.php',
+        'Url'=>'lib/util/url_class.php',
+        'Paging'=>'lib/util/paging_class.php',
+        'Req'=>'lib/util/request_class.php',
+        'Chips'=>'lib/util/chips_class.php',
+        'Route'=>'lib/util/route_class.php',
+        'Image'=>'lib/util/image_class.php',
+        'TimeTest'=>'lib/util/timetest_class.php',
+        'Date'=>'lib/util/date_class.php',
+        'Captcha'=>'lib/util/captcha_class.php',
+        'Http'=>'lib/util/http_class.php',
+        'BackUp'=>'lib/db/backup_class.php',
+        'DBMysql'=>'lib/db/db_mysql_class.php',
+        'DBMysqli'=>'lib/db/db_mysqli_class.php',
+        'DBFactory'=>'lib/db/dbfactory_class.php',
+        'File'=>'lib/file/file_class.php',
+        'UploadFile'=>'lib/file/uploadfile_class.php',
+        'XMLOperator'=>'lib/doc/xmloperator_class.php',
+        'JSON'=>'lib/doc/json_class.php',
+        'Bobject'=>'base/bobject_class.php',
+        'Event'=>'base/event_class.php',
+        'EventManager'=>'base/eventmanager_class.php',
+        'Logger'=>'base/logger_class.php',
+        'ModelEvent'=>'base/model_event_class.php',
+        'Module'=>'base/module_class.php',
+        'Query'=>'web/model/query_class.php',
+        'Application'=>'base/interfaces.php',
+        'App'=>'base/application_class.php',
+        'WebApp'=>'base/webapp_class.php',
+        'Controller'=>'web/controller/controller_class.php',
+        'EnterpriseBase'=>'web/controller/enterprise_base.php',
+        'AdminBase'=>'web/controller/admin_base.php',
+        'Model'=>'web/model/model_class.php',
+        'Tag'=>'base/tag_class.php',
+        'TError'=>'base/error_class.php',
+        'BaseAction'=>'web/action/baseaction_class.php',
+        'Action'=>'web/action/action_class.php',
+        'InlineAction'=>'web/action/inlineaction_class.php',
+        'ViewAction'=>'web/action/viewaction_class.php',
+        'View'=>'web/views/view_class.php',
+        'Manager'=>'web/auth/manager_class.php',
+        'Roles'=>'web/auth/roles_class.php',
+        'Theme'=>'web/theme_class.php',
+        'ThemeManager'=>'web/thememanager_class.php',
+        'JS'=>'web/js/jspackages.php',
+        'Widget'=>'base/widget_class.php',
+        'ICache'=>'cache/cache_inte.php',
+        'CacheFactory'=>'cache/cachefactory_class.php',
+        'FileCache'=>'cache/filecache_class.php',
+        'DbCache'=>'cache/dbcache_class.php',
+        'ExtensionCollection'=>'base/extension_collection_class.php',
+        'ExtensionFactory'=>'base/extension_factory_class.php',
+        'Debug'=>'lib/util/debug_class.php',
+        'TString'=>'lib/util/string_class.php'
+    );
+
+    private static $_coreController = array(
+        "BaseExt"=>"BaseExt.php",
+        "EtpBase"=>"EtpBase.php",
+        "TaxBase"=>"TaxBase.php",
+        "TaxHandle"=>"TaxHandle.php",
+        "GovBase"=>"GovBase.php",
+        "EtpApply"=>"EtpApply.php",
+         "AdmBase"=>"AdmBase.php"
+    );
+}
